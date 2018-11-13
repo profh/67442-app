@@ -34,4 +34,21 @@ class NetworkClient {
     }
     
   }
+  
+  func fetchScorecardDetail(_ completion: @escaping (Data?) -> Void, scorecardId: Int) {
+    
+    let urlString = "https://personalcaddieapi.herokuapp.com/scorecards/\(scorecardId)/"
+    print("made it in")
+    
+    Alamofire.request(urlString, headers: headers).response { response in
+      print(response)
+      if let error = response.error {
+        print("Error fetching scorecard overviews: \(error)")
+        completion(response.data)
+        return
+      }
+      completion(response.data)
+    }
+    
+  }
 }

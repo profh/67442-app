@@ -25,6 +25,9 @@
 		97CACB5A219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97CACB58219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.xib */; };
 		97CACB5F219A8B0800D29F01 /* ScorecardOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB5E219A8B0800D29F01 /* ScorecardOverviewViewModel.swift */; };
 		97CACB61219A8CC900D29F01 /* ScorecardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB60219A8CC900D29F01 /* ScorecardParser.swift */; };
+		97CACB63219A912A00D29F01 /* ScorecardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB62219A912A00D29F01 /* ScorecardDetailViewController.swift */; };
+		97CACB65219A91F700D29F01 /* ScorecardDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB64219A91F700D29F01 /* ScorecardDetailViewModel.swift */; };
+		97CACB68219B5A3400D29F01 /* ScorecardHoleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB67219B5A3400D29F01 /* ScorecardHoleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		97CACB58219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScorecardOverviewCollectionViewCell.xib; sourceTree = "<group>"; };
 		97CACB5E219A8B0800D29F01 /* ScorecardOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardOverviewViewModel.swift; sourceTree = "<group>"; };
 		97CACB60219A8CC900D29F01 /* ScorecardParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardParser.swift; sourceTree = "<group>"; };
+		97CACB62219A912A00D29F01 /* ScorecardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardDetailViewController.swift; sourceTree = "<group>"; };
+		97CACB64219A91F700D29F01 /* ScorecardDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardDetailViewModel.swift; sourceTree = "<group>"; };
+		97CACB67219B5A3400D29F01 /* ScorecardHoleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardHoleCell.swift; sourceTree = "<group>"; };
 		A3878D15BBA53AA25AE1FE1A /* Pods-PersonalCaddie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalCaddie.release.xcconfig"; path = "Pods/Target Support Files/Pods-PersonalCaddie/Pods-PersonalCaddie.release.xcconfig"; sourceTree = "<group>"; };
 		C150C218502919D6F5D27EAA /* Pods_PersonalCaddieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PersonalCaddieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A01A1228E05EA0FEC27AF6 /* Pods_PersonalCaddie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PersonalCaddie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,8 +151,8 @@
 		97CACB4B219A6D4300D29F01 /* Scorecards */ = {
 			isa = PBXGroup;
 			children = (
-				97CACB5E219A8B0800D29F01 /* ScorecardOverviewViewModel.swift */,
-				97CACB60219A8CC900D29F01 /* ScorecardParser.swift */,
+				97CACB69219B984900D29F01 /* Parsers */,
+				97CACB66219B58AD00D29F01 /* ViewModels */,
 				97CACB5D219A7EEE00D29F01 /* Nibs */,
 				97CACB5B219A7ED100D29F01 /* ViewControllers */,
 				97CACB4C219A6D6D00D29F01 /* Models */,
@@ -160,6 +166,7 @@
 				97CACB4D219A6DFE00D29F01 /* ScorecardOverview.swift */,
 				97CACB4F219A6E3500D29F01 /* ScorecardDetail.swift */,
 				97CACB51219A6E4B00D29F01 /* ScorecardHoleDetail.swift */,
+				97CACB67219B5A3400D29F01 /* ScorecardHoleCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				97CACB55219A7E4C00D29F01 /* ScorecardOverviewCollectionViewController.swift */,
+				97CACB62219A912A00D29F01 /* ScorecardDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -179,6 +187,23 @@
 				97CACB58219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.xib */,
 			);
 			path = Nibs;
+			sourceTree = "<group>";
+		};
+		97CACB66219B58AD00D29F01 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				97CACB5E219A8B0800D29F01 /* ScorecardOverviewViewModel.swift */,
+				97CACB64219A91F700D29F01 /* ScorecardDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		97CACB69219B984900D29F01 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				97CACB60219A8CC900D29F01 /* ScorecardParser.swift */,
+			);
+			path = Parsers;
 			sourceTree = "<group>";
 		};
 		C5D6FAA3DF3D4A3308E6509F /* Frameworks */ = {
@@ -427,6 +452,8 @@
 			files = (
 				97CACB5F219A8B0800D29F01 /* ScorecardOverviewViewModel.swift in Sources */,
 				97CACB2B219A6A3500D29F01 /* ViewController.swift in Sources */,
+				97CACB68219B5A3400D29F01 /* ScorecardHoleCell.swift in Sources */,
+				97CACB63219A912A00D29F01 /* ScorecardDetailViewController.swift in Sources */,
 				97CACB52219A6E4B00D29F01 /* ScorecardHoleDetail.swift in Sources */,
 				97CACB56219A7E4C00D29F01 /* ScorecardOverviewCollectionViewController.swift in Sources */,
 				97CACB61219A8CC900D29F01 /* ScorecardParser.swift in Sources */,
@@ -435,6 +462,7 @@
 				97CACB54219A728200D29F01 /* NetworkClient.swift in Sources */,
 				97CACB59219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.swift in Sources */,
 				97CACB50219A6E3500D29F01 /* ScorecardDetail.swift in Sources */,
+				97CACB65219A91F700D29F01 /* ScorecardDetailViewModel.swift in Sources */,
 				97CACB4E219A6DFE00D29F01 /* ScorecardOverview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -81,6 +81,25 @@ class ScorecardOverviewCollectionViewController: UICollectionViewController {
     
 
     }
+  
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+      self.performSegue(withIdentifier: "showScorecardDetail", sender: collectionView)
+    }
+  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == "showScorecardDetail" {
+        if let indexPath = self.collectionView?.indexPathsForSelectedItems{
+          (segue.destination as! ScorecardDetailViewController).viewModel = ScorecardDetailViewModel()
+          (segue.destination as! ScorecardDetailViewController).viewModel!.scorecardOverview = viewModel.scorecards[indexPath[0].row]
+          
+
+
+        }
+        
+        
+
+      }
+    }
 
     // MARK: UICollectionViewDelegate
 
