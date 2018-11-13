@@ -16,6 +16,15 @@
 		97CACB33219A6A3800D29F01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97CACB32219A6A3800D29F01 /* Assets.xcassets */; };
 		97CACB36219A6A3800D29F01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CACB34219A6A3800D29F01 /* LaunchScreen.storyboard */; };
 		97CACB41219A6A3900D29F01 /* PersonalCaddieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB40219A6A3900D29F01 /* PersonalCaddieTests.swift */; };
+		97CACB4E219A6DFE00D29F01 /* ScorecardOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB4D219A6DFE00D29F01 /* ScorecardOverview.swift */; };
+		97CACB50219A6E3500D29F01 /* ScorecardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB4F219A6E3500D29F01 /* ScorecardDetail.swift */; };
+		97CACB52219A6E4B00D29F01 /* ScorecardHoleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB51219A6E4B00D29F01 /* ScorecardHoleDetail.swift */; };
+		97CACB54219A728200D29F01 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB53219A728200D29F01 /* NetworkClient.swift */; };
+		97CACB56219A7E4C00D29F01 /* ScorecardOverviewCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB55219A7E4C00D29F01 /* ScorecardOverviewCollectionViewController.swift */; };
+		97CACB59219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB57219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.swift */; };
+		97CACB5A219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97CACB58219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.xib */; };
+		97CACB5F219A8B0800D29F01 /* ScorecardOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB5E219A8B0800D29F01 /* ScorecardOverviewViewModel.swift */; };
+		97CACB61219A8CC900D29F01 /* ScorecardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB60219A8CC900D29F01 /* ScorecardParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +51,15 @@
 		97CACB3C219A6A3900D29F01 /* PersonalCaddieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonalCaddieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CACB40219A6A3900D29F01 /* PersonalCaddieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCaddieTests.swift; sourceTree = "<group>"; };
 		97CACB42219A6A3900D29F01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97CACB4D219A6DFE00D29F01 /* ScorecardOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardOverview.swift; sourceTree = "<group>"; };
+		97CACB4F219A6E3500D29F01 /* ScorecardDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardDetail.swift; sourceTree = "<group>"; };
+		97CACB51219A6E4B00D29F01 /* ScorecardHoleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardHoleDetail.swift; sourceTree = "<group>"; };
+		97CACB53219A728200D29F01 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		97CACB55219A7E4C00D29F01 /* ScorecardOverviewCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardOverviewCollectionViewController.swift; sourceTree = "<group>"; };
+		97CACB57219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardOverviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		97CACB58219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScorecardOverviewCollectionViewCell.xib; sourceTree = "<group>"; };
+		97CACB5E219A8B0800D29F01 /* ScorecardOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardOverviewViewModel.swift; sourceTree = "<group>"; };
+		97CACB60219A8CC900D29F01 /* ScorecardParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardParser.swift; sourceTree = "<group>"; };
 		A3878D15BBA53AA25AE1FE1A /* Pods-PersonalCaddie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalCaddie.release.xcconfig"; path = "Pods/Target Support Files/Pods-PersonalCaddie/Pods-PersonalCaddie.release.xcconfig"; sourceTree = "<group>"; };
 		C150C218502919D6F5D27EAA /* Pods_PersonalCaddieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PersonalCaddieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A01A1228E05EA0FEC27AF6 /* Pods_PersonalCaddie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PersonalCaddie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +120,8 @@
 		97CACB27219A6A3500D29F01 /* PersonalCaddie */ = {
 			isa = PBXGroup;
 			children = (
+				97CACB53219A728200D29F01 /* NetworkClient.swift */,
+				97CACB4B219A6D4300D29F01 /* Scorecards */,
 				97CACB28219A6A3500D29F01 /* AppDelegate.swift */,
 				97CACB2A219A6A3500D29F01 /* ViewController.swift */,
 				97CACB2C219A6A3500D29F01 /* Main.storyboard */,
@@ -120,6 +140,45 @@
 				97CACB42219A6A3900D29F01 /* Info.plist */,
 			);
 			path = PersonalCaddieTests;
+			sourceTree = "<group>";
+		};
+		97CACB4B219A6D4300D29F01 /* Scorecards */ = {
+			isa = PBXGroup;
+			children = (
+				97CACB5E219A8B0800D29F01 /* ScorecardOverviewViewModel.swift */,
+				97CACB60219A8CC900D29F01 /* ScorecardParser.swift */,
+				97CACB5D219A7EEE00D29F01 /* Nibs */,
+				97CACB5B219A7ED100D29F01 /* ViewControllers */,
+				97CACB4C219A6D6D00D29F01 /* Models */,
+			);
+			path = Scorecards;
+			sourceTree = "<group>";
+		};
+		97CACB4C219A6D6D00D29F01 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				97CACB4D219A6DFE00D29F01 /* ScorecardOverview.swift */,
+				97CACB4F219A6E3500D29F01 /* ScorecardDetail.swift */,
+				97CACB51219A6E4B00D29F01 /* ScorecardHoleDetail.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		97CACB5B219A7ED100D29F01 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				97CACB55219A7E4C00D29F01 /* ScorecardOverviewCollectionViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		97CACB5D219A7EEE00D29F01 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				97CACB57219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.swift */,
+				97CACB58219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.xib */,
+			);
+			path = Nibs;
 			sourceTree = "<group>";
 		};
 		C5D6FAA3DF3D4A3308E6509F /* Frameworks */ = {
@@ -218,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97CACB5A219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.xib in Resources */,
 				97CACB36219A6A3800D29F01 /* LaunchScreen.storyboard in Resources */,
 				97CACB33219A6A3800D29F01 /* Assets.xcassets in Resources */,
 				97CACB2E219A6A3500D29F01 /* Main.storyboard in Resources */,
@@ -239,15 +299,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PersonalCaddie/Pods-PersonalCaddie-resources.sh",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
@@ -261,15 +317,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-PersonalCaddieTests-checkManifestLockResult.txt",
 			);
@@ -283,15 +335,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-PersonalCaddie-checkManifestLockResult.txt",
 			);
@@ -305,8 +353,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PersonalCaddie/Pods-PersonalCaddie-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
@@ -316,8 +362,6 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
@@ -335,15 +379,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PersonalCaddieTests/Pods-PersonalCaddieTests-resources.sh",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
@@ -357,8 +397,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PersonalCaddieTests/Pods-PersonalCaddieTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
@@ -368,8 +406,6 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
@@ -389,9 +425,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97CACB5F219A8B0800D29F01 /* ScorecardOverviewViewModel.swift in Sources */,
 				97CACB2B219A6A3500D29F01 /* ViewController.swift in Sources */,
+				97CACB52219A6E4B00D29F01 /* ScorecardHoleDetail.swift in Sources */,
+				97CACB56219A7E4C00D29F01 /* ScorecardOverviewCollectionViewController.swift in Sources */,
+				97CACB61219A8CC900D29F01 /* ScorecardParser.swift in Sources */,
 				97CACB29219A6A3500D29F01 /* AppDelegate.swift in Sources */,
 				97CACB31219A6A3500D29F01 /* PersonalCaddie.xcdatamodeld in Sources */,
+				97CACB54219A728200D29F01 /* NetworkClient.swift in Sources */,
+				97CACB59219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.swift in Sources */,
+				97CACB50219A6E3500D29F01 /* ScorecardDetail.swift in Sources */,
+				97CACB4E219A6DFE00D29F01 /* ScorecardOverview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
