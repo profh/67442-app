@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20300932A93F00DA14759A85 /* Pods_PersonalCaddie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A01A1228E05EA0FEC27AF6 /* Pods_PersonalCaddie.framework */; };
+		621B59EF6CADEC0304D1E07C /* Pods_PersonalCaddieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C150C218502919D6F5D27EAA /* Pods_PersonalCaddieTests.framework */; };
 		97CACB29219A6A3500D29F01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB28219A6A3500D29F01 /* AppDelegate.swift */; };
 		97CACB2B219A6A3500D29F01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB2A219A6A3500D29F01 /* ViewController.swift */; };
 		97CACB2E219A6A3500D29F01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CACB2C219A6A3500D29F01 /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		169FAAE720919085889045F1 /* Pods-PersonalCaddieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalCaddieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PersonalCaddieTests/Pods-PersonalCaddieTests.release.xcconfig"; sourceTree = "<group>"; };
+		8B771BDF9A90E086A4784CCB /* Pods-PersonalCaddie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalCaddie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PersonalCaddie/Pods-PersonalCaddie.debug.xcconfig"; sourceTree = "<group>"; };
 		97CACB25219A6A3500D29F01 /* PersonalCaddie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalCaddie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CACB28219A6A3500D29F01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97CACB2A219A6A3500D29F01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +42,10 @@
 		97CACB3C219A6A3900D29F01 /* PersonalCaddieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonalCaddieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CACB40219A6A3900D29F01 /* PersonalCaddieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCaddieTests.swift; sourceTree = "<group>"; };
 		97CACB42219A6A3900D29F01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3878D15BBA53AA25AE1FE1A /* Pods-PersonalCaddie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalCaddie.release.xcconfig"; path = "Pods/Target Support Files/Pods-PersonalCaddie/Pods-PersonalCaddie.release.xcconfig"; sourceTree = "<group>"; };
+		C150C218502919D6F5D27EAA /* Pods_PersonalCaddieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PersonalCaddieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7A01A1228E05EA0FEC27AF6 /* Pods_PersonalCaddie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PersonalCaddie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4937972F1C1BBF814EEF6B0 /* Pods-PersonalCaddieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalCaddieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PersonalCaddieTests/Pods-PersonalCaddieTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20300932A93F00DA14759A85 /* Pods_PersonalCaddie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +61,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				621B59EF6CADEC0304D1E07C /* Pods_PersonalCaddieTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A7F9D8B5B8D24FAFE20E398 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B771BDF9A90E086A4784CCB /* Pods-PersonalCaddie.debug.xcconfig */,
+				A3878D15BBA53AA25AE1FE1A /* Pods-PersonalCaddie.release.xcconfig */,
+				F4937972F1C1BBF814EEF6B0 /* Pods-PersonalCaddieTests.debug.xcconfig */,
+				169FAAE720919085889045F1 /* Pods-PersonalCaddieTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		97CACB1C219A6A3400D29F01 = {
 			isa = PBXGroup;
 			children = (
 				97CACB27219A6A3500D29F01 /* PersonalCaddie */,
 				97CACB3F219A6A3900D29F01 /* PersonalCaddieTests */,
 				97CACB26219A6A3500D29F01 /* Products */,
+				1A7F9D8B5B8D24FAFE20E398 /* Pods */,
+				C5D6FAA3DF3D4A3308E6509F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +122,15 @@
 			path = PersonalCaddieTests;
 			sourceTree = "<group>";
 		};
+		C5D6FAA3DF3D4A3308E6509F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7A01A1228E05EA0FEC27AF6 /* Pods_PersonalCaddie.framework */,
+				C150C218502919D6F5D27EAA /* Pods_PersonalCaddieTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97CACB45219A6A3900D29F01 /* Build configuration list for PBXNativeTarget "PersonalCaddie" */;
 			buildPhases = (
+				6E5E11BE074C8EED1EB8056F /* [CP] Check Pods Manifest.lock */,
 				97CACB21219A6A3500D29F01 /* Sources */,
 				97CACB22219A6A3500D29F01 /* Frameworks */,
 				97CACB23219A6A3500D29F01 /* Resources */,
+				C3965768B5165F6CA8DE0C3B /* [CP] Embed Pods Frameworks */,
+				16C5FA40DC50414079ECD775 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97CACB48219A6A3900D29F01 /* Build configuration list for PBXNativeTarget "PersonalCaddieTests" */;
 			buildPhases = (
+				54DE63DF690EC4C16A984B6B /* [CP] Check Pods Manifest.lock */,
 				97CACB38219A6A3900D29F01 /* Sources */,
 				97CACB39219A6A3900D29F01 /* Frameworks */,
 				97CACB3A219A6A3900D29F01 /* Resources */,
+				FEE1836698199B6BA85F171E /* [CP] Embed Pods Frameworks */,
+				F66C4BB32C2DC3FF8BB115F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,6 +232,157 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16C5FA40DC50414079ECD775 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PersonalCaddie/Pods-PersonalCaddie-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PersonalCaddie/Pods-PersonalCaddie-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54DE63DF690EC4C16A984B6B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PersonalCaddieTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E5E11BE074C8EED1EB8056F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PersonalCaddie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3965768B5165F6CA8DE0C3B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PersonalCaddie/Pods-PersonalCaddie-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PersonalCaddie/Pods-PersonalCaddie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F66C4BB32C2DC3FF8BB115F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PersonalCaddieTests/Pods-PersonalCaddieTests-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PersonalCaddieTests/Pods-PersonalCaddieTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEE1836698199B6BA85F171E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PersonalCaddieTests/Pods-PersonalCaddieTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PersonalCaddieTests/Pods-PersonalCaddieTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		97CACB21219A6A3500D29F01 /* Sources */ = {
@@ -360,6 +549,7 @@
 		};
 		97CACB46219A6A3900D29F01 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B771BDF9A90E086A4784CCB /* Pods-PersonalCaddie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +568,7 @@
 		};
 		97CACB47219A6A3900D29F01 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3878D15BBA53AA25AE1FE1A /* Pods-PersonalCaddie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -396,6 +587,7 @@
 		};
 		97CACB49219A6A3900D29F01 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4937972F1C1BBF814EEF6B0 /* Pods-PersonalCaddieTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -417,6 +609,7 @@
 		};
 		97CACB4A219A6A3900D29F01 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 169FAAE720919085889045F1 /* Pods-PersonalCaddieTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
