@@ -38,12 +38,40 @@ class NetworkClient {
   func fetchScorecardDetail(_ completion: @escaping (Data?) -> Void, scorecardId: Int) {
     
     let urlString = "https://personalcaddieapi.herokuapp.com/scorecards/\(scorecardId)/"
-    print("made it in")
+
+    Alamofire.request(urlString, headers: headers).response { response in
+      if let error = response.error {
+        print("Error fetching scorecard detail: \(error)")
+        completion(response.data)
+        return
+      }
+      completion(response.data)
+    }
+    
+  }
+  
+  func fetchCourses(_ completion: @escaping (Data?) -> Void) {
+    
+    let urlString = "https://personalcaddieapi.herokuapp.com/courses/"
     
     Alamofire.request(urlString, headers: headers).response { response in
-      print(response)
       if let error = response.error {
-        print("Error fetching scorecard overviews: \(error)")
+        print("Error fetching courses: \(error)")
+        completion(response.data)
+        return
+      }
+      completion(response.data)
+    }
+    
+  }
+  
+  func fetchHoles(_ completion: @escaping (Data?) -> Void, courseId: Int) {
+    
+    let urlString = "https://personalcaddieapi.herokuapp.com/holes/?course_id=\(courseId)"
+    
+    Alamofire.request(urlString, headers: headers).response { response in
+      if let error = response.error {
+        print("Error fetching scorecard detail: \(error)")
         completion(response.data)
         return
       }
