@@ -15,10 +15,6 @@ let clubs =
     "name": "Driver"
     ],
    [
-    "id": 2,
-    "name": "Putter"
-    ],
-   [
     "id": 3,
     "name": "3 Wood"
     ],
@@ -48,17 +44,27 @@ let clubs =
     ],
    [
     "id": 10,
-    "name": "Pitching Wedge"
+    "name": "PW"
     ],
    [
     "id": 11,
-    "name": "Approach Wedge"
-    ]]
+    "name": "AW"
+    ],
+   
+   [
+    "id": 12,
+    "name": "60"
+    ],
+   [
+    "id": 2,
+    "name": "Putter"
+    ]
+]
 
 
 class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate {
 
-  var viewModel: NewScorecardViewModel? = NewScorecardViewModel()
+  var viewModel: NewScorecardViewModel?
   @IBOutlet var courseNameLabel: UILabel!
   @IBOutlet var collectionView: UICollectionView!
   @IBOutlet var tableView: UITableView!
@@ -73,23 +79,19 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
   var inHole = false
 
   override func viewDidLoad() {
-      super.viewDidLoad()
-    
-    viewModel!.course = (self.navigationController as! CurrentScorecardNavigationController).course!
+    super.viewDidLoad()
+
     courseNameLabel.text = viewModel!.course!.name
     
-    //location = LocationManager()
     viewModel!.refresh (completion: { [unowned self] in
       DispatchQueue.main.async {
         self.collectionView.reloadData()
       }
     }, courseId: viewModel!.course!.courseId)
-      // Do any additional setup after loading the view.
-    
     if !inHole {
       newStrokeButton.isEnabled = false
     }
-    let holeNum = viewModel!.holesPlayed.count + 1
+    let holeNum = viewModel!.numberOfHolesPlayed + 1
     let title = "Start Hole #\(holeNum)"
     holeButton.setTitle(title, for: .normal)
 
@@ -99,9 +101,13 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
   
   override func viewWillAppear(_ animated: Bool) {    
     self.tableView.reloadData()
-
+    scrollToBottom()
+    self.navigationController?.tabBarController?.tabBar.items?.last?.isEnabled = false
   }
 
+  override func viewWillDisappear(_ animated: Bool) {
+    self.navigationController?.tabBarController?.tabBar.items?.last?.isEnabled = true
+  }
   override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
       // Dispose of any resources that can be recreated.
@@ -125,6 +131,7 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
   
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "scorecardHoleCell", for: indexPath) as! ScorecardHoleCell
     cell.num.text = String(viewModel!.holes[indexPath.item].number)
     if indexPath.item < viewModel!.holesPlayed.count{
@@ -137,6 +144,7 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
     
     cell.par.text = String(viewModel!.holes[indexPath.item].par)
     cell.dist.text = String(viewModel!.holes[indexPath.item].distance )
+
     return cell
   }
   
@@ -149,13 +157,33 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "StrokeCell", for: indexPath) as! StrokeCell
 
-    cell.strokeLabel.text = clubs[viewModel!.strokes[indexPath.row].club]["name"] as! String
+    print("QQQQQQQQQQQQQQQQQ", viewModel!.strokes[indexPath.row].club, clubs[viewModel!.strokes[indexPath.row].club] )
+    for i in 0..<(clubs.count) {
+
+//      if let index = club.index(where: {(Int($0["id"]) == viewModel!.strokes[indexPath.row].club)}) {
+//        print(index)
+//      }
+      
+      if clubs[i]["id"] as! Int == viewModel!.strokes[indexPath.row].club{
+        cell.strokeLabel.text = clubs[i]["name"] as! String
+
+      }
+    }
+    
     return cell
   }
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     let holeNum = viewModel!.holesPlayed.count + 1
     return "Hole \(holeNum)"
+  }
+  
+  
+  func scrollToBottom(){
+    if viewModel?.strokes.count as! Int > 0 {
+      let indexPath = IndexPath(row: (viewModel?.strokes.count as! Int) - 1, section: 0)
+      tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
   }
   
 //  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
@@ -170,7 +198,7 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
   @IBAction func startHole(_ sender: UIButton){
     inHole = !inHole
     if inHole{
-      let holeNum = viewModel!.holesPlayed.count + 1
+      let holeNum = viewModel!.numberOfHolesPlayed + 1
       newStrokeButton.isEnabled = true
       let title = "Complete Hole #\(holeNum)"
       holeButton.setTitle(title, for: .normal)
@@ -182,12 +210,25 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
       tableView.reloadData()
       collectionView.reloadData()
       
-      let holeNum = viewModel!.holesPlayed.count + 1
+      let holeNum = viewModel!.numberOfHolesPlayed + 1
       newStrokeButton.isEnabled = false
       let title = "Start Hole #\(holeNum)"
       holeButton.setTitle(title, for: .normal)
 
     }
+  }
+  
+  @IBAction func completeRound(_ sender: UIButton){
+
+    (self.navigationController as! AddScorecardNavigationController).currScorecard = false
+    self.navigationController!.popViewController(animated: true)
+    
+    
+    viewModel!.reset()
+
+    // create everything !!!!!!
+    // reset everything  !!!!!!
+
   }
   
   

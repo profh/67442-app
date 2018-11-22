@@ -77,23 +77,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mVp-oH-0Ef">
-                                <rect key="frame" x="16" y="116" width="343" height="404"/>
+                                <rect key="frame" x="16" y="82" width="343" height="565"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="znm-RS-NUz">
-                                    <size key="itemSize" width="160" height="60"/>
+                                    <size key="itemSize" width="160" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="AHl-Rs-3Jk" customClass="ScorecardInputCollectionViewCell" customModule="PersonalCaddie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="HNh-Ib-rX2" kind="show" identifier="showLies" id="Edm-zM-PQX"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -101,52 +104,167 @@
                                     <outlet property="delegate" destination="3Lh-WL-qi5" id="cCj-pM-iKg"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Elx-PL-zL7">
-                                <rect key="frame" x="49" y="87" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAo-6O-B6g">
-                                <rect key="frame" x="129" y="86" width="117" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuk-Av-bkz">
-                                <rect key="frame" x="262" y="85" width="82" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcS-0N-m2l">
-                                <rect key="frame" x="34" y="550" width="307" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Complete Stroke"/>
-                                <connections>
-                                    <action selector="submit:" destination="3Lh-WL-qi5" eventType="touchUpInside" id="ebm-df-3jX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="phj-kY-gDF"/>
                     </view>
-                    <navigationItem key="navigationItem" id="V2t-zO-IBX">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="D9A-S4-cau"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="V2t-zO-IBX"/>
                     <connections>
-                        <outlet property="club" destination="Elx-PL-zL7" id="i1Y-7k-mgE"/>
                         <outlet property="collectionView" destination="mVp-oH-0Ef" id="a5p-Sv-FVk"/>
-                        <outlet property="lat" destination="WAo-6O-B6g" id="soE-M9-8qR"/>
-                        <outlet property="lon" destination="wuk-Av-bkz" id="rfC-t8-jVA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77L-ef-oLI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2716" y="1503.5982008995504"/>
+            <point key="canvasLocation" x="1982" y="1530"/>
+        </scene>
+        <!--Flight Type View Controller-->
+        <scene sceneID="KTg-cb-ycj">
+            <objects>
+                <viewController id="Xh8-nw-6w7" customClass="FlightTypeViewController" customModule="PersonalCaddie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FQs-va-3eU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xN1-79-Ohc">
+                                <rect key="frame" x="16" y="82" width="343" height="389"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sIO-1N-Hor">
+                                    <size key="itemSize" width="160" height="80"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="kRe-1K-5Gs" customClass="ScorecardInputCollectionViewCell" customModule="PersonalCaddie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xh8-nw-6w7" id="fvz-rg-crO"/>
+                                    <outlet property="delegate" destination="Xh8-nw-6w7" id="J2Q-ea-ZRg"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1Q-zy-PSr">
+                                <rect key="frame" x="16" y="512" width="343" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Complete Stroke"/>
+                                <connections>
+                                    <action selector="submit:" destination="Xh8-nw-6w7" eventType="touchUpInside" id="dPJ-67-0lo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8ng-yl-dQ6"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="xN1-79-Ohc" id="HdG-WT-zHm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YwV-ux-MSs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5108" y="1529.6851574212894"/>
+        </scene>
+        <!--Contact Type View Controller-->
+        <scene sceneID="hvh-bD-JYM">
+            <objects>
+                <viewController id="FV4-pc-Edh" customClass="ContactTypeViewController" customModule="PersonalCaddie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mTh-5n-nIE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="M6d-OE-NF3">
+                                <rect key="frame" x="16" y="82" width="343" height="565"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="w6z-tO-R19">
+                                    <size key="itemSize" width="160" height="80"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="kzh-8s-2D8" customClass="ScorecardInputCollectionViewCell" customModule="PersonalCaddie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="Xh8-nw-6w7" kind="show" identifier="showFlightType" id="mr1-9s-5R9"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="FV4-pc-Edh" id="JXq-4q-ESG"/>
+                                    <outlet property="delegate" destination="FV4-pc-Edh" id="hVN-cs-Ipv"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ldg-uw-QH7"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="M6d-OE-NF3" id="PAy-mY-aoe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S1a-vf-fRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4142" y="1530"/>
+        </scene>
+        <!--Lie View Controller-->
+        <scene sceneID="WYI-dX-irk">
+            <objects>
+                <viewController id="HNh-Ib-rX2" customClass="LieViewController" customModule="PersonalCaddie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jq4-Vo-um7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l43-DG-YYu">
+                                <rect key="frame" x="16" y="82" width="343" height="565"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YUt-hq-K0t">
+                                    <size key="itemSize" width="160" height="80"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="1So-ru-4B0" customClass="ScorecardInputCollectionViewCell" customModule="PersonalCaddie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="FV4-pc-Edh" kind="show" identifier="showContactType" id="AnM-aU-024"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="HNh-Ib-rX2" id="B2X-ad-Nl6"/>
+                                    <outlet property="delegate" destination="HNh-Ib-rX2" id="oPQ-yr-fNG"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="aTd-An-tYj"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="l43-DG-YYu" id="NlH-hc-Qy0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VgP-7S-sKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3022" y="1530"/>
         </scene>
         <!--New Scorecard View Controller-->
         <scene sceneID="MLl-Rq-vwF">
@@ -243,13 +361,17 @@
                                     <outlet property="delegate" destination="iDb-hw-lK0" id="M9X-XH-19v"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2t-Ou-fmU">
-                                <rect key="frame" x="18" y="587" width="339" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ffY-Gs-p8T">
+                                <rect key="frame" x="193" y="271" width="162" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Complete Round"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Take Stroke From Here"/>
+                                <connections>
+                                    <segue destination="IGt-Bf-Pbo" kind="show" id="IVE-FA-b63"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ny4-7k-E4o">
-                                <rect key="frame" x="16" y="288" width="162" height="203"/>
+                                <rect key="frame" x="16" y="271" width="162" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -280,7 +402,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RV2-N6-xsT">
-                                <rect key="frame" x="16" y="508" width="339" height="60"/>
+                                <rect key="frame" x="16" y="465" width="339" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Begin Hole"/>
                                 <connections>
@@ -315,12 +437,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffY-Gs-p8T">
-                                <rect key="frame" x="193" y="288" width="162" height="203"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2t-Ou-fmU">
+                                <rect key="frame" x="18" y="533" width="339" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Take Stroke"/>
+                                <state key="normal" title="Complete Round"/>
                                 <connections>
-                                    <segue destination="IGt-Bf-Pbo" kind="show" id="IVE-FA-b63"/>
+                                    <action selector="completeRound:" destination="iDb-hw-lK0" eventType="touchUpInside" id="gf5-TP-XDC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -342,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rak-78-drm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829.60000000000002" y="1529.6851574212894"/>
+            <point key="canvasLocation" x="-10.4" y="1529.6851574212894"/>
         </scene>
         <!--Scorecard Detail View Controller-->
         <scene sceneID="3ja-yI-0uq">
@@ -594,7 +716,7 @@
                                 <state key="normal" title="Start Round"/>
                                 <connections>
                                     <action selector="addScorecardWith_sender:" destination="nYx-RN-GMU" eventType="touchUpInside" id="XzG-Oc-jh9"/>
-                                    <segue destination="jhH-ge-JL7" kind="show" identifier="toNewScorecardVC" id="Pex-u4-8mr"/>
+                                    <segue destination="iDb-hw-lK0" kind="show" id="Ut8-Tl-Dtc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -626,24 +748,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCr-jf-zja" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1964" y="1503.5982008995504"/>
-        </scene>
-        <!--Current Scorecard Navigation Controller-->
-        <scene sceneID="fmP-j4-GdF">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="jhH-ge-JL7" customClass="CurrentScorecardNavigationController" customModule="PersonalCaddie" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SYn-iD-egY">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="iDb-hw-lK0" kind="relationship" relationship="rootViewController" id="12A-Uv-DSp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Oii-e3-ErW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-74.400000000000006" y="1529.6851574212894"/>
+            <point key="canvasLocation" x="998" y="1530"/>
         </scene>
     </scenes>
 </document>

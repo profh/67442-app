@@ -8,10 +8,11 @@
 
 import UIKit
 
-class AddScorecardNavigationController: UINavigationController {
+class AddScorecardNavigationController: UINavigationController, UINavigationControllerDelegate {
   
   var currScorecard: Bool = false
-
+  var viewModel = NewScorecardViewModel()
+  
   override func viewDidLoad() {
       super.viewDidLoad()
 
@@ -25,16 +26,25 @@ class AddScorecardNavigationController: UINavigationController {
   
   
   override func viewWillAppear(_ animated: Bool) {
+    print(self.viewControllers)
     if currScorecard {
+      let vc = self.viewControllers.last as! NewScorecardViewController
+      vc.viewWillAppear(true)
+    }
+    if currScorecard && self.viewModel.strokes.count == 0{
       let vc:NewScorecardViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewScorecardViewController") as! NewScorecardViewController
-      
+      vc.viewModel = self.viewModel
       self.pushViewController(vc, animated: true)
     }
-    else {
+    else if currScorecard == false {
       let vc:ScorecardCourseViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ScorecardCourseViewController") as! ScorecardCourseViewController
+      vc.viewModel = self.viewModel
+
       self.pushViewController(vc, animated: true)
     }
   }
+  
+
 
   /*
   // MARK: - Navigation

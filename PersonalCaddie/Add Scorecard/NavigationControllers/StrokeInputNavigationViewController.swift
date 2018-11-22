@@ -14,6 +14,10 @@ class StrokeInputNavigationViewController: UINavigationController {
   var scorecardHole: Int?
   var latitude: Double?
   var longitude: Double?
+  var club: Int?
+  var flightType: String?
+  var lie: String?
+  var contactType: String?
   
   var viewModel: NewScorecardViewModel?
 

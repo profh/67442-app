@@ -8,13 +8,13 @@
 
 import UIKit
 
+
+
 class ClubsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
 
   
-  @IBOutlet var club: UILabel!
   @IBOutlet var collectionView: UICollectionView!
-  @IBOutlet var lat: UILabel!
-  @IBOutlet var lon: UILabel!
+
   
   var latitude: Double?
   var longitude: Double?
@@ -24,51 +24,7 @@ class ClubsViewController: UIViewController, UICollectionViewDelegate, UICollect
   
   var selectedCellIndex: Int?
   
-  let clubs =
-    [[
-      "id": 1,
-      "name": "Driver"
-  ],
-  [
-  "id": 2,
-  "name": "Putter"
-  ],
-  [
-  "id": 3,
-  "name": "3 Wood"
-  ],
-  [
-  "id": 4,
-  "name": "4 Iron"
-  ],
-  [
-  "id": 5,
-  "name": "5 Iron"
-  ],
-  [
-  "id": 6,
-  "name": "6 Iron"
-  ],
-  [
-  "id": 7,
-  "name": "7 Iron"
-  ],
-  [
-  "id": 8,
-  "name": "8 Iron"
-  ],
-  [
-  "id": 9,
-  "name": "9 Iron"
-  ],
-  [
-  "id": 10,
-  "name": "Pitching Wedge"
-  ],
-  [
-  "id": 11,
-  "name": "Approach Wedge"
-  ]]
+  
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -78,10 +34,6 @@ class ClubsViewController: UIViewController, UICollectionViewDelegate, UICollect
 
       collectionView.allowsMultipleSelection = false
       
-      
-      let nav = (self.navigationController as! StrokeInputNavigationViewController)
-      lat.text = String(nav.latitude!)
-      lon.text = String(nav.longitude!)
 
   }
 
@@ -117,7 +69,7 @@ class ClubsViewController: UIViewController, UICollectionViewDelegate, UICollect
       cell.backgroundColor = UIColor.white
     }
     else {
-      cell.backgroundColor = UIColor.blue
+      cell.backgroundColor = UIColor.green
     }
 
     return cell
@@ -126,27 +78,22 @@ class ClubsViewController: UIViewController, UICollectionViewDelegate, UICollect
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    (self.navigationController as! StrokeInputNavigationViewController).scorecardHole =  clubs[indexPath.item]["id"] as! Int
-    club.text = String((self.navigationController as! StrokeInputNavigationViewController).scorecardHole!)
-    
+    // (self.navigationController as! StrokeInputNavigationViewController).scorecardHole =  clubs[indexPath.item]["id"] as! Int
     
     let cell = collectionView.cellForItem(at: indexPath) as! ScorecardInputCollectionViewCell
-    cell.backgroundColor = UIColor.blue
     selectedCellIndex = indexPath.item
+
     
     collectionView.reloadData()
+    (self.navigationController as! StrokeInputNavigationViewController).club = clubs[selectedCellIndex!]["id"] as! Int
+    
+    self.performSegue(withIdentifier: "showLies", sender: collectionView)
+
+    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", selectedCellIndex, clubs[selectedCellIndex!]["id"] as! Int)
+    
     
   }
   
   
-  @IBAction func submit(_ sender: UIButton) {
-    if let clubId = selectedCellIndex,
-      let lat = (self.navigationController as! StrokeInputNavigationViewController).latitude,
-      let lon = (self.navigationController as! StrokeInputNavigationViewController).longitude
-      {
-      (self.navigationController! as! StrokeInputNavigationViewController).viewModel!.strokes.append(Stroke(club: clubId, lat: lat, lon: lon, contactType: nil, flightType: nil, finalLocation: nil))
-      self.navigationController!.dismiss(animated: true)
-    }
-  }
 
 }

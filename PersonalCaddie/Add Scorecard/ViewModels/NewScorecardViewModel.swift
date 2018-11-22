@@ -14,6 +14,8 @@ class NewScorecardViewModel {
   let parser: AddScorecardParser
   var holes: [Hole]
   var course: Course?
+  var courses: [Course]
+
   
   var holesPlayed: [[Stroke]]
   var strokes: [Stroke]
@@ -22,9 +24,17 @@ class NewScorecardViewModel {
     networkClient = NetworkClient()
     parser = AddScorecardParser()
     holes = []
-    strokes = [] //[Stroke(club: 1, lat: 3.234, lon: 23.234, contactType: nil, flightType: nil, finalLocation: nil),Stroke(club: 5, lat: 3.234, lon: 23.234, contactType: nil, flightType: nil, finalLocation: nil),Stroke(club: 2, lat: 3.234, lon: 23.234, contactType: nil, flightType: nil, finalLocation: nil)]
+    strokes = []
     holesPlayed = []
     
+    courses = []
+    
+    
+  }
+  
+  func reset(){
+    strokes = []
+    holesPlayed = []
   }
   
   func refresh(completion: @escaping () -> Void, courseId: Int) {
@@ -41,6 +51,28 @@ class NewScorecardViewModel {
   var numberOfHoles: Int{
     return self.holes.count
   }
+  
+  
+  
+  func refreshCourses(completion: @escaping () -> Void) {
+    networkClient.fetchCourses{  data in
+      
+      if let courses = self.parser.parseCoursesResponse(data){
+        self.courses = courses
+      }
+      completion()
+      
+    }
+  }
+  
+  var numberOfCourses: Int{
+    return self.courses.count
+  }
+  
+  var numberOfHolesPlayed: Int {
+    return self.holesPlayed.count
+  }
+  
   
 
 }

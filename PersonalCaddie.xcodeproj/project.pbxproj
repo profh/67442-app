@@ -45,6 +45,9 @@
 		97CACBA3219DECCA00D29F01 /* CurrentScorecardNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACBA2219DECC900D29F01 /* CurrentScorecardNavigationController.swift */; };
 		97CACBA5219DF6FC00D29F01 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACBA4219DF6FC00D29F01 /* Stroke.swift */; };
 		97CACBA7219DFDD700D29F01 /* StrokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACBA6219DFDD700D29F01 /* StrokeCell.swift */; };
+		97CACBA921A5B7C100D29F01 /* FlightTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACBA821A5B7C100D29F01 /* FlightTypeViewController.swift */; };
+		97CACBAE21A63DA200D29F01 /* LieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACBAD21A63DA200D29F01 /* LieViewController.swift */; };
+		97CACBB021A7097300D29F01 /* ContactTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACBAF21A7097300D29F01 /* ContactTypeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +103,9 @@
 		97CACBA2219DECC900D29F01 /* CurrentScorecardNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentScorecardNavigationController.swift; sourceTree = "<group>"; };
 		97CACBA4219DF6FC00D29F01 /* Stroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stroke.swift; sourceTree = "<group>"; };
 		97CACBA6219DFDD700D29F01 /* StrokeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeCell.swift; sourceTree = "<group>"; };
+		97CACBA821A5B7C100D29F01 /* FlightTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTypeViewController.swift; sourceTree = "<group>"; };
+		97CACBAD21A63DA200D29F01 /* LieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LieViewController.swift; sourceTree = "<group>"; };
+		97CACBAF21A7097300D29F01 /* ContactTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTypeViewController.swift; sourceTree = "<group>"; };
 		A3878D15BBA53AA25AE1FE1A /* Pods-PersonalCaddie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalCaddie.release.xcconfig"; path = "Pods/Target Support Files/Pods-PersonalCaddie/Pods-PersonalCaddie.release.xcconfig"; sourceTree = "<group>"; };
 		C150C218502919D6F5D27EAA /* Pods_PersonalCaddieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PersonalCaddieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A01A1228E05EA0FEC27AF6 /* Pods_PersonalCaddie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PersonalCaddie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -258,7 +264,7 @@
 		97CACB8C219D011F00D29F01 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				97CACB84219BD8D000D29F01 /* ClubsViewController.swift */,
+				97CACBAA21A5B7CE00D29F01 /* StrokeDescription */,
 				97CACB91219D01A000D29F01 /* ScorecardCourseViewController.swift */,
 				97CACB8A219CF5CF00D29F01 /* NewScorecardViewController.swift */,
 			);
@@ -303,6 +309,17 @@
 				97CACBA0219D319B00D29F01 /* NewScorecardViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		97CACBAA21A5B7CE00D29F01 /* StrokeDescription */ = {
+			isa = PBXGroup;
+			children = (
+				97CACB84219BD8D000D29F01 /* ClubsViewController.swift */,
+				97CACBA821A5B7C100D29F01 /* FlightTypeViewController.swift */,
+				97CACBAD21A63DA200D29F01 /* LieViewController.swift */,
+				97CACBAF21A7097300D29F01 /* ContactTypeViewController.swift */,
+			);
+			path = StrokeDescription;
 			sourceTree = "<group>";
 		};
 		C5D6FAA3DF3D4A3308E6509F /* Frameworks */ = {
@@ -561,10 +578,13 @@
 				97CACB9D219D291A00D29F01 /* AddScorecardNavigationController.swift in Sources */,
 				97CACB56219A7E4C00D29F01 /* ScorecardOverviewCollectionViewController.swift in Sources */,
 				97CACB61219A8CC900D29F01 /* ScorecardParser.swift in Sources */,
+				97CACBAE21A63DA200D29F01 /* LieViewController.swift in Sources */,
 				97CACB92219D01A000D29F01 /* ScorecardCourseViewController.swift in Sources */,
 				97CACB89219CD15E00D29F01 /* LocationManager.swift in Sources */,
 				97CACB29219A6A3500D29F01 /* AppDelegate.swift in Sources */,
+				97CACBB021A7097300D29F01 /* ContactTypeViewController.swift in Sources */,
 				97CACB31219A6A3500D29F01 /* PersonalCaddie.xcdatamodeld in Sources */,
+				97CACBA921A5B7C100D29F01 /* FlightTypeViewController.swift in Sources */,
 				97CACB94219D030A00D29F01 /* ScorecardCourseCell.swift in Sources */,
 				97CACB54219A728200D29F01 /* NetworkClient.swift in Sources */,
 				97CACB8B219CF5CF00D29F01 /* NewScorecardViewController.swift in Sources */,
