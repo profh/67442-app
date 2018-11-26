@@ -84,6 +84,20 @@ class AddScorecardParser {
     
   }
   
+  func parseCreateScorecardResponse(_ data: Data) -> Int?{
+    do {
+      if let swiftyjson = try? JSON(data: data ){
+        return swiftyjson["id"].int!
+      }
+    }
+    catch {
+      print("error serializing json: \(error)")
+      
+    }
+    
+    return nil
+  }
+  
   
   
 }

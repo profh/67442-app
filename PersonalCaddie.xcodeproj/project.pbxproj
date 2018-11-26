@@ -38,11 +38,9 @@
 		97CACB94219D030A00D29F01 /* ScorecardCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB93219D030A00D29F01 /* ScorecardCourseCell.swift */; };
 		97CACB96219D0F5900D29F01 /* AddScorecardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB95219D0F5900D29F01 /* AddScorecardParser.swift */; };
 		97CACB98219D0FAE00D29F01 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB97219D0FAE00D29F01 /* Course.swift */; };
-		97CACB9A219D139F00D29F01 /* ScorecardCourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB99219D139F00D29F01 /* ScorecardCourseViewModel.swift */; };
 		97CACB9D219D291A00D29F01 /* AddScorecardNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB9C219D291A00D29F01 /* AddScorecardNavigationController.swift */; };
 		97CACB9F219D30E000D29F01 /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB9E219D30E000D29F01 /* Hole.swift */; };
 		97CACBA1219D319B00D29F01 /* NewScorecardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACBA0219D319B00D29F01 /* NewScorecardViewModel.swift */; };
-		97CACBA3219DECCA00D29F01 /* CurrentScorecardNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACBA2219DECC900D29F01 /* CurrentScorecardNavigationController.swift */; };
 		97CACBA5219DF6FC00D29F01 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACBA4219DF6FC00D29F01 /* Stroke.swift */; };
 		97CACBA7219DFDD700D29F01 /* StrokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACBA6219DFDD700D29F01 /* StrokeCell.swift */; };
 		97CACBA921A5B7C100D29F01 /* FlightTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACBA821A5B7C100D29F01 /* FlightTypeViewController.swift */; };
@@ -96,11 +94,9 @@
 		97CACB93219D030A00D29F01 /* ScorecardCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardCourseCell.swift; sourceTree = "<group>"; };
 		97CACB95219D0F5900D29F01 /* AddScorecardParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScorecardParser.swift; sourceTree = "<group>"; };
 		97CACB97219D0FAE00D29F01 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
-		97CACB99219D139F00D29F01 /* ScorecardCourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardCourseViewModel.swift; sourceTree = "<group>"; };
 		97CACB9C219D291A00D29F01 /* AddScorecardNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScorecardNavigationController.swift; sourceTree = "<group>"; };
 		97CACB9E219D30E000D29F01 /* Hole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hole.swift; sourceTree = "<group>"; };
 		97CACBA0219D319B00D29F01 /* NewScorecardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewScorecardViewModel.swift; sourceTree = "<group>"; };
-		97CACBA2219DECC900D29F01 /* CurrentScorecardNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentScorecardNavigationController.swift; sourceTree = "<group>"; };
 		97CACBA4219DF6FC00D29F01 /* Stroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stroke.swift; sourceTree = "<group>"; };
 		97CACBA6219DFDD700D29F01 /* StrokeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeCell.swift; sourceTree = "<group>"; };
 		97CACBA821A5B7C100D29F01 /* FlightTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTypeViewController.swift; sourceTree = "<group>"; };
@@ -276,7 +272,6 @@
 			children = (
 				97CACB86219BDC9100D29F01 /* StrokeInputNavigationViewController.swift */,
 				97CACB9C219D291A00D29F01 /* AddScorecardNavigationController.swift */,
-				97CACBA2219DECC900D29F01 /* CurrentScorecardNavigationController.swift */,
 			);
 			path = NavigationControllers;
 			sourceTree = "<group>";
@@ -305,7 +300,6 @@
 		97CACB9B219D13AC00D29F01 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				97CACB99219D139F00D29F01 /* ScorecardCourseViewModel.swift */,
 				97CACBA0219D319B00D29F01 /* NewScorecardViewModel.swift */,
 			);
 			path = ViewModels;
@@ -574,7 +568,6 @@
 				97CACB68219B5A3400D29F01 /* ScorecardHoleCell.swift in Sources */,
 				97CACB63219A912A00D29F01 /* ScorecardDetailViewController.swift in Sources */,
 				97CACB52219A6E4B00D29F01 /* ScorecardHoleDetail.swift in Sources */,
-				97CACBA3219DECCA00D29F01 /* CurrentScorecardNavigationController.swift in Sources */,
 				97CACB9D219D291A00D29F01 /* AddScorecardNavigationController.swift in Sources */,
 				97CACB56219A7E4C00D29F01 /* ScorecardOverviewCollectionViewController.swift in Sources */,
 				97CACB61219A8CC900D29F01 /* ScorecardParser.swift in Sources */,
@@ -594,7 +587,6 @@
 				97CACB85219BD8D000D29F01 /* ClubsViewController.swift in Sources */,
 				97CACBA1219D319B00D29F01 /* NewScorecardViewModel.swift in Sources */,
 				97CACB50219A6E3500D29F01 /* ScorecardDetail.swift in Sources */,
-				97CACB9A219D139F00D29F01 /* ScorecardCourseViewModel.swift in Sources */,
 				97CACB65219A91F700D29F01 /* ScorecardDetailViewModel.swift in Sources */,
 				97CACB9F219D30E000D29F01 /* Hole.swift in Sources */,
 				97CACBA5219DF6FC00D29F01 /* Stroke.swift in Sources */,

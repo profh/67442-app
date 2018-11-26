@@ -83,5 +83,6 @@ class ScorecardCourseViewController: UIViewController, UITableViewDataSource, UI
     (self.navigationController as! AddScorecardNavigationController).currScorecard = true
     tableView.isUserInteractionEnabled = false
     startRoundButton.isEnabled = false
+    viewModel!.createScorecard( courseId: viewModel!.course!.courseId)
   }
 }

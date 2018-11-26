@@ -79,4 +79,21 @@ class NetworkClient {
     }
     
   }
+  
+  
+  
+  func createScorecard(_ completion: @escaping (Data?) -> Void, courseId: Int){
+    let urlString = "https://personalcaddieapi.herokuapp.com/scorecards/"
+    
+    Alamofire.request(urlString, method: .post, parameters: ["course": courseId], headers: headers).responseJSON { response in
+
+      if let error = response.error {
+        print("Error fetching courses: \(error)")
+        completion(response.data)
+        return
+      }
+      completion(response.data)
+    }
+    
+  }
 }

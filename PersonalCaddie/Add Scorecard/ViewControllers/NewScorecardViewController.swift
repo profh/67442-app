@@ -85,6 +85,7 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
     
     viewModel!.refresh (completion: { [unowned self] in
       DispatchQueue.main.async {
+        
         self.collectionView.reloadData()
       }
     }, courseId: viewModel!.course!.courseId)
@@ -157,12 +158,9 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "StrokeCell", for: indexPath) as! StrokeCell
 
-    print("QQQQQQQQQQQQQQQQQ", viewModel!.strokes[indexPath.row].club, clubs[viewModel!.strokes[indexPath.row].club] )
+
     for i in 0..<(clubs.count) {
 
-//      if let index = club.index(where: {(Int($0["id"]) == viewModel!.strokes[indexPath.row].club)}) {
-//        print(index)
-//      }
       
       if clubs[i]["id"] as! Int == viewModel!.strokes[indexPath.row].club{
         cell.strokeLabel.text = clubs[i]["name"] as! String

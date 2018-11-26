@@ -51,13 +51,11 @@ class ScorecardParser {
   
   
   func parseScorecardDetailResponse(_ data: Data) -> ScorecardDetail?{
-    print("parser")
     
     var scorecard: ScorecardDetail
     let f = DateFormatter()
     f.dateFormat = "yyyy-MM-dd"
     
-    print(data)
     
     if let swiftyjson = try? JSON(data: data ){
       var scorecardHoles: [ScorecardHoleDetail] = []
@@ -89,7 +87,6 @@ class ScorecardParser {
       
       
       scorecard = ScorecardDetail(scorecardId: scorecardId!, date: date!, courseId: courseId!, courseName: courseName!, nineHolePar: nineHolePar!, eighteenHolePar: eighteenHolePar!, numPutts: numPutts!, numStrokes: totalStrokes, numHolesPlayed: scorecardHoles.count, scorecardHoles: scorecardHoles)
-      print(scorecard)
       return scorecard
     }
     

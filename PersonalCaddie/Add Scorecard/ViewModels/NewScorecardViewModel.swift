@@ -15,6 +15,7 @@ class NewScorecardViewModel {
   var holes: [Hole]
   var course: Course?
   var courses: [Course]
+  var scorecardId: Int?
 
   
   var holesPlayed: [[Stroke]]
@@ -39,9 +40,9 @@ class NewScorecardViewModel {
   
   func refresh(completion: @escaping () -> Void, courseId: Int) {
     networkClient.fetchHoles({  data in
-      
       if let holes = self.parser.parseHolesResponse(data){
         self.holes = holes
+        print(self.holes)
       }
       completion()
       
@@ -73,6 +74,19 @@ class NewScorecardViewModel {
     return self.holesPlayed.count
   }
   
+
+  func createScorecard(courseId: Int) {
+    networkClient.createScorecard({  data in
+      
+      if let scorecardId = self.parser.parseCreateScorecardResponse((data)!){
+        self.scorecardId = scorecardId
+      }
+
+    }, courseId: courseId)
+    
+
+  }
+
   
 
 }

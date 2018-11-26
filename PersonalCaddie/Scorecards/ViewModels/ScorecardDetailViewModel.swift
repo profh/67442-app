@@ -29,7 +29,6 @@ class ScorecardDetailViewModel {
   
   func refresh(completion: @escaping () -> Void) {
     networkClient.fetchScorecardDetail({  data in
-
       if let scorecard = self.parser.parseScorecardDetailResponse(data!){
         self.scorecard = scorecard
         
