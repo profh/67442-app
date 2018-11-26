@@ -406,7 +406,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Begin Hole"/>
                                 <connections>
-                                    <action selector="startHole:" destination="iDb-hw-lK0" eventType="touchUpInside" id="KJc-Db-uQb"/>
+                                    <action selector="startCompleteHole:" destination="iDb-hw-lK0" eventType="touchUpInside" id="Jtt-ol-JcD"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hole" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuv-v9-Sh1">

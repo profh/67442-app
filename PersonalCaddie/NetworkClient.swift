@@ -71,7 +71,7 @@ class NetworkClient {
     
     Alamofire.request(urlString, headers: headers).response { response in
       if let error = response.error {
-        print("Error fetching scorecard detail: \(error)")
+        print("Error fetching holes: \(error)")
         completion(response.data)
         return
       }
@@ -88,7 +88,7 @@ class NetworkClient {
     Alamofire.request(urlString, method: .post, parameters: ["course": courseId], headers: headers).responseJSON { response in
 
       if let error = response.error {
-        print("Error fetching courses: \(error)")
+        print("Error creating scorecard: \(error)")
         completion(response.data)
         return
       }
@@ -96,4 +96,40 @@ class NetworkClient {
     }
     
   }
+  
+
+  
+  
+  func createScorecardHole(_ completion: @escaping (Data?) -> Void, scorecardId: Int, holeId: Int){
+    let urlString = "https://personalcaddieapi.herokuapp.com/scorecardHoles/"
+
+    Alamofire.request(urlString, method: .post, parameters: ["scorecard": scorecardId, "hole": holeId], headers: headers).responseJSON { response in
+      if let error = response.error {
+        print("Error creating scorecard hole: \(error)")
+        completion(response.data)
+        return
+      }
+      completion(response.data)
+    }
+    
+  }
+  
+  func createStroke(scHole: Int, stroke: Stroke){
+    let urlString = "https://personalcaddieapi.herokuapp.com/strokes/"
+    let params: [String: Any]  = ["scorecardHole": scHole, "club": stroke.club, "lat": stroke.lat, "lon": stroke.lon, "contactType": stroke.contactType!, "flightType": stroke.flightType!, "finalLocation": stroke.finalLocation!]
+    print(params)
+    
+    Alamofire.request(urlString, method: .post, parameters: params, headers: headers).responseJSON { response in
+      print("Im inside")
+      print(response)
+      if let error = response.error {
+        print("Error creating stroke: \(error)")
+        return
+      }
+    }
+  }
+  
+  
+  
+  
 }

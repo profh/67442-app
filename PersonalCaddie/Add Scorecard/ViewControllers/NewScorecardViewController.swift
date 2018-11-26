@@ -9,58 +9,6 @@
 import UIKit
 
 
-let clubs =
-  [[
-    "id": 1,
-    "name": "Driver"
-    ],
-   [
-    "id": 3,
-    "name": "3 Wood"
-    ],
-   [
-    "id": 4,
-    "name": "4 Iron"
-    ],
-   [
-    "id": 5,
-    "name": "5 Iron"
-    ],
-   [
-    "id": 6,
-    "name": "6 Iron"
-    ],
-   [
-    "id": 7,
-    "name": "7 Iron"
-    ],
-   [
-    "id": 8,
-    "name": "8 Iron"
-    ],
-   [
-    "id": 9,
-    "name": "9 Iron"
-    ],
-   [
-    "id": 10,
-    "name": "PW"
-    ],
-   [
-    "id": 11,
-    "name": "AW"
-    ],
-   
-   [
-    "id": 12,
-    "name": "60"
-    ],
-   [
-    "id": 2,
-    "name": "Putter"
-    ]
-]
-
 
 class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate {
 
@@ -193,25 +141,35 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
   
   // MARK: - IBActions
   
-  @IBAction func startHole(_ sender: UIButton){
+  @IBAction func startCompleteHole(_ sender: UIButton){
     inHole = !inHole
     if inHole{
-      let holeNum = viewModel!.numberOfHolesPlayed + 1
+      let holeNum = viewModel!.numberOfHolesPlayed + viewModel!.numberOfHolesPlayed + 1
       newStrokeButton.isEnabled = true
       let title = "Complete Hole #\(holeNum)"
       holeButton.setTitle(title, for: .normal)
+      
+      viewModel!.currHole = viewModel!.holes[holeNum].holeId
     }
     else {
       
       viewModel!.holesPlayed.append(viewModel!.strokes)
-      viewModel!.strokes = []
-      tableView.reloadData()
-      collectionView.reloadData()
+      // Stroke(club: clubId, lat: lat, lon: lon, contactType: ct, flightType: ft, finalLocation: lie)
       
-      let holeNum = viewModel!.numberOfHolesPlayed + 1
-      newStrokeButton.isEnabled = false
-      let title = "Start Hole #\(holeNum)"
-      holeButton.setTitle(title, for: .normal)
+      
+      viewModel!.createScorecardHole(completion: { [unowned self] in
+        DispatchQueue.main.async {
+          self.viewModel!.createStrokes()
+          self.viewModel!.strokes = []
+          self.tableView.reloadData()
+          self.collectionView.reloadData()
+          
+          let holeNum = self.viewModel!.numberOfHolesPlayed + 1
+          self.newStrokeButton.isEnabled = false
+          let title = "Start Hole #\(holeNum)"
+          self.holeButton.setTitle(title, for: .normal)
+        }
+        })
 
     }
   }
@@ -222,10 +180,11 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
     self.navigationController!.popViewController(animated: true)
     
     
+    
+    
     viewModel!.reset()
 
     // create everything !!!!!!
-    // reset everything  !!!!!!
 
   }
   

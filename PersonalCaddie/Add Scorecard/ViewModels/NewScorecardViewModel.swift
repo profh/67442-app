@@ -16,6 +16,8 @@ class NewScorecardViewModel {
   var course: Course?
   var courses: [Course]
   var scorecardId: Int?
+  var currHole: Int?
+  var scHole: Int?
 
   
   var holesPlayed: [[Stroke]]
@@ -42,7 +44,6 @@ class NewScorecardViewModel {
     networkClient.fetchHoles({  data in
       if let holes = self.parser.parseHolesResponse(data){
         self.holes = holes
-        print(self.holes)
       }
       completion()
       
@@ -75,16 +76,38 @@ class NewScorecardViewModel {
   }
   
 
-  func createScorecard(courseId: Int) {
+  func createScorecard() {
     networkClient.createScorecard({  data in
       
       if let scorecardId = self.parser.parseCreateScorecardResponse((data)!){
         self.scorecardId = scorecardId
       }
 
-    }, courseId: courseId)
+    }, courseId: course!.courseId)
     
 
+  }
+  
+  func createScorecardHole(completion: @escaping () -> Void) {
+    networkClient.createScorecardHole({  data in
+      if let scorecardHoleId = self.parser.parseCreateScorecardHoleResponse((data)!){
+        self.scHole = scorecardHoleId
+        completion()
+
+      }
+      
+    }, scorecardId: scorecardId!, holeId: currHole!)
+    
+    
+  }
+  
+  func createStrokes(){
+    for stroke in strokes{
+      if let sch = scHole {
+        networkClient.createStroke(scHole: scHole!, stroke: stroke)
+      }
+
+    }
   }
 
   

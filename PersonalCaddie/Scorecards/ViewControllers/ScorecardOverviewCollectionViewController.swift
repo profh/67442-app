@@ -22,13 +22,17 @@ class ScorecardOverviewCollectionViewController: UICollectionViewController {
     
       collectionView!.register(nibCell, forCellWithReuseIdentifier: reuseIdentifier)
     
-      viewModel.refresh { [unowned self] in
-        DispatchQueue.main.async {
-          self.collectionView?.reloadData()
-        }
-      }
+
       
     }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    viewModel.refresh { [unowned self] in
+      DispatchQueue.main.async {
+        self.collectionView?.reloadData()
+      }
+    }
+  }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

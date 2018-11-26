@@ -10,6 +10,8 @@ import Foundation
 
 
 struct Stroke {
+  
+  
   let club: Int
   let lat: Double
   let lon: Double
