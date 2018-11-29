@@ -88,7 +88,6 @@ class FlightTypeViewController: UIViewController, UICollectionViewDelegate, UICo
     {
       (self.navigationController! as! StrokeInputNavigationViewController).viewModel!.strokes.append(Stroke(club: clubId, lat: lat, lon: lon, contactType: ct, flightType: ft, finalLocation: lie))
       self.navigationController!.dismiss(animated: true)
-      print(Stroke(club: clubId, lat: lat, lon: lon, contactType: ct, flightType: ft, finalLocation: lie))
     }
   }
 

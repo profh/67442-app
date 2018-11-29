@@ -43,6 +43,7 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
     let holeNum = viewModel!.numberOfHolesPlayed + 1
     let title = "Start Hole #\(holeNum)"
     holeButton.setTitle(title, for: .normal)
+    
 
 
     
@@ -150,6 +151,8 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
       holeButton.setTitle(title, for: .normal)
       
       viewModel!.currHole = viewModel!.holes[holeNum].holeId
+      
+      completeScorecardButton.isEnabled = false
     }
     else {
       
@@ -168,8 +171,11 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
           self.newStrokeButton.isEnabled = false
           let title = "Start Hole #\(holeNum)"
           self.holeButton.setTitle(title, for: .normal)
+          self.completeScorecardButton.isEnabled = true
+
         }
         })
+      
 
     }
   }
@@ -177,14 +183,10 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
   @IBAction func completeRound(_ sender: UIButton){
 
     (self.navigationController as! AddScorecardNavigationController).currScorecard = false
-    self.navigationController!.popViewController(animated: true)
-    
-    
-    
-    
-    viewModel!.reset()
+    self.navigationController!.popToRootViewController(animated: true)
+    self.navigationController?.tabBarController?.tabBar.items?.last?.isEnabled = true
 
-    // create everything !!!!!!
+    viewModel!.reset()
 
   }
   

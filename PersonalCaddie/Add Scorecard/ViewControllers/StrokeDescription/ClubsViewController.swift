@@ -137,10 +137,7 @@ class ClubsViewController: UIViewController, UICollectionViewDelegate, UICollect
     collectionView.reloadData()
     (self.navigationController as! StrokeInputNavigationViewController).club = clubs[selectedCellIndex!]["id"] as! Int
     
-    self.performSegue(withIdentifier: "showLies", sender: collectionView)
-
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", selectedCellIndex, clubs[selectedCellIndex!]["id"] as! Int)
-    
+    self.performSegue(withIdentifier: "showLies", sender: collectionView)    
     
   }
   

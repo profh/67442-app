@@ -117,13 +117,11 @@ class NetworkClient {
   func createStroke(scHole: Int, stroke: Stroke){
     let urlString = "https://personalcaddieapi.herokuapp.com/strokes/"
     let params: [String: Any]  = ["scorecardHole": scHole, "club": stroke.club, "lat": stroke.lat, "lon": stroke.lon, "contactType": stroke.contactType!, "flightType": stroke.flightType!, "finalLocation": stroke.finalLocation!]
-    print(params)
     
     Alamofire.request(urlString, method: .post, parameters: params, headers: headers).responseJSON { response in
-      print("Im inside")
-      print(response)
       if let error = response.error {
         print("Error creating stroke: \(error)")
+
         return
       }
     }

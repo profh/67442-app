@@ -26,7 +26,6 @@ class AddScorecardNavigationController: UINavigationController, UINavigationCont
   
   
   override func viewWillAppear(_ animated: Bool) {
-    print(self.viewControllers)
     if currScorecard {
       let vc = self.viewControllers.last as! NewScorecardViewController
       vc.viewWillAppear(true)

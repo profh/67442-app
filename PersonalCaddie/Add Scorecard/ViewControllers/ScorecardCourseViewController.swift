@@ -41,7 +41,6 @@ class ScorecardCourseViewController: UIViewController, UITableViewDataSource, UI
     }
     else {
       tableView.isUserInteractionEnabled = true
-      startRoundButton.isEnabled = true
     }
   }
 
