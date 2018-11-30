@@ -11,14 +11,26 @@ import UIKit
 class CourseDetailViewController: UIViewController {
 
   var viewModel: CourseDetailViewModel?
-  @IBOutlet var cid: UILabel!
+  @IBOutlet var courseName: UILabel!
+  @IBOutlet var addressOne: UILabel!
+  @IBOutlet var addressTwo: UILabel!
+  @IBOutlet var numScorecards: UILabel!
+  @IBOutlet var pars: UILabel!
+  @IBOutlet var puttsPerHole: UILabel!
   
   
   
     override func viewDidLoad() {
         super.viewDidLoad()
       if let vm = viewModel{
-        cid.text = String(vm.course.courseId)
+        let course  = vm.course
+        courseName.text = course.name
+        addressOne.text = course.street
+        addressTwo.text = course.city + ", " + course.state + " " + course.zip_code
+        numScorecards.text = String(course.numScorecards)
+        puttsPerHole.text = String(Double(course.numPutts) / Double(course.numHolesPlayed))
+        pars.text = String(course.nineHolePar) + "/" + String(course.eighteenHolePar)
+        
       }
 
         // Do any additional setup after loading the view.
