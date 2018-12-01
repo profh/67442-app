@@ -8,12 +8,9 @@
 
 import UIKit
 
-class CourseOverviewViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class CourseOverviewViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout{
   
   let viewModel = CourseOverviewViewModel()
-  @IBOutlet var collectionView: UICollectionView!
-  
-  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -39,22 +36,36 @@ class CourseOverviewViewController: UIViewController, UICollectionViewDataSource
   // MARK: - CollectionView
   
   
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return viewModel.numberOfCourseOverviews
   }
   
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+  override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourseOverviewCell", for: indexPath) as! CourseOverviewCollectionViewCell
     let courseOverview = viewModel.courseOverviews[indexPath.item]
     
     cell.name.text = courseOverview.name
     cell.numScorecards.text = String(courseOverview.numScorecards)
-    cell.puttsPerHole.text = String(Double(courseOverview.numPutts) / Double(courseOverview.numHolesPlayed))
+    if courseOverview.numHolesPlayed == 0 {
+      cell.puttsPerHole.text = "0"
+    }
+    else {
+      cell.puttsPerHole.text = String(format: "%.2f", Double(courseOverview.numPutts) / Double(courseOverview.numHolesPlayed))
+    }
     cell.par.text = String(courseOverview.nineHolePar) + "/" + String(courseOverview.eighteenHolePar)
     
-    
+    cell.layer.borderColor = UIColor.black.cgColor
+    cell.layer.borderWidth = 1
+    cell.layer.cornerRadius = 10
     
     return cell
+  }
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let a = collectionView.bounds.width - collectionView.adjustedContentInset.left - collectionView.adjustedContentInset.right - collectionView.contentInset.left - collectionView.contentInset.right
+    print(a)
+    print(self.view.frame.width )
+    
+    return CGSize(width: self.view.frame.width - 10, height: 110)
   }
   
 
