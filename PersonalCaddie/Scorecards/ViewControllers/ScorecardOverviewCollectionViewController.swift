@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "scorecardOverviewCell"
 
-class ScorecardOverviewCollectionViewController: UICollectionViewController {
+class ScorecardOverviewCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
   
   
     var viewModel = ScorecardOverviewViewModel()
@@ -49,13 +49,9 @@ class ScorecardOverviewCollectionViewController: UICollectionViewController {
     }
     */
 
-    // MARK: UICollectionViewDataSource
+    // MARK: UICollectionView
 
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return
-//    }
-//
+
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
@@ -81,6 +77,13 @@ class ScorecardOverviewCollectionViewController: UICollectionViewController {
         cell.puttsPerHoleLabel.text = String(format: "%.2f", Double(scorecard.numPutts) / Double(scorecard.numHolesPlayed))
       }
       
+      cell.pars.text = String(scorecard.nineHolePar) + " / " + String(scorecard.eighteenHolePar)
+      
+      cell.layer.borderColor = UIColor.black.cgColor
+      cell.layer.borderWidth = 1
+      cell.layer.cornerRadius = 10
+      
+      
       return cell
     
 
@@ -95,45 +98,14 @@ class ScorecardOverviewCollectionViewController: UICollectionViewController {
         if let indexPath = self.collectionView?.indexPathsForSelectedItems{
           (segue.destination as! ScorecardDetailViewController).viewModel = ScorecardDetailViewModel()
           (segue.destination as! ScorecardDetailViewController).viewModel!.scorecardOverview = viewModel.scorecards[indexPath[0].row]
-          
-
 
         }
-        
-        
-
+      
       }
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
+  
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+      
+      return CGSize(width: self.view.frame.width - 10, height: 110)
     }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }

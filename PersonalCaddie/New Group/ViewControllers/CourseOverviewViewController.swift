@@ -61,9 +61,6 @@ class CourseOverviewViewController: UICollectionViewController, UICollectionView
     return cell
   }
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let a = collectionView.bounds.width - collectionView.adjustedContentInset.left - collectionView.adjustedContentInset.right - collectionView.contentInset.left - collectionView.contentInset.right
-    print(a)
-    print(self.view.frame.width )
     
     return CGSize(width: self.view.frame.width - 10, height: 110)
   }

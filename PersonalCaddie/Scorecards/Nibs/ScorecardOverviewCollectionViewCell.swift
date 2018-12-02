@@ -14,6 +14,7 @@ class ScorecardOverviewCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var holesPlayedLabel: UILabel!
   @IBOutlet weak var scoreLabel: UILabel!
   @IBOutlet weak var puttsPerHoleLabel: UILabel!
+  @IBOutlet weak var pars: UILabel!
   
   override func awakeFromNib() {
       super.awakeFromNib()
