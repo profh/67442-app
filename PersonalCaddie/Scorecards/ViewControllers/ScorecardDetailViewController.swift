@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
   @IBOutlet var courseNameLabel: UILabel!
   @IBOutlet var dateLabel: UILabel!
   @IBOutlet var scoreLabel: UILabel!
   @IBOutlet var pphLabel: UILabel!
+  @IBOutlet var parsLabel: UILabel!
   
   @IBOutlet var collectionView: UICollectionView!
   var viewModel: ScorecardDetailViewModel?
@@ -26,7 +27,9 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
           self.collectionView.reloadData()
         }
       }
-        // Do any additional setup after loading the view.
+      collectionView.layer.borderWidth = 2
+      collectionView.layer.borderColor = UIColor.black.cgColor
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +47,7 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
       dateLabel.text = f.string(from: scorecard.date)
       pphLabel.text = String(scorecard.numPutts)
       scoreLabel.text = String(scorecard.numStrokes)
+      parsLabel.text = String(scorecard.nineHolePar) + " / " + String(scorecard.eighteenHolePar)
     }
   }
   
@@ -62,7 +66,23 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
     cell.score.text = String(viewModel!.scorecard!.scorecardHoles[indexPath.item].numStrokes)
     cell.par.text = String(viewModel!.scorecard!.scorecardHoles[indexPath.item].par)
     cell.dist.text = String(viewModel!.scorecard!.scorecardHoles[indexPath.item].distance )
+    
+    cell.layer.borderWidth = 1
+    cell.layer.borderColor = UIColor.black.cgColor
+    cell.num.layer.borderWidth = 1
+    cell.num.layer.borderColor = UIColor.black.cgColor
+    cell.score.layer.borderWidth = 1
+    cell.score.layer.borderColor = UIColor.black.cgColor
+    cell.par.layer.borderWidth = 1
+    cell.par.layer.borderColor = UIColor.black.cgColor
+    cell.dist.layer.borderWidth = 1
+    cell.dist.layer.borderColor = UIColor.black.cgColor
     return cell
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    
+    return 0
   }
   
 
