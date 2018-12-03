@@ -25,7 +25,7 @@ class CourseDetailViewModel {
   }
   
   func refresh(){
-    networkClient.fetchStrokes({data in
+    networkClient.fetchStrokesForCourse({data in
             if let strokes = self.parser.parseStrokesResponse(data!){
               self.strokes = strokes
       

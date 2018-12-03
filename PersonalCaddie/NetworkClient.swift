@@ -146,9 +146,25 @@ class NetworkClient {
   }
   
   
-  func fetchStrokes(_ completion: @escaping (Data?) -> Void, courseId: Int) {
+  func fetchStrokesForCourse(_ completion: @escaping (Data?) -> Void, courseId: Int) {
     
     let urlString = "https://personalcaddieapi.herokuapp.com/strokes/?course_id=\(courseId)"
+    
+    
+    Alamofire.request(urlString, headers: headers).response { response in
+      if let error = response.error {
+        print("Error fetching course overviews: \(error)")
+        completion(response.data)
+        return
+      }
+      completion(response.data)
+    }
+    
+  }
+  
+  func fetchStrokes(_ completion: @escaping (Data?) -> Void) {
+    
+    let urlString = "https://personalcaddieapi.herokuapp.com/strokes/"
     
     
     Alamofire.request(urlString, headers: headers).response { response in

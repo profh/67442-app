@@ -1182,10 +1182,10 @@
             </objects>
             <point key="canvasLocation" x="996" y="-559"/>
         </scene>
-        <!--View Controller-->
+        <!--Player Card View Controller-->
         <scene sceneID="F9q-r0-ggF">
             <objects>
-                <viewController id="5jL-Az-DnC" sceneMemberID="viewController">
+                <viewController id="5jL-Az-DnC" customClass="PlayerCardViewController" customModule="PersonalCaddie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lny-Su-ES5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1197,11 +1197,80 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nXv-Od-p1F">
+                                <rect key="frame" x="18" y="168" width="343" height="365"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p4r-s4-uL3">
+                                    <size key="itemSize" width="343" height="81"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ClubStatsCell" id="uSm-QH-E0G" customClass="ClubStatsCollectionViewCell" customModule="PersonalCaddie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="343" height="81"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="81"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNF-c6-C0G">
+                                                    <rect key="frame" x="85" y="30" width="192" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="stat" destination="GNF-c6-C0G" id="nbj-yI-Br7"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="SectionHeader" id="mlx-0B-zmr" customClass="SectionHeader" customModule="PersonalCaddie" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6i-oX-DkN">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                            <state key="normal" title="Button">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="headerSelectedaaaaaaWithSender:" destination="mlx-0B-zmr" eventType="touchUpInside" id="RfM-e2-98f"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="r6i-oX-DkN" firstAttribute="centerX" secondItem="mlx-0B-zmr" secondAttribute="centerX" id="B0D-6W-Opg"/>
+                                        <constraint firstItem="r6i-oX-DkN" firstAttribute="width" secondItem="mlx-0B-zmr" secondAttribute="width" id="YRt-fZ-2b2"/>
+                                        <constraint firstItem="r6i-oX-DkN" firstAttribute="centerY" secondItem="mlx-0B-zmr" secondAttribute="centerY" id="jkz-HD-Ui1"/>
+                                        <constraint firstItem="r6i-oX-DkN" firstAttribute="height" secondItem="mlx-0B-zmr" secondAttribute="height" id="xq8-5V-wOy"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="sectionButton" destination="r6i-oX-DkN" id="IEV-Oc-EQq"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="5jL-Az-DnC" id="YBi-20-a3e"/>
+                                    <outlet property="delegate" destination="5jL-Az-DnC" id="L3o-Kc-0Ey"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ymy-NQ-0D7" firstAttribute="bottom" secondItem="nXv-Od-p1F" secondAttribute="bottom" constant="85" id="G4a-ig-NPR"/>
+                            <constraint firstItem="nXv-Od-p1F" firstAttribute="top" secondItem="Ymy-NQ-0D7" secondAttribute="top" constant="104" id="NAR-3W-ZpV"/>
+                            <constraint firstItem="Ymy-NQ-0D7" firstAttribute="trailing" secondItem="nXv-Od-p1F" secondAttribute="trailing" constant="14" id="OeH-3x-DIy"/>
+                            <constraint firstItem="nXv-Od-p1F" firstAttribute="leading" secondItem="Ymy-NQ-0D7" secondAttribute="leading" constant="18" id="qNG-ii-4sb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ymy-NQ-0D7"/>
                     </view>
                     <navigationItem key="navigationItem" id="9po-YS-chY"/>
+                    <connections>
+                        <outlet property="collectionView" destination="nXv-Od-p1F" id="Xwo-WV-y1f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZMT-r4-qWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
