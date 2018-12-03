@@ -18,8 +18,15 @@
 		9703FDB021B1A8DC0052CF02 /* CourseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703FDAF21B1A8DC0052CF02 /* CourseDetailViewModel.swift */; };
 		9703FDB221B1A9C10052CF02 /* ReadStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703FDB121B1A9C10052CF02 /* ReadStroke.swift */; };
 		9703FDB421B1AE680052CF02 /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703FDB321B1AE680052CF02 /* CourseDetailViewController.swift */; };
+		976B2C0921B5946B000116E5 /* smallBall.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C0821B5946A000116E5 /* smallBall.png */; };
+		976B2C0A21B5946B000116E5 /* smallBall.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C0821B5946A000116E5 /* smallBall.png */; };
+		976B2C0C21B595A5000116E5 /* smallHole.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C0B21B595A5000116E5 /* smallHole.png */; };
+		976B2C0D21B595A5000116E5 /* smallHole.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C0B21B595A5000116E5 /* smallHole.png */; };
+		976B2C0F21B59621000116E5 /* smallSc.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C0E21B59620000116E5 /* smallSc.png */; };
+		976B2C1021B59621000116E5 /* smallSc.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C0E21B59620000116E5 /* smallSc.png */; };
+		976B2C1221B5976D000116E5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C1121B5976D000116E5 /* TabBarViewController.swift */; };
+		976B2C1321B5976D000116E5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C1121B5976D000116E5 /* TabBarViewController.swift */; };
 		97CACB29219A6A3500D29F01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB28219A6A3500D29F01 /* AppDelegate.swift */; };
-		97CACB2B219A6A3500D29F01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB2A219A6A3500D29F01 /* ViewController.swift */; };
 		97CACB2E219A6A3500D29F01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CACB2C219A6A3500D29F01 /* Main.storyboard */; };
 		97CACB31219A6A3500D29F01 /* PersonalCaddie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB2F219A6A3500D29F01 /* PersonalCaddie.xcdatamodeld */; };
 		97CACB33219A6A3800D29F01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97CACB32219A6A3800D29F01 /* Assets.xcassets */; };
@@ -79,9 +86,12 @@
 		9703FDAF21B1A8DC0052CF02 /* CourseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewModel.swift; sourceTree = "<group>"; };
 		9703FDB121B1A9C10052CF02 /* ReadStroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadStroke.swift; sourceTree = "<group>"; };
 		9703FDB321B1AE680052CF02 /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
+		976B2C0821B5946A000116E5 /* smallBall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallBall.png; sourceTree = "<group>"; };
+		976B2C0B21B595A5000116E5 /* smallHole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallHole.png; sourceTree = "<group>"; };
+		976B2C0E21B59620000116E5 /* smallSc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallSc.png; sourceTree = "<group>"; };
+		976B2C1121B5976D000116E5 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		97CACB25219A6A3500D29F01 /* PersonalCaddie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalCaddie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CACB28219A6A3500D29F01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		97CACB2A219A6A3500D29F01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		97CACB2D219A6A3500D29F01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97CACB30219A6A3500D29F01 /* PersonalCaddie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersonalCaddie.xcdatamodel; sourceTree = "<group>"; };
 		97CACB32219A6A3800D29F01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -198,9 +208,20 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		976B2C1421B5A6B2000116E5 /* imgs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = imgs;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		97CACB1C219A6A3400D29F01 = {
 			isa = PBXGroup;
 			children = (
+				976B2C0821B5946A000116E5 /* smallBall.png */,
+				976B2C0B21B595A5000116E5 /* smallHole.png */,
+				976B2C0E21B59620000116E5 /* smallSc.png */,
 				97CACB27219A6A3500D29F01 /* PersonalCaddie */,
 				97CACB3F219A6A3900D29F01 /* PersonalCaddieTests */,
 				97CACB26219A6A3500D29F01 /* Products */,
@@ -221,13 +242,14 @@
 		97CACB27219A6A3500D29F01 /* PersonalCaddie */ = {
 			isa = PBXGroup;
 			children = (
+				976B2C1121B5976D000116E5 /* TabBarViewController.swift */,
 				97CACB53219A728200D29F01 /* NetworkClient.swift */,
 				9703714821AF8A0600EB95FD /* Courses */,
 				97CACB7F219BD85900D29F01 /* Add Scorecard */,
 				97CACB4B219A6D4300D29F01 /* Scorecards */,
 				97CACB28219A6A3500D29F01 /* AppDelegate.swift */,
-				97CACB2A219A6A3500D29F01 /* ViewController.swift */,
 				97CACB2C219A6A3500D29F01 /* Main.storyboard */,
+				976B2C1421B5A6B2000116E5 /* imgs */,
 				97CACB32219A6A3800D29F01 /* Assets.xcassets */,
 				97CACB34219A6A3800D29F01 /* LaunchScreen.storyboard */,
 				97CACB37219A6A3800D29F01 /* Info.plist */,
@@ -474,8 +496,11 @@
 			files = (
 				97CACB5A219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.xib in Resources */,
 				97CACB36219A6A3800D29F01 /* LaunchScreen.storyboard in Resources */,
+				976B2C0C21B595A5000116E5 /* smallHole.png in Resources */,
 				97CACB33219A6A3800D29F01 /* Assets.xcassets in Resources */,
 				97CACB2E219A6A3500D29F01 /* Main.storyboard in Resources */,
+				976B2C0F21B59621000116E5 /* smallSc.png in Resources */,
+				976B2C0921B5946B000116E5 /* smallBall.png in Resources */,
 				97CACB83219BD88B00D29F01 /* ScorecardInputCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +509,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				976B2C1021B59621000116E5 /* smallSc.png in Resources */,
+				976B2C0A21B5946B000116E5 /* smallBall.png in Resources */,
+				976B2C0D21B595A5000116E5 /* smallHole.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,7 +651,6 @@
 			files = (
 				97CACB82219BD88B00D29F01 /* ScorecardInputCollectionViewCell.swift in Sources */,
 				97CACB5F219A8B0800D29F01 /* ScorecardOverviewViewModel.swift in Sources */,
-				97CACB2B219A6A3500D29F01 /* ViewController.swift in Sources */,
 				97CACBA7219DFDD700D29F01 /* StrokeCell.swift in Sources */,
 				97CACB68219B5A3400D29F01 /* ScorecardHoleCell.swift in Sources */,
 				97CACB63219A912A00D29F01 /* ScorecardDetailViewController.swift in Sources */,
@@ -652,6 +679,7 @@
 				97CACB59219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.swift in Sources */,
 				97CACB96219D0F5900D29F01 /* AddScorecardParser.swift in Sources */,
 				97CACB85219BD8D000D29F01 /* ClubsViewController.swift in Sources */,
+				976B2C1221B5976D000116E5 /* TabBarViewController.swift in Sources */,
 				97CACBA1219D319B00D29F01 /* NewScorecardViewModel.swift in Sources */,
 				97CACB50219A6E3500D29F01 /* ScorecardDetail.swift in Sources */,
 				97CACB65219A91F700D29F01 /* ScorecardDetailViewModel.swift in Sources */,
@@ -668,6 +696,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				976B2C1321B5976D000116E5 /* TabBarViewController.swift in Sources */,
 				97CACB41219A6A3900D29F01 /* PersonalCaddieTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

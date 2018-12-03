@@ -12,11 +12,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Courses-->
         <scene sceneID="AsJ-OM-xX4">
             <objects>
                 <navigationController id="wO8-hX-fnv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Z4y-Hc-JNy"/>
+                    <tabBarItem key="tabBarItem" title="Courses" image="smallHole.png" id="Z4y-Hc-JNy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jyk-PH-fk7">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -230,11 +230,11 @@
             </objects>
             <point key="canvasLocation" x="42" y="-348"/>
         </scene>
-        <!--Item-->
+        <!--Scorecards-->
         <scene sceneID="TY0-e3-X31">
             <objects>
                 <navigationController id="njt-YZ-I29" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="2xH-ex-WCq"/>
+                    <tabBarItem key="tabBarItem" title="Scorecards" image="smallSc.png" id="2xH-ex-WCq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rVO-A8-GGh">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -800,9 +800,6 @@
                         <viewLayoutGuide key="safeArea" id="4wU-BU-RJT"/>
                     </view>
                     <navigationItem key="navigationItem" id="gUi-QV-Rzt"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="name" value="newsc"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="collectionView" destination="gpw-JK-wKZ" id="zg2-rv-m7u"/>
                         <outlet property="completeScorecardButton" destination="U2t-Ou-fmU" id="mow-sX-pIS"/>
@@ -1036,14 +1033,15 @@
             </objects>
             <point key="canvasLocation" x="148" y="429.53523238380814"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="Lca-Kh-K5T">
             <objects>
-                <tabBarController id="6gc-vm-w5F" sceneMemberID="viewController">
+                <tabBarController id="6gc-vm-w5F" customClass="TabBarViewController" customModule="PersonalCaddie" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e3i-ri-2bp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.063125971488149066" green="0.79207820594352329" blue="0.0013558450558683547" alpha="0.61061289612676062" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="njt-YZ-I29" kind="relationship" relationship="viewControllers" id="HcC-RV-3b5"/>
@@ -1055,11 +1053,13 @@
             </objects>
             <point key="canvasLocation" x="-4140" y="667"/>
         </scene>
-        <!--Item-->
+        <!--New Scorecard-->
         <scene sceneID="rwO-kg-xQB">
             <objects>
                 <navigationController navigationBarHidden="YES" id="S3F-iH-E07" customClass="AddScorecardNavigationController" customModule="PersonalCaddie" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="uHk-Zp-uWT"/>
+                    <tabBarItem key="tabBarItem" title="New Scorecard" image="smallBall.png" id="uHk-Zp-uWT">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5oq-Ta-04H">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1165,4 +1165,9 @@
             <point key="canvasLocation" x="998" y="1530"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="smallBall.png" width="25" height="25"/>
+        <image name="smallHole.png" width="25" height="25"/>
+        <image name="smallSc.png" width="25" height="25"/>
+    </resources>
 </document>

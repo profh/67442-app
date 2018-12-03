@@ -24,13 +24,12 @@ class AddScorecardNavigationController: UINavigationController, UINavigationCont
       // Dispose of any resources that can be recreated.
   }
   
-  
   override func viewWillAppear(_ animated: Bool) {
     if currScorecard {
       let vc = self.viewControllers.last as! NewScorecardViewController
       vc.viewWillAppear(true)
     }
-    if currScorecard && !(self.viewControllers.last is NewScorecardViewController){
+    if currScorecard && !(self.viewControllers.last is NewScorecardViewController)  {
       let vc:NewScorecardViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewScorecardViewController") as! NewScorecardViewController
       vc.viewModel = self.viewModel
       self.pushViewController(vc, animated: true)
@@ -38,7 +37,6 @@ class AddScorecardNavigationController: UINavigationController, UINavigationCont
     else if currScorecard == false {
       let vc:ScorecardCourseViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ScorecardCourseViewController") as! ScorecardCourseViewController
       vc.viewModel = self.viewModel
-
       self.pushViewController(vc, animated: true)
     }
   }

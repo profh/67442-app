@@ -80,11 +80,15 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
   override func viewWillAppear(_ animated: Bool) {    
     self.tableView.reloadData()
     scrollToBottom()
-    self.navigationController?.tabBarController?.tabBar.items?[1].isEnabled = false
+    //self.navigationController?.tabBarController?.tabBar.items?[1].isEnabled = false
+    self.navigationController?.tabBarController?.tabBar.items?[1].badgeColor = .black
+    
   }
 
   override func viewWillDisappear(_ animated: Bool) {
     self.navigationController?.tabBarController?.tabBar.items?[1].isEnabled = true
+    self.navigationController?.tabBarController?.tabBar.items?[1].badgeColor = .black
+
   }
   override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
@@ -235,6 +239,8 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
     (self.navigationController as! AddScorecardNavigationController).currScorecard = false
     self.navigationController!.popToRootViewController(animated: true)
     self.navigationController?.tabBarController?.tabBar.items?[1].isEnabled = true
+    self.navigationController?.tabBarController?.tabBar.items?[1].badgeColor = .black
+
 
     viewModel!.reset()
 

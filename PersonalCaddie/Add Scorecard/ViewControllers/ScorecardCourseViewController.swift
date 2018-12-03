@@ -45,9 +45,9 @@ class ScorecardCourseViewController: UIViewController, UITableViewDataSource, UI
   override func viewWillAppear(_ animated: Bool) {
 
     if (self.navigationController as! AddScorecardNavigationController).currScorecard {
-      let vc:NewScorecardViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewScorecardViewController") as! NewScorecardViewController
-      vc.viewModel = (self.navigationController! as! AddScorecardNavigationController).viewModel
-      self.navigationController!.pushViewController(vc, animated: true)
+        let vc:NewScorecardViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewScorecardViewController") as! NewScorecardViewController
+        vc.viewModel = (self.navigationController! as! AddScorecardNavigationController).viewModel
+        self.navigationController!.pushViewController(vc, animated: true)
     }
     else {
       tableView.isUserInteractionEnabled = true
