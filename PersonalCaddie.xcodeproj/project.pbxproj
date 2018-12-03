@@ -26,6 +26,8 @@
 		976B2C1021B59621000116E5 /* smallSc.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C0E21B59620000116E5 /* smallSc.png */; };
 		976B2C1221B5976D000116E5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C1121B5976D000116E5 /* TabBarViewController.swift */; };
 		976B2C1321B5976D000116E5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C1121B5976D000116E5 /* TabBarViewController.swift */; };
+		976B2C1621B5A81B000116E5 /* smallPerson.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C1521B5A81B000116E5 /* smallPerson.png */; };
+		976B2C1721B5A81B000116E5 /* smallPerson.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C1521B5A81B000116E5 /* smallPerson.png */; };
 		97CACB29219A6A3500D29F01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB28219A6A3500D29F01 /* AppDelegate.swift */; };
 		97CACB2E219A6A3500D29F01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CACB2C219A6A3500D29F01 /* Main.storyboard */; };
 		97CACB31219A6A3500D29F01 /* PersonalCaddie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB2F219A6A3500D29F01 /* PersonalCaddie.xcdatamodeld */; };
@@ -90,6 +92,7 @@
 		976B2C0B21B595A5000116E5 /* smallHole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallHole.png; sourceTree = "<group>"; };
 		976B2C0E21B59620000116E5 /* smallSc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallSc.png; sourceTree = "<group>"; };
 		976B2C1121B5976D000116E5 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		976B2C1521B5A81B000116E5 /* smallPerson.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallPerson.png; sourceTree = "<group>"; };
 		97CACB25219A6A3500D29F01 /* PersonalCaddie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalCaddie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CACB28219A6A3500D29F01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97CACB2D219A6A3500D29F01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -211,6 +214,10 @@
 		976B2C1421B5A6B2000116E5 /* imgs */ = {
 			isa = PBXGroup;
 			children = (
+				976B2C0821B5946A000116E5 /* smallBall.png */,
+				976B2C0B21B595A5000116E5 /* smallHole.png */,
+				976B2C0E21B59620000116E5 /* smallSc.png */,
+				976B2C1521B5A81B000116E5 /* smallPerson.png */,
 			);
 			name = imgs;
 			path = ..;
@@ -219,9 +226,6 @@
 		97CACB1C219A6A3400D29F01 = {
 			isa = PBXGroup;
 			children = (
-				976B2C0821B5946A000116E5 /* smallBall.png */,
-				976B2C0B21B595A5000116E5 /* smallHole.png */,
-				976B2C0E21B59620000116E5 /* smallSc.png */,
 				97CACB27219A6A3500D29F01 /* PersonalCaddie */,
 				97CACB3F219A6A3900D29F01 /* PersonalCaddieTests */,
 				97CACB26219A6A3500D29F01 /* Products */,
@@ -496,6 +500,7 @@
 			files = (
 				97CACB5A219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.xib in Resources */,
 				97CACB36219A6A3800D29F01 /* LaunchScreen.storyboard in Resources */,
+				976B2C1621B5A81B000116E5 /* smallPerson.png in Resources */,
 				976B2C0C21B595A5000116E5 /* smallHole.png in Resources */,
 				97CACB33219A6A3800D29F01 /* Assets.xcassets in Resources */,
 				97CACB2E219A6A3500D29F01 /* Main.storyboard in Resources */,
@@ -511,6 +516,7 @@
 			files = (
 				976B2C1021B59621000116E5 /* smallSc.png in Resources */,
 				976B2C0A21B5946B000116E5 /* smallBall.png in Resources */,
+				976B2C1721B5A81B000116E5 /* smallPerson.png in Resources */,
 				976B2C0D21B595A5000116E5 /* smallHole.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
