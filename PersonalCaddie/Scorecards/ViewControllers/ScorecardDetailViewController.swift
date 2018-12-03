@@ -45,7 +45,7 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
     if let scorecard = viewModel?.scorecardOverview{
       courseNameLabel.text = scorecard.courseName
       dateLabel.text = f.string(from: scorecard.date)
-      pphLabel.text = String(scorecard.numPutts)
+      pphLabel.text =  String(format: "%.2f", Double(scorecard.numPutts) / Double(scorecard.numHolesPlayed))
       scoreLabel.text = String(scorecard.numStrokes)
       parsLabel.text = String(scorecard.nineHolePar) + " / " + String(scorecard.eighteenHolePar)
     }
@@ -63,7 +63,12 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "scorecardHoleCell", for: indexPath) as! ScorecardHoleCell
     cell.num.text = String(viewModel!.scorecard!.scorecardHoles[indexPath.item].number)
-    cell.score.text = String(viewModel!.scorecard!.scorecardHoles[indexPath.item].numStrokes)
+    if (viewModel!.scorecard!.scorecardHoles[indexPath.item].numStrokes == 0){
+      cell.score.text = "-"
+    }
+    else {
+      cell.score.text = String(viewModel!.scorecard!.scorecardHoles[indexPath.item].numStrokes)
+    }
     cell.par.text = String(viewModel!.scorecard!.scorecardHoles[indexPath.item].par)
     cell.dist.text = String(viewModel!.scorecard!.scorecardHoles[indexPath.item].distance )
     

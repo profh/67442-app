@@ -28,7 +28,7 @@ class CourseDetailViewController: UIViewController {
         addressOne.text = course.street
         addressTwo.text = course.city + ", " + course.state + " " + course.zip_code
         numScorecards.text = String(course.numScorecards)
-        puttsPerHole.text = String(Double(course.numPutts) / Double(course.numHolesPlayed))
+        puttsPerHole.text =  String(format: "%.2f", Double(course.numPutts) / Double(course.numHolesPlayed))
         pars.text = String(course.nineHolePar) + "/" + String(course.eighteenHolePar)
         
       }
