@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate {
+class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegateFlowLayout {
 
   var viewModel: NewScorecardViewModel?
   @IBOutlet var courseNameLabel: UILabel!
@@ -39,13 +39,41 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
     }, courseId: viewModel!.course!.courseId)
     if !inHole {
       newStrokeButton.isEnabled = false
+      newStrokeButton.layer.borderColor = UIColor.gray.cgColor
+      
+      completeScorecardButton.layer.borderColor = UIColor.black.cgColor
     }
+    else {
+      newStrokeButton.isEnabled = true
+      newStrokeButton.layer.borderColor = UIColor.black.cgColor
+      completeScorecardButton.isEnabled = false
+      completeScorecardButton.layer.borderColor = UIColor.gray.cgColor
+    }
+    newStrokeButton.setTitleColor(UIColor.black, for: .normal)
+    newStrokeButton.setTitleColor(UIColor.gray, for: .disabled)
+    newStrokeButton.layer.borderWidth = 1
+    newStrokeButton.layer.cornerRadius = 10
+    
+    completeScorecardButton.setTitleColor(UIColor.black, for: .normal)
+    completeScorecardButton.setTitleColor(UIColor.gray, for: .disabled)
+    completeScorecardButton.layer.borderWidth = 1
+    completeScorecardButton.layer.cornerRadius = 10
+    
+    holeButton.layer.borderWidth = 1
+    holeButton.layer.cornerRadius = 10
+    holeButton.setTitleColor(UIColor.black, for: .normal)
+    
+    
     let holeNum = viewModel!.numberOfHolesPlayed + 1
     let title = "Start Hole #\(holeNum)"
     holeButton.setTitle(title, for: .normal)
     
+    
 
+    
 
+    collectionView.layer.borderWidth = 2
+    collectionView.layer.borderColor = UIColor.black.cgColor
     
   }
   
@@ -94,8 +122,24 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
     
     cell.par.text = String(viewModel!.holes[indexPath.item].par)
     cell.dist.text = String(viewModel!.holes[indexPath.item].distance )
+    
+    
+    cell.layer.borderWidth = 1
+    cell.layer.borderColor = UIColor.black.cgColor
+    cell.num.layer.borderWidth = 1
+    cell.num.layer.borderColor = UIColor.black.cgColor
+    cell.score.layer.borderWidth = 1
+    cell.score.layer.borderColor = UIColor.black.cgColor
+    cell.par.layer.borderWidth = 1
+    cell.par.layer.borderColor = UIColor.black.cgColor
+    cell.dist.layer.borderWidth = 1
+    cell.dist.layer.borderColor = UIColor.black.cgColor
 
     return cell
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return 0
   }
   
   // MARK: - Table View
@@ -125,6 +169,11 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
     return "Hole \(holeNum)"
   }
   
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return CGFloat(40)
+  }
+  
+  
   
   func scrollToBottom(){
     if viewModel?.strokes.count as! Int > 0 {
@@ -145,21 +194,20 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
   @IBAction func startCompleteHole(_ sender: UIButton){
     inHole = !inHole
     if inHole{
-      let holeNum = viewModel!.numberOfHolesPlayed + viewModel!.numberOfHolesPlayed + 1
+      let holeNum = viewModel!.numberOfHolesPlayed + 1
       newStrokeButton.isEnabled = true
+      newStrokeButton.layer.borderColor = UIColor.black.cgColor
       let title = "Complete Hole #\(holeNum)"
       holeButton.setTitle(title, for: .normal)
       
-      viewModel!.currHole = viewModel!.holes[holeNum].holeId
+      viewModel!.currHole = viewModel!.holes[holeNum-1].holeId
       
       completeScorecardButton.isEnabled = false
+      completeScorecardButton.layer.borderColor = UIColor.gray.cgColor
     }
     else {
       
       viewModel!.holesPlayed.append(viewModel!.strokes)
-      // Stroke(club: clubId, lat: lat, lon: lon, contactType: ct, flightType: ft, finalLocation: lie)
-      
-      
       viewModel!.createScorecardHole(completion: { [unowned self] in
         DispatchQueue.main.async {
           self.viewModel!.createStrokes()
@@ -169,9 +217,11 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
           
           let holeNum = self.viewModel!.numberOfHolesPlayed + 1
           self.newStrokeButton.isEnabled = false
+          self.newStrokeButton.layer.borderColor = UIColor.gray.cgColor
           let title = "Start Hole #\(holeNum)"
           self.holeButton.setTitle(title, for: .normal)
           self.completeScorecardButton.isEnabled = true
+          self.completeScorecardButton.layer.borderColor = UIColor.black.cgColor
 
         }
         })

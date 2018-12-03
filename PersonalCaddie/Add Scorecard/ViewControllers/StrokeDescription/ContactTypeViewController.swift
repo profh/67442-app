@@ -10,7 +10,7 @@ import UIKit
 
 let contactTypes = ["Perfect", "Fat", "Thin", "Top"]
 
-class ContactTypeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
+class ContactTypeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
   @IBOutlet var collectionView: UICollectionView!
   var selectedCellIndex: Int?
   
@@ -45,6 +45,10 @@ class ContactTypeViewController: UIViewController, UICollectionViewDelegate, UIC
       cell.backgroundColor = UIColor.green
     }
     
+    cell.layer.borderWidth = 1
+    cell.layer.borderColor = UIColor.black.cgColor
+    cell.layer.cornerRadius = 10
+    
     return cell
     
     
@@ -62,17 +66,23 @@ class ContactTypeViewController: UIViewController, UICollectionViewDelegate, UIC
     self.performSegue(withIdentifier: "showFlightType", sender: collectionView)
     
   }
-
   
-
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      // Get the new view controller using segue.destinationViewController.
-      // Pass the selected object to the new view controller.
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let width = collectionView.bounds.width / 2 - 6
+    let height = collectionView.bounds.height / CGFloat(contactTypes.count/2) - 15
+    if (contactTypes.count % 2 == 1 && indexPath.item == contactTypes.count-1){
+      return CGSize(width: (width + 6) * 2 - 6 , height: height)
+      
+    }
+    return CGSize(width: width , height: height)
   }
-  */
+
+  // MARK: - IBActions
+  
+  @IBAction func cancelStroke(_ sender: UIButton){
+    self.navigationController!.dismiss(animated: true)
+  }
+
 
 }

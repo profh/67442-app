@@ -20,7 +20,7 @@ let lies = [
    "Dirt",
    "Gravel"]
 
-class LieViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class LieViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
   
   @IBOutlet var collectionView: UICollectionView!
@@ -57,6 +57,10 @@ class LieViewController: UIViewController, UICollectionViewDelegate, UICollectio
       cell.backgroundColor = UIColor.green
     }
     
+    cell.layer.borderWidth = 1
+    cell.layer.borderColor = UIColor.black.cgColor
+    cell.layer.cornerRadius = 10
+    
     return cell
     
     
@@ -74,15 +78,24 @@ class LieViewController: UIViewController, UICollectionViewDelegate, UICollectio
     self.performSegue(withIdentifier: "showContactType", sender: collectionView)
 
   }
+  
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let width = collectionView.bounds.width / 2 - 6
+    let height = collectionView.bounds.height / CGFloat(lies.count/2) - 15
+    if (lies.count % 2 == 1 && indexPath.item == lies.count-1){
+      return CGSize(width: (width + 6) * 2 - 6 , height: height)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
+    return CGSize(width: width , height: height)
+  }
+  
+  // MARK: - IBActions
+  
+  @IBAction func cancelStroke(_ sender: UIButton){
+    self.navigationController!.dismiss(animated: true)
+  }
+
+   
 
 }

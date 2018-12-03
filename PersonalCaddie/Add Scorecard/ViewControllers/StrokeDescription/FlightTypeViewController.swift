@@ -11,10 +11,11 @@ import UIKit
 
 let flightTypes = ["Draw", "Fade", "Push", "Pull", "Slice", "Hook", "Straight"]
 
-class FlightTypeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class FlightTypeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
   
   @IBOutlet var collectionView: UICollectionView!
+  @IBOutlet var submitButton: UIButton!
   var selectedCellIndex: Int?
 
   override func viewDidLoad() {
@@ -22,6 +23,13 @@ class FlightTypeViewController: UIViewController, UICollectionViewDelegate, UICo
     let nibCell = UINib(nibName: "ScorecardInputCollectionViewCell", bundle: nil)
     
     collectionView!.register(nibCell, forCellWithReuseIdentifier: "scorecardInputCell")
+    
+    submitButton.isEnabled = false
+    submitButton.layer.borderColor = UIColor.gray.cgColor
+    submitButton.layer.borderWidth = 1
+    submitButton.layer.cornerRadius = 10
+    submitButton.setTitleColor(UIColor.black, for: .normal)
+    submitButton.setTitleColor(UIColor.gray, for: .disabled)
 
       // Do any additional setup after loading the view.
   }
@@ -50,21 +58,38 @@ class FlightTypeViewController: UIViewController, UICollectionViewDelegate, UICo
       cell.backgroundColor = UIColor.green
     }
     
+    cell.layer.borderWidth = 1
+    cell.layer.borderColor = UIColor.black.cgColor
+    cell.layer.cornerRadius = 10
+    
     return cell
     
     
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//    (self.navigationController as! StrokeInputNavigationViewController).scorecardHole =  clubs[indexPath.item]["id"] as! Int
     
-    
+    submitButton.isEnabled = true
+    submitButton.layer.borderColor = UIColor.black.cgColor
+
     let cell = collectionView.cellForItem(at: indexPath) as! ScorecardInputCollectionViewCell
     selectedCellIndex = indexPath.item
     collectionView.reloadData()
     
     (self.navigationController as! StrokeInputNavigationViewController).flightType = flightTypes[indexPath.item]
 
+  }
+  
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let width = collectionView.bounds.width / 2 - 6
+    let height = collectionView.bounds.height / CGFloat((flightTypes.count+1)/2) - 15
+    
+    if (flightTypes.count % 2 == 1 && indexPath.item == flightTypes.count-1){
+      return CGSize(width: (width + 6) * 2 - 6 , height: height)
+      
+    }
+    return CGSize(width: width , height: height)
   }
 
   /*
@@ -77,6 +102,11 @@ class FlightTypeViewController: UIViewController, UICollectionViewDelegate, UICo
   }
   */
 
+  // MARK: - IBActions
+  
+  @IBAction func cancelStroke(_ sender: UIButton){
+    self.navigationController!.dismiss(animated: true)
+  }
   
   @IBAction func submit(_ sender: UIButton) {
     if let clubId = (self.navigationController as! StrokeInputNavigationViewController).club,
@@ -90,5 +120,7 @@ class FlightTypeViewController: UIViewController, UICollectionViewDelegate, UICo
       self.navigationController!.dismiss(animated: true)
     }
   }
+  
+  
 
 }

@@ -60,7 +60,7 @@ let clubs =
     ]
 ]
 
-class ClubsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class ClubsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 
   
   @IBOutlet var collectionView: UICollectionView!
@@ -122,6 +122,9 @@ class ClubsViewController: UIViewController, UICollectionViewDelegate, UICollect
       cell.backgroundColor = UIColor.green
     }
 
+    cell.layer.borderWidth = 1
+    cell.layer.borderColor = UIColor.black.cgColor
+    cell.layer.cornerRadius = 10
     return cell
     
     
@@ -141,6 +144,21 @@ class ClubsViewController: UIViewController, UICollectionViewDelegate, UICollect
     
   }
   
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let width = collectionView.bounds.width / 2 - 6
+    let height = collectionView.bounds.height / CGFloat(clubs.count/2) - 15
+    
+    if (clubs.count % 2 == 1 && indexPath.item == clubs.count-1){
+      return CGSize(width: (width + 6) * 2 - 6 , height: height)
+      
+    }
+    return CGSize(width: width , height: height)
+  }
   
+  // MARK: - IBActions
+  
+  @IBAction func cancelStroke(_ sender: UIButton){
+    self.navigationController!.dismiss(animated: true)
+  }
 
 }

@@ -31,7 +31,6 @@ class ScorecardDetailViewModel {
     networkClient.fetchScorecardDetail({  data in
       if let scorecard = self.parser.parseScorecardDetailResponse(data!){
         self.scorecard = scorecard
-        
       }
       
       completion()

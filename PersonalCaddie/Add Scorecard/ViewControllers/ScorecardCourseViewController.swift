@@ -23,7 +23,17 @@ class ScorecardCourseViewController: UIViewController, UITableViewDataSource, UI
       }
     }
     
+    startRoundButton.layer.borderColor = UIColor.gray.cgColor
+    startRoundButton.layer.borderWidth = 1
+    startRoundButton.layer.cornerRadius = 10
+    startRoundButton.setTitleColor(UIColor.gray, for: .disabled)
     startRoundButton.isEnabled = false
+    startRoundButton.setTitle("Start Round", for: .normal)
+    startRoundButton.setTitle("Select Course", for: .disabled)
+
+    
+
+    
       // Do any additional setup after loading the view.
   }
 
@@ -72,9 +82,14 @@ class ScorecardCourseViewController: UIViewController, UITableViewDataSource, UI
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
     startRoundButton.isEnabled = true
-    startRoundButton.setTitle("Start Round", for: .normal)
+    startRoundButton.layer.borderColor = UIColor.black.cgColor
     viewModel!.course = (tableView.cellForRow(at: indexPath) as! ScorecardCourseCell).course!
     }
+  
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return CGFloat(70)
+  }
   
   
   // MARK: - IBActions
@@ -82,6 +97,8 @@ class ScorecardCourseViewController: UIViewController, UITableViewDataSource, UI
     (self.navigationController as! AddScorecardNavigationController).currScorecard = true
     tableView.isUserInteractionEnabled = false
     startRoundButton.isEnabled = false
+    startRoundButton.layer.borderColor = UIColor.gray.cgColor
+
     viewModel!.createScorecard()
   }
 }

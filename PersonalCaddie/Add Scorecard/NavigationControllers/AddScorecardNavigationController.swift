@@ -30,7 +30,7 @@ class AddScorecardNavigationController: UINavigationController, UINavigationCont
       let vc = self.viewControllers.last as! NewScorecardViewController
       vc.viewWillAppear(true)
     }
-    if currScorecard && self.viewModel.strokes.count == 0{
+    if currScorecard && !(self.viewControllers.last is NewScorecardViewController){
       let vc:NewScorecardViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewScorecardViewController") as! NewScorecardViewController
       vc.viewModel = self.viewModel
       self.pushViewController(vc, animated: true)
