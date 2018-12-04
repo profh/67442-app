@@ -108,7 +108,6 @@ class PlayerCardViewController: UIViewController, UICollectionViewDataSource, UI
 
 
 class SectionHeader: UICollectionReusableView {
-  @IBOutlet weak var sectionHeaderlabel: UILabel!
   @IBOutlet weak var sectionButton: UIButton!
   
   var tapHeader: (() -> Void)?

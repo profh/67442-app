@@ -68,15 +68,11 @@ class CourseDetailViewController: UIViewController, UICollectionViewDelegate, UI
   // MARK: - Collection View
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
-    print(viewModel!.clubStats.count, "asdfasdfasdfasdf")
     return viewModel!.clubStats.count
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    print(viewModel)
-    print(viewModel?.clubStats)
-    print(viewModel?.clubStats[section])
-    print(viewModel?.clubStats[section].expanded)
+
     if viewModel!.clubStats[section].expanded {
       return 1
     }
@@ -115,6 +111,7 @@ class CourseDetailViewController: UIViewController, UICollectionViewDelegate, UI
       sectionHeader.sectionButton.layer.borderColor = UIColor.black.cgColor
       return sectionHeader
     }
+    
     return UICollectionReusableView()
   }
   
@@ -130,6 +127,9 @@ class CourseDetailViewController: UIViewController, UICollectionViewDelegate, UI
     
     let sections = IndexSet.init(integer: indexPath.section)
     collectionView.reloadSections(sections)
+    if viewModel!.clubStats[indexPath.section].expanded {
+      collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
+    }
   }
 
 

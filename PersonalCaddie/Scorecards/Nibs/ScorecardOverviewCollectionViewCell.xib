@@ -20,12 +20,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Course Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gud-Q5-SIX">
-                        <rect key="frame" x="20" y="20" width="258" height="37"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Holes Played" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1O-6y-BcO">
                         <rect key="frame" x="20" y="87" width="83.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -60,7 +54,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dyk-K2-aht">
-                        <rect key="frame" x="286" y="27" width="69" height="27"/>
+                        <rect key="frame" x="285" y="27" width="70" height="27"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -71,6 +65,15 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gud-Q5-SIX">
+                        <rect key="frame" x="20" y="11" width="262" height="46"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="262" id="XvK-3U-9b8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
@@ -78,7 +81,7 @@
                 <constraint firstItem="dFd-dh-K7I" firstAttribute="top" secondItem="8ex-Px-pTN" secondAttribute="bottom" constant="1" id="2fR-r8-mqL"/>
                 <constraint firstItem="dFd-dh-K7I" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" multiplier="5:3" id="5n7-3n-733"/>
                 <constraint firstItem="Bpe-Ml-alP" firstAttribute="top" secondItem="gud-Q5-SIX" secondAttribute="bottom" constant="7" id="6sW-HX-EbI"/>
-                <constraint firstItem="gud-Q5-SIX" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="20" id="7yY-Eh-0GD"/>
+                <constraint firstItem="gud-Q5-SIX" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="11" id="7yY-Eh-0GD"/>
                 <constraint firstItem="8ex-Px-pTN" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" multiplier="5:3" id="9Bq-cG-6rm"/>
                 <constraint firstItem="gud-Q5-SIX" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="AlK-ZC-ZPr"/>
                 <constraint firstItem="Dyk-K2-aht" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="27" id="BVr-XR-M5g"/>

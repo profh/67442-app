@@ -80,15 +80,15 @@ class CourseDetailViewModel {
       }
       prev = s
     }
-    
-    for csl in clubStrokeLocations{
-      print(csl)
-    }
-    
-    var p1 = CLLocation(latitude: 5.0, longitude: 5.0)
-    var p2 = CLLocation(latitude: 5.0, longitude: 3.0)
-    
-    print(p1.distance(from: p2), "!!!!!!!!!!!!")
+//    
+//    for csl in clubStrokeLocations{
+//      print(csl)
+//    }
+//    
+//    var p1 = CLLocation(latitude: 5.0, longitude: 5.0)
+//    var p2 = CLLocation(latitude: 5.0, longitude: 3.0)
+//    
+//    print(p1.distance(from: p2), "!!!!!!!!!!!!")
     
     
     
