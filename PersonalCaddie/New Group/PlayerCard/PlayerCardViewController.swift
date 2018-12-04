@@ -50,14 +50,16 @@ class PlayerCardViewController: UIViewController, UICollectionViewDataSource, UI
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClubStatsCell", for: indexPath) as! ClubStatsCollectionViewCell
-    if let perfContactPercentage = viewModel.clubStats[indexPath.item].perfContactPercentage{
-      cell.stat.text = String(format: "%.2f", perfContactPercentage)
+    if let perfContactPercentage = viewModel.clubStats[indexPath.section].perfContactPercentage{
+      cell.perfContactPercentage.text = "79.32 %" //String(format: "%.2f", perfContactPercentage) + " %"
     }
     else{
-      cell.stat.text = "-"
+      cell.perfContactPercentage.text = "-"
     }
     
-    cell.stat.textColor = .black
+    cell.avgDistance.text = "164.5"
+    cell.straightFlightPercentage.text = "71.45 %"
+    
     
     cell.layer.borderWidth = 1
     cell.layer.borderColor = UIColor.black.cgColor
@@ -80,7 +82,7 @@ class PlayerCardViewController: UIViewController, UICollectionViewDataSource, UI
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     
-    return CGSize(width: collectionView.bounds.width - 20, height: 110)
+    return CGSize(width: collectionView.bounds.width - 20, height: 80)
   }
   
   

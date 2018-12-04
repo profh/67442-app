@@ -9,5 +9,7 @@
 import UIKit
 
 class ClubStatsCollectionViewCell: UICollectionViewCell {
-  @IBOutlet var stat: UILabel!
+  @IBOutlet var avgDistance: UILabel!
+  @IBOutlet var perfContactPercentage: UILabel!
+  @IBOutlet var straightFlightPercentage: UILabel!
 }

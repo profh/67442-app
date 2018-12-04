@@ -12,11 +12,12 @@ class TabBarViewController: UITabBarController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        UITabBar.appearance().unselectedItemTintColor = UIColor( red: CGFloat(121/255.0), green: CGFloat(121/255.0), blue: CGFloat(128/255.0), alpha: CGFloat(1.0) )
-      
+        UITabBar.appearance().unselectedItemTintColor = UIColor( red: CGFloat(70/255.0), green: CGFloat(70/255.0), blue: CGFloat(70/255.0), alpha: CGFloat(1) )
+      print(CGFloat(1))
       //shareBtn.backgroundColor = UIColor( red: CGFloat(92/255.0), green: CGFloat(203/255.0), blue: CGFloat(207/255.0), alpha: CGFloat(1.0) )
 
         UITabBar.appearance().tintColor = .black
+        //self.tabBar.unselectedItemTintColor = UIColor(red: 121.0, green: 121.0, blue: 121.0, alpha: 1.0)
         // Do any additional setup after loading the view.
     }
 

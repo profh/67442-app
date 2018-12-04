@@ -14,12 +14,9 @@ class PlayerCardViewModel {
   let parser = PlayerCardParser()
   let networkClient = NetworkClient()
   var strokes: [ReadStroke]?
-  var clubStats: [ClubStats]
+  var clubStats: [ClubStats] = []
   
-  
-  init() {
-    clubStats = []
-  }
+
   
   
   func refresh(completion: @escaping () -> Void ){
