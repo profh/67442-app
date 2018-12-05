@@ -135,16 +135,26 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
     }
     else if viewModel!.clubStats.count > 0{
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClubStatsCell", for: indexPath) as! ClubStatsCollectionViewCell
+      if let avgDist = viewModel!.clubStats[indexPath.section].avgDist{
+        cell.avgDistance.text = String(format: "%.2f", avgDist)
+      }
+      else{
+        cell.avgDistance.text = "-"
+      }
+      
       if let perfContactPercentage = viewModel!.clubStats[indexPath.section].perfContactPercentage{
-        cell.perfContactPercentage.text = "71.52 %" //String(format: "%.2f", perfContactPercentage) + " %"
+        cell.perfContactPercentage.text = String(format: "%.2f", perfContactPercentage) + " %"
       }
       else{
         cell.perfContactPercentage.text = "-"
       }
       
-      cell.avgDistance.text = "196.7"
-      cell.straightFlightPercentage.text = "68.66 %"
-      
+      if let straightFlightPercentage = viewModel!.clubStats[indexPath.section].straightFlightPercentage{
+        cell.straightFlightPercentage.text = String(format: "%.2f", straightFlightPercentage)
+      }
+      else{
+        cell.straightFlightPercentage.text = "-"
+      }
       
       cell.layer.borderWidth = 1
       cell.layer.borderColor = UIColor.black.cgColor

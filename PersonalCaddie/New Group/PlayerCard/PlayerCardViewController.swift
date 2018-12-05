@@ -50,6 +50,15 @@ class PlayerCardViewController: UIViewController, UICollectionViewDataSource, UI
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClubStatsCell", for: indexPath) as! ClubStatsCollectionViewCell
+    
+    
+    if let avgDist = viewModel.clubStats[indexPath.section].avgDist{
+      cell.avgDistance.text = String(format: "%.2f", avgDist)
+    }
+    else{
+      cell.avgDistance.text = "-"
+    }
+
     if let perfContactPercentage = viewModel.clubStats[indexPath.section].perfContactPercentage{
       cell.perfContactPercentage.text = String(format: "%.2f", perfContactPercentage) + " %"
     }
@@ -57,10 +66,13 @@ class PlayerCardViewController: UIViewController, UICollectionViewDataSource, UI
       cell.perfContactPercentage.text = "-"
     }
     
-    cell.avgDistance.text = String(format: "%.2f", viewModel.clubStats[indexPath.section].avgDist) + " %"
-    cell.straightFlightPercentage.text = "71.45 %"
-    
-    
+    if let straightFlightPercentage = viewModel.clubStats[indexPath.section].straightFlightPercentage{
+      cell.straightFlightPercentage.text = String(format: "%.2f", straightFlightPercentage)
+    }
+    else{
+      cell.straightFlightPercentage.text = "-"
+    }
+      
     cell.layer.borderWidth = 1
     cell.layer.borderColor = UIColor.black.cgColor
     return cell

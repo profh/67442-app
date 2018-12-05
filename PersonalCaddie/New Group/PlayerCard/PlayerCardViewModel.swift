@@ -76,7 +76,7 @@ class PlayerCardViewModel {
     }
 
     
-    var avgDistances: [Double] = []
+    var avgDistances: [Double?] = []
     clubStrokeLocations[0].append(["latOne": Double(prev.lat)!, "lonOne": Double(prev.lon)!, "latTwo": 5.0, "lonTwo": 5.0])
     print(clubStrokeLocations[0])
     for club in clubStrokeLocations{
@@ -87,7 +87,7 @@ class PlayerCardViewModel {
       }
       else {
         print("here")
-        avgDistances.append(0.0)
+        avgDistances.append(nil)
       }
     }
 
