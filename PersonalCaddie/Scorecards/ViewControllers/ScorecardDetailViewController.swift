@@ -136,14 +136,14 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
     else if viewModel!.clubStats.count > 0{
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClubStatsCell", for: indexPath) as! ClubStatsCollectionViewCell
       if let perfContactPercentage = viewModel!.clubStats[indexPath.section].perfContactPercentage{
-        cell.perfContactPercentage.text = "79.32 %" //String(format: "%.2f", perfContactPercentage) + " %"
+        cell.perfContactPercentage.text = "71.52 %" //String(format: "%.2f", perfContactPercentage) + " %"
       }
       else{
         cell.perfContactPercentage.text = "-"
       }
       
-      cell.avgDistance.text = "164.5"
-      cell.straightFlightPercentage.text = "71.45 %"
+      cell.avgDistance.text = "196.7"
+      cell.straightFlightPercentage.text = "68.66 %"
       
       
       cell.layer.borderWidth = 1

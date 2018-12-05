@@ -51,13 +51,13 @@ class PlayerCardViewController: UIViewController, UICollectionViewDataSource, UI
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClubStatsCell", for: indexPath) as! ClubStatsCollectionViewCell
     if let perfContactPercentage = viewModel.clubStats[indexPath.section].perfContactPercentage{
-      cell.perfContactPercentage.text = "79.32 %" //String(format: "%.2f", perfContactPercentage) + " %"
+      cell.perfContactPercentage.text = String(format: "%.2f", perfContactPercentage) + " %"
     }
     else{
       cell.perfContactPercentage.text = "-"
     }
     
-    cell.avgDistance.text = "164.5"
+    cell.avgDistance.text = String(format: "%.2f", viewModel.clubStats[indexPath.section].avgDist) + " %"
     cell.straightFlightPercentage.text = "71.45 %"
     
     
@@ -92,6 +92,9 @@ class PlayerCardViewController: UIViewController, UICollectionViewDataSource, UI
     
     let sections = IndexSet.init(integer: indexPath.section)
     collectionView.reloadSections(sections)
+    if viewModel.clubStats[indexPath.section].expanded {
+      collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
+    }
   }
 
     /*

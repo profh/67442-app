@@ -1344,7 +1344,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.063125971488149066" green="0.5296812875407455" blue="0.21025883984753502" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.062745098039215685" green="0.52941176470588236" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="S3F-iH-E07" kind="relationship" relationship="viewControllers" id="i7A-dx-l6s"/>

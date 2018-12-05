@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 
-let MY_API_KEY = "5d193190fca2fcb12d1fef5edd5e5f5f3b95aa72"
+let MY_API_KEY = "8469e22bcd93b82c15a94c463cb3f00f5913fcb2"
 
 let headers: HTTPHeaders = [
   "Authorization": "Token " + MY_API_KEY

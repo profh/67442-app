@@ -10,13 +10,19 @@ import Foundation
 
 
 struct ClubStats {
+  var clubId: Int
   var clubName: String
+  var avgDist: Double
   var perfContactPercentage: Double?
+  var straightFlightPercentage: Double?
   var expanded: Bool
   
-  init(clubName: String, perfContactPercentage: Double?){
+  init(clubId: Int, clubName: String, avgDist: Double, perfContactPercentage: Double?, straightFlightPercentage: Double?){
+    self.clubId = clubId
     self.clubName = clubName
+    self.avgDist = avgDist
     self.perfContactPercentage = perfContactPercentage
+    self.straightFlightPercentage = straightFlightPercentage
     self.expanded = false
   }
 }

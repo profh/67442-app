@@ -80,21 +80,55 @@ class CourseDetailViewModel {
       }
       prev = s
     }
-//    
-//    for csl in clubStrokeLocations{
-//      print(csl)
-//    }
-//    
-//    var p1 = CLLocation(latitude: 5.0, longitude: 5.0)
-//    var p2 = CLLocation(latitude: 5.0, longitude: 3.0)
-//    
-//    print(p1.distance(from: p2), "!!!!!!!!!!!!")
+    
+    
+    var avgDistances: [Double] = []
+    clubStrokeLocations[0].append(["latOne": Double(prev.lat)!, "lonOne": Double(prev.lon)!, "latTwo": 5.0, "lonTwo": 5.0])
+    print(clubStrokeLocations[0])
+    for club in clubStrokeLocations{
+      if club.count > 0{
+        let total = club.reduce(0.0) {total, d in total + CLLocation(latitude: d["latOne"]!, longitude: d["lonOne"]!).distance(from: CLLocation(latitude: d["latTwo"]!, longitude: d["lonTwo"]!))}
+        print(total)
+        avgDistances.append(total / Double(club.count))
+      }
+      else {
+        print("here")
+        avgDistances.append(0.0)
+      }
+    }
+    
+    print(avgDistances)
+    
+    //    var p1 = CLLocation(latitude: 0.0, longitude: 0.0)
+    //    var p2 = CLLocation(latitude: 0.0, longitude: 0.0)
+    //
+    //    var total: Double = 0
+    //    clubStrokeLocations[0].append(["latOne": Double(prev.lat)!, "lonOne": Double(prev.lon)!, "latTwo": 5.0, "lonTwo": 5.0])
+    //    print(["latOne": Double(prev.lat)!, "lonOne": Double(prev.lon)!], "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    //    for csl in clubStrokeLocations[0]{
+    //      p1 = CLLocation(latitude: csl["latOne"]!, longitude: csl["lonOne"]!)
+    //      p2 = CLLocation(latitude: csl["latTwo"]!, longitude: csl["lonTwo"]!)
+    //      print(p1.distance(from: p2))
+    //      total = total + p1.distance(from: p2)
+    //    }
+    //
+    //    let a = clubStrokeLocations[0].reduce(0.0) {total, d in total + CLLocation(latitude: d["latOne"]!, longitude: d["lonOne"]!).distance(from: CLLocation(latitude: d["latTwo"]!, longitude: d["lonTwo"]!))}
+    //
+    //    print(total, a)
+    //    print()
+    //    print()
+    //    print()
+    //    print()
+    //    print()
+    //    print()
+    //    print(total / Double(clubStrokeLocations[0].count))
+    //
     
     
     
-    for club in clubs{
+    for i in 0..<clubs.count{
       
-      let clubStrokes = strokes.filter( { $0.club == club["id"] as! Int})
+      let clubStrokes = strokes.filter( { $0.club == clubs[i]["id"] as! Int})
       
       let perfContact = clubStrokes.filter( {
         if let ct = $0.contactType{
@@ -104,21 +138,40 @@ class CourseDetailViewModel {
           return false
         }
         
-      })
+        }
+      )
       
-      
-      
-      
-      if clubStrokes.count == 0 {
-        clubStats.append(ClubStats(clubName: club["name"] as! String, perfContactPercentage: nil))
+      let straightFlight = clubStrokes.filter( {
+        if let ft = $0.flightType{
+          return ft == "Straight"
+        }
+        else {
+          return false
+        }
         
-      }
-      else if perfContact.count == 0 {
-        clubStats.append(ClubStats(clubName: club["name"] as! String, perfContactPercentage: 0.0))
+        }
+      )
+      
+      let numStrokes = Double(clubStrokes.count)
+      if  numStrokes == 0.0 {
+        clubStats.append(ClubStats(clubId: clubs[i]["id"] as! Int, clubName: clubs[i]["name"] as! String, avgDist: avgDistances[i], perfContactPercentage: nil, straightFlightPercentage: nil))
       }
       else {
-        clubStats.append(ClubStats(clubName: club["name"] as! String, perfContactPercentage: Double(perfContact.count) / Double(clubStrokes.count) * 100))
+        var pc = 0.0
+        if perfContact.count > 0{
+          pc = Double(perfContact.count)
+        }
+        
+        var sf = 0.0
+        if straightFlight.count > 0 {
+          sf = Double(straightFlight.count)
+        }
+        
+        clubStats.append(ClubStats(clubId: clubs[i]["id"] as! Int, clubName: clubs[i]["name"] as! String, avgDist: avgDistances[i], perfContactPercentage: pc / numStrokes * 100, straightFlightPercentage: sf / numStrokes * 100))
+        
+        
       }
+      
     }
   }
   
