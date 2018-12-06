@@ -1462,15 +1462,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ball" translatesAutoresizingMaskIntoConstraints="NO" id="wmJ-5Z-vh8">
-                                <rect key="frame" x="109" y="173" width="157" height="188"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="188" id="ZeI-ZB-YdO"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball" translatesAutoresizingMaskIntoConstraints="NO" id="wmJ-5Z-vh8">
+                                <rect key="frame" x="59.5" y="232.5" width="256" height="222"/>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iLW-e0-Ema" customClass="GIDSignInButton">
-                                <rect key="frame" x="94" y="446" width="187.5" height="63"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iLW-e0-Ema" customClass="GIDSignInButton">
+                                <rect key="frame" x="94" y="541" width="187.5" height="63"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="Kfg-An-xuy"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.062745098039215685" green="0.58431372549019611" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1480,6 +1480,7 @@
                             <constraint firstItem="dlN-lI-KJr" firstAttribute="centerX" secondItem="b1b-pE-qKb" secondAttribute="centerX" id="Efn-qQ-q2y"/>
                             <constraint firstItem="iLW-e0-Ema" firstAttribute="width" secondItem="L3N-KP-tY8" secondAttribute="width" multiplier="1:2" id="GeM-mI-vnQ"/>
                             <constraint firstItem="wmJ-5Z-vh8" firstAttribute="centerY" secondItem="b1b-pE-qKb" secondAttribute="centerY" id="Nm2-CL-gfD"/>
+                            <constraint firstItem="wmJ-5Z-vh8" firstAttribute="height" secondItem="L3N-KP-tY8" secondAttribute="height" multiplier="1:3" id="VhV-DE-HzJ"/>
                             <constraint firstItem="iLW-e0-Ema" firstAttribute="centerX" secondItem="b1b-pE-qKb" secondAttribute="centerX" id="ahc-hb-2XP"/>
                             <constraint firstItem="wmJ-5Z-vh8" firstAttribute="centerX" secondItem="b1b-pE-qKb" secondAttribute="centerX" id="jqX-dm-bXg"/>
                         </constraints>
