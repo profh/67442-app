@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>flightTracking</key>
+	<false/>
+	<key>contactTracking</key>
+	<false/>
+	<key>lieTracking</key>
+	<true/>
+	<key>clubTracking</key>
+	<true/>
 	<key>email</key>
 	<string></string>
 	<key>lastName</key>

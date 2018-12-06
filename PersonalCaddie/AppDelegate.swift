@@ -107,10 +107,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
             archiver.encode(firstName, forKey: "firstName")
             archiver.encode(lastName, forKey: "lastName")
             archiver.encode(email, forKey: "email")
+            archiver.encode(true, forKey: "clubTracking")
+            archiver.encode(true, forKey: "lieTracking")
+            archiver.encode(true, forKey: "contactTracking")
+            archiver.encode(true, forKey: "flightTracking")
             archiver.finishEncoding()
             data.write(toFile: self.dataFilePath(), atomically: true)
           }
-          print("Token as logging in:", token)
           if token != "" {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarViewController
