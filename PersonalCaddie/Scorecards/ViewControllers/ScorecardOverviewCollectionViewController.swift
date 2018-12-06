@@ -39,12 +39,12 @@ class ScorecardOverviewCollectionViewController: UICollectionViewController, UIC
   }
 
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ScorecardOverviewCollectionViewCell
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ScorecardOverviewCollectionViewCell
   
     let f = DateFormatter()
     f.dateFormat = "MM/dd/yy"
-    
-    let scorecard = viewModel.scorecards[indexPath.row]
+    let numScorecards = viewModel.numberOfScorecards
+    let scorecard = viewModel.scorecards[numScorecards - indexPath.row - 1]
     
     cell.courseNameLabel.text = scorecard.courseName
     cell.dateLabel.text = f.string(from: scorecard.date)
@@ -80,7 +80,7 @@ class ScorecardOverviewCollectionViewController: UICollectionViewController, UIC
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showScorecardDetail" {
       if let indexPath = self.collectionView?.indexPathsForSelectedItems{
-        (segue.destination as! ScorecardDetailViewController).viewModel = ScorecardDetailViewModel(viewModel.scorecards[indexPath[0].row])        
+        (segue.destination as! ScorecardDetailViewController).viewModel = ScorecardDetailViewModel(viewModel.scorecards[viewModel.numberOfScorecards - indexPath[0].row - 1])
       }
       
     }
