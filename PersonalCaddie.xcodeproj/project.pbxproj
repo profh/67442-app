@@ -38,8 +38,7 @@
 		976B2C2421B5B918000116E5 /* PlayerCardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C2221B5B918000116E5 /* PlayerCardParser.swift */; };
 		976B2C2621B5B9AB000116E5 /* ClubStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C2521B5B9AB000116E5 /* ClubStats.swift */; };
 		976B2C2721B5B9AB000116E5 /* ClubStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C2521B5B9AB000116E5 /* ClubStats.swift */; };
-		976B2C2921B5ECDF000116E5 /* svgPerson.svg in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C2821B5ECDE000116E5 /* svgPerson.svg */; };
-		976B2C2A21B5ECDF000116E5 /* svgPerson.svg in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C2821B5ECDE000116E5 /* svgPerson.svg */; };
+		976B2C2C21B89F11000116E5 /* ProcesStrokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C2B21B89F11000116E5 /* ProcesStrokes.swift */; };
 		97CACB29219A6A3500D29F01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB28219A6A3500D29F01 /* AppDelegate.swift */; };
 		97CACB2E219A6A3500D29F01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CACB2C219A6A3500D29F01 /* Main.storyboard */; };
 		97CACB31219A6A3500D29F01 /* PersonalCaddie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB2F219A6A3500D29F01 /* PersonalCaddie.xcdatamodeld */; };
@@ -110,7 +109,7 @@
 		976B2C1F21B5B87B000116E5 /* PlayerCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCardViewModel.swift; sourceTree = "<group>"; };
 		976B2C2221B5B918000116E5 /* PlayerCardParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCardParser.swift; sourceTree = "<group>"; };
 		976B2C2521B5B9AB000116E5 /* ClubStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubStats.swift; sourceTree = "<group>"; };
-		976B2C2821B5ECDE000116E5 /* svgPerson.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = svgPerson.svg; sourceTree = "<group>"; };
+		976B2C2B21B89F11000116E5 /* ProcesStrokes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcesStrokes.swift; sourceTree = "<group>"; };
 		97CACB25219A6A3500D29F01 /* PersonalCaddie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalCaddie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CACB28219A6A3500D29F01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97CACB2D219A6A3500D29F01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -256,7 +255,6 @@
 		97CACB1C219A6A3400D29F01 = {
 			isa = PBXGroup;
 			children = (
-				976B2C2821B5ECDE000116E5 /* svgPerson.svg */,
 				97CACB27219A6A3500D29F01 /* PersonalCaddie */,
 				97CACB3F219A6A3900D29F01 /* PersonalCaddieTests */,
 				97CACB26219A6A3500D29F01 /* Products */,
@@ -277,6 +275,7 @@
 		97CACB27219A6A3500D29F01 /* PersonalCaddie */ = {
 			isa = PBXGroup;
 			children = (
+				976B2C2B21B89F11000116E5 /* ProcesStrokes.swift */,
 				976B2C1121B5976D000116E5 /* TabBarViewController.swift */,
 				97CACB53219A728200D29F01 /* NetworkClient.swift */,
 				976B2C2521B5B9AB000116E5 /* ClubStats.swift */,
@@ -539,7 +538,6 @@
 				97CACB2E219A6A3500D29F01 /* Main.storyboard in Resources */,
 				976B2C0F21B59621000116E5 /* smallSc.png in Resources */,
 				976B2C0921B5946B000116E5 /* smallBall.png in Resources */,
-				976B2C2921B5ECDF000116E5 /* svgPerson.svg in Resources */,
 				97CACB83219BD88B00D29F01 /* ScorecardInputCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,7 +549,6 @@
 				976B2C1021B59621000116E5 /* smallSc.png in Resources */,
 				976B2C0A21B5946B000116E5 /* smallBall.png in Resources */,
 				976B2C1721B5A81B000116E5 /* smallPerson.png in Resources */,
-				976B2C2A21B5ECDF000116E5 /* svgPerson.svg in Resources */,
 				976B2C0D21B595A5000116E5 /* smallHole.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -723,6 +720,7 @@
 				97CACB87219BDC9100D29F01 /* StrokeInputNavigationViewController.swift in Sources */,
 				97CACB59219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.swift in Sources */,
 				97CACB96219D0F5900D29F01 /* AddScorecardParser.swift in Sources */,
+				976B2C2C21B89F11000116E5 /* ProcesStrokes.swift in Sources */,
 				97CACB85219BD8D000D29F01 /* ClubsViewController.swift in Sources */,
 				976B2C1221B5976D000116E5 /* TabBarViewController.swift in Sources */,
 				97CACBA1219D319B00D29F01 /* NewScorecardViewModel.swift in Sources */,

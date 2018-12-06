@@ -55,19 +55,19 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
     let f = DateFormatter()
     f.dateFormat = "MM/dd/yy"
 
-            self.viewModel!.refreshScorecard { [unowned self] in
-              DispatchQueue.main.async {
-                self.collectionView.reloadData()
+    self.viewModel!.refreshScorecard { [unowned self] in
+      DispatchQueue.main.async {
+        self.collectionView.reloadData()
 
-              }
-            }
+      }
+    }
 
-            self.viewModel!.refreshStats(completion: { [unowned self] in
-              DispatchQueue.main.async {
-                self.clubStatsCollectionView.reloadData()
+    self.viewModel!.refreshStats(completion: { [unowned self] in
+      DispatchQueue.main.async {
+        self.clubStatsCollectionView.reloadData()
 
-              }
-            })
+      }
+    })
     
     
     if let scorecard = viewModel?.scorecardOverview{
