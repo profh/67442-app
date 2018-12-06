@@ -18,8 +18,6 @@ class AddScorecardParser {
     var courses: [Course] = []
     do {
       if let swiftyjson = try? JSON(data: data! ){
-        
-        
         for (_, course):(String, JSON) in swiftyjson {
           let courseId = course["id"].int
           let name = course["name"].string
@@ -32,26 +30,18 @@ class AddScorecardParser {
           let numScorecards = course["numScorecards"].int
           let numHolesPlayed = course["numHolesPlayed"].int
           let numPutts = course["numPutts"].int
-          
 
           courses.append(Course(courseId: courseId!, name: name!, street: street!, city: city!, state: state!, zip_code: zip_code!, nineHolePar: nineHolePar!, eighteenHolePar: eighteenHolePar!, numScorecards: numScorecards!, numHolesPlayed: numHolesPlayed!, numPutts: numPutts!))
-          
         }
-        
-        
         return courses
       }
     }
     catch {
       print("error serializing json: \(error)")
-      
     }
-    
     return nil
   
   }
-  
-
   
   func parseHolesResponse(_ data: Data? ) -> [Hole]?{
     var holes: [Hole] = []
@@ -66,22 +56,16 @@ class AddScorecardParser {
           let par = hole["par"].int
           let distance = hole["distance"].int
           
-          
           holes.append(Hole(holeId: holeId!, course: course!, number: number!, par: par!, distance: distance!))
-          
         }
-        
-        
+
         return holes
       }
     }
     catch {
       print("error serializing json: \(error)")
-      
     }
-    
     return nil
-    
   }
   
   func parseCreateScorecardResponse(_ data: Data) -> Int?{
@@ -92,13 +76,9 @@ class AddScorecardParser {
     }
     catch {
       print("error serializing json: \(error)")
-      
     }
-    
     return nil
   }
-  
-  
   
   func parseCreateScorecardHoleResponse(_ data: Data) -> Int?{
     do {
@@ -108,10 +88,7 @@ class AddScorecardParser {
     }
     catch {
       print("error serializing json: \(error)")
-      
     }
-    
     return nil
   }
-  
 }

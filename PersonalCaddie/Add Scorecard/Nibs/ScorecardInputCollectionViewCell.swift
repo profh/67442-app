@@ -18,7 +18,6 @@ class ScorecardInputCollectionViewCell: UICollectionViewCell {
   
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
 }

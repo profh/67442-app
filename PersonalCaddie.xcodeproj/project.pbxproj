@@ -14,7 +14,6 @@
 		9703714F21AF8A7800EB95FD /* CourseOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703714E21AF8A7800EB95FD /* CourseOverview.swift */; };
 		9703715121B05A0C00EB95FD /* CourseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703715021B05A0C00EB95FD /* CourseParser.swift */; };
 		9703715321B073BA00EB95FD /* CourseOverviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703715221B073BA00EB95FD /* CourseOverviewCollectionViewCell.swift */; };
-		9703FDAE21B1A8C90052CF02 /* CourseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703FDAD21B1A8C90052CF02 /* CourseDetail.swift */; };
 		9703FDB021B1A8DC0052CF02 /* CourseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703FDAF21B1A8DC0052CF02 /* CourseDetailViewModel.swift */; };
 		9703FDB221B1A9C10052CF02 /* ReadStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703FDB121B1A9C10052CF02 /* ReadStroke.swift */; };
 		9703FDB421B1AE680052CF02 /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703FDB321B1AE680052CF02 /* CourseDetailViewController.swift */; };
@@ -39,6 +38,7 @@
 		976B2C2621B5B9AB000116E5 /* ClubStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C2521B5B9AB000116E5 /* ClubStats.swift */; };
 		976B2C2721B5B9AB000116E5 /* ClubStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C2521B5B9AB000116E5 /* ClubStats.swift */; };
 		976B2C2C21B89F11000116E5 /* ProcesStrokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C2B21B89F11000116E5 /* ProcesStrokes.swift */; };
+		976B2C2F21B8A695000116E5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C2E21B8A695000116E5 /* Constants.swift */; };
 		97CACB29219A6A3500D29F01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB28219A6A3500D29F01 /* AppDelegate.swift */; };
 		97CACB2E219A6A3500D29F01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CACB2C219A6A3500D29F01 /* Main.storyboard */; };
 		97CACB31219A6A3500D29F01 /* PersonalCaddie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB2F219A6A3500D29F01 /* PersonalCaddie.xcdatamodeld */; };
@@ -95,7 +95,6 @@
 		9703714E21AF8A7800EB95FD /* CourseOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseOverview.swift; sourceTree = "<group>"; };
 		9703715021B05A0C00EB95FD /* CourseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseParser.swift; sourceTree = "<group>"; };
 		9703715221B073BA00EB95FD /* CourseOverviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseOverviewCollectionViewCell.swift; sourceTree = "<group>"; };
-		9703FDAD21B1A8C90052CF02 /* CourseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetail.swift; sourceTree = "<group>"; };
 		9703FDAF21B1A8DC0052CF02 /* CourseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewModel.swift; sourceTree = "<group>"; };
 		9703FDB121B1A9C10052CF02 /* ReadStroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadStroke.swift; sourceTree = "<group>"; };
 		9703FDB321B1AE680052CF02 /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +109,7 @@
 		976B2C2221B5B918000116E5 /* PlayerCardParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCardParser.swift; sourceTree = "<group>"; };
 		976B2C2521B5B9AB000116E5 /* ClubStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubStats.swift; sourceTree = "<group>"; };
 		976B2C2B21B89F11000116E5 /* ProcesStrokes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcesStrokes.swift; sourceTree = "<group>"; };
+		976B2C2E21B8A695000116E5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		97CACB25219A6A3500D29F01 /* PersonalCaddie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalCaddie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CACB28219A6A3500D29F01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97CACB2D219A6A3500D29F01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -190,11 +190,11 @@
 		9703714821AF8A0600EB95FD /* Courses */ = {
 			isa = PBXGroup;
 			children = (
-				9703715221B073BA00EB95FD /* CourseOverviewCollectionViewCell.swift */,
 				9703715021B05A0C00EB95FD /* CourseParser.swift */,
-				9703714D21AF8A6F00EB95FD /* Models */,
-				9703714A21AF8A2700EB95FD /* ViewModels */,
 				9703714921AF8A2100EB95FD /* ViewControllers */,
+				9703714A21AF8A2700EB95FD /* ViewModels */,
+				9703714D21AF8A6F00EB95FD /* Models */,
+				973FBCE521B8B707004A4829 /* Nibs */,
 			);
 			name = Courses;
 			path = "New Group";
@@ -221,11 +221,42 @@
 		9703714D21AF8A6F00EB95FD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9703FDAD21B1A8C90052CF02 /* CourseDetail.swift */,
 				9703FDB121B1A9C10052CF02 /* ReadStroke.swift */,
 				9703714E21AF8A7800EB95FD /* CourseOverview.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		973FBCE021B8B695004A4829 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				976B2C1C21B5B19D000116E5 /* ClubStatsCollectionViewCell.swift */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		973FBCE121B8B69E004A4829 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				976B2C1921B5B15B000116E5 /* PlayerCardViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		973FBCE221B8B6AC004A4829 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				976B2C1F21B5B87B000116E5 /* PlayerCardViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		973FBCE521B8B707004A4829 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				9703715221B073BA00EB95FD /* CourseOverviewCollectionViewCell.swift */,
+			);
+			path = Nibs;
 			sourceTree = "<group>";
 		};
 		976B2C1421B5A6B2000116E5 /* imgs */ = {
@@ -243,10 +274,10 @@
 		976B2C1821B5B124000116E5 /* PlayerCard */ = {
 			isa = PBXGroup;
 			children = (
-				976B2C1C21B5B19D000116E5 /* ClubStatsCollectionViewCell.swift */,
-				976B2C1921B5B15B000116E5 /* PlayerCardViewController.swift */,
-				976B2C1F21B5B87B000116E5 /* PlayerCardViewModel.swift */,
 				976B2C2221B5B918000116E5 /* PlayerCardParser.swift */,
+				973FBCE121B8B69E004A4829 /* ViewControllers */,
+				973FBCE221B8B6AC004A4829 /* ViewModels */,
+				973FBCE021B8B695004A4829 /* Nibs */,
 			);
 			name = PlayerCard;
 			path = "New Group/PlayerCard";
@@ -278,6 +309,8 @@
 				976B2C2B21B89F11000116E5 /* ProcesStrokes.swift */,
 				976B2C1121B5976D000116E5 /* TabBarViewController.swift */,
 				97CACB53219A728200D29F01 /* NetworkClient.swift */,
+				97CACB88219CD15E00D29F01 /* LocationManager.swift */,
+				976B2C2E21B8A695000116E5 /* Constants.swift */,
 				976B2C2521B5B9AB000116E5 /* ClubStats.swift */,
 				97CACB7F219BD85900D29F01 /* Add Scorecard */,
 				97CACB4B219A6D4300D29F01 /* Scorecards */,
@@ -306,11 +339,11 @@
 		97CACB4B219A6D4300D29F01 /* Scorecards */ = {
 			isa = PBXGroup;
 			children = (
-				97CACB69219B984900D29F01 /* Parsers */,
-				97CACB66219B58AD00D29F01 /* ViewModels */,
-				97CACB5D219A7EEE00D29F01 /* Nibs */,
+				97CACB60219A8CC900D29F01 /* ScorecardParser.swift */,
 				97CACB5B219A7ED100D29F01 /* ViewControllers */,
+				97CACB66219B58AD00D29F01 /* ViewModels */,
 				97CACB4C219A6D6D00D29F01 /* Models */,
+				97CACB5D219A7EEE00D29F01 /* Nibs */,
 			);
 			path = Scorecards;
 			sourceTree = "<group>";
@@ -353,24 +386,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		97CACB69219B984900D29F01 /* Parsers */ = {
-			isa = PBXGroup;
-			children = (
-				97CACB60219A8CC900D29F01 /* ScorecardParser.swift */,
-			);
-			path = Parsers;
-			sourceTree = "<group>";
-		};
 		97CACB7F219BD85900D29F01 /* Add Scorecard */ = {
 			isa = PBXGroup;
 			children = (
+				97CACB95219D0F5900D29F01 /* AddScorecardParser.swift */,
 				97CACB8E219D013200D29F01 /* NavigationControllers */,
 				97CACB8C219D011F00D29F01 /* ViewControllers */,
 				97CACB9B219D13AC00D29F01 /* ViewModels */,
 				97CACB90219D015800D29F01 /* Models */,
 				97CACB8F219D014800D29F01 /* Nibs */,
-				97CACB88219CD15E00D29F01 /* LocationManager.swift */,
-				97CACB95219D0F5900D29F01 /* AddScorecardParser.swift */,
 			);
 			path = "Add Scorecard";
 			sourceTree = "<group>";
@@ -397,6 +421,8 @@
 		97CACB8F219D014800D29F01 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				97CACB93219D030A00D29F01 /* ScorecardCourseCell.swift */,
+				97CACBA6219DFDD700D29F01 /* StrokeCell.swift */,
 				97CACB80219BD88B00D29F01 /* ScorecardInputCollectionViewCell.swift */,
 				97CACB81219BD88B00D29F01 /* ScorecardInputCollectionViewCell.xib */,
 			);
@@ -406,11 +432,9 @@
 		97CACB90219D015800D29F01 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				97CACB93219D030A00D29F01 /* ScorecardCourseCell.swift */,
 				97CACB9E219D30E000D29F01 /* Hole.swift */,
 				97CACB97219D0FAE00D29F01 /* Course.swift */,
 				97CACBA4219DF6FC00D29F01 /* Stroke.swift */,
-				97CACBA6219DFDD700D29F01 /* StrokeCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -711,6 +735,7 @@
 				97CACB54219A728200D29F01 /* NetworkClient.swift in Sources */,
 				976B2C2321B5B918000116E5 /* PlayerCardParser.swift in Sources */,
 				9703FDB421B1AE680052CF02 /* CourseDetailViewController.swift in Sources */,
+				976B2C2F21B8A695000116E5 /* Constants.swift in Sources */,
 				97CACB8B219CF5CF00D29F01 /* NewScorecardViewController.swift in Sources */,
 				9703FDB021B1A8DC0052CF02 /* CourseDetailViewModel.swift in Sources */,
 				9703715321B073BA00EB95FD /* CourseOverviewCollectionViewCell.swift in Sources */,
@@ -728,7 +753,6 @@
 				97CACB65219A91F700D29F01 /* ScorecardDetailViewModel.swift in Sources */,
 				9703715121B05A0C00EB95FD /* CourseParser.swift in Sources */,
 				976B2C2021B5B87B000116E5 /* PlayerCardViewModel.swift in Sources */,
-				9703FDAE21B1A8C90052CF02 /* CourseDetail.swift in Sources */,
 				97CACB9F219D30E000D29F01 /* Hole.swift in Sources */,
 				97CACBA5219DF6FC00D29F01 /* Stroke.swift in Sources */,
 				97CACB4E219A6DFE00D29F01 /* ScorecardOverview.swift in Sources */,

@@ -37,23 +37,8 @@ class CourseDetailViewModel: ProcessStrokes {
           }, courseId: self.course.courseId)
     }
   
+  var numClubStats: Int {
+    return clubStats.count
+  }
   
-  
-  
-  
-//  var numberOfHolesPlayed: Int{
-//    return course.numHolesPlayed
-//  }
-//
-//  func refresh(completion: @escaping () -> Void) {
-//    networkClient.fetchScorecardDetail({  data in
-//      if let scorecard = self.parser.parseScorecardDetailResponse(data!){
-//        self.scorecard = scorecard
-//
-//      }
-//
-//      completion()
-//
-//    }, scorecardId: self.scorecardOverview!.scorecardId)
-//  }
 }

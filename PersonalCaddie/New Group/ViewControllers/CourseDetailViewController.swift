@@ -22,26 +22,26 @@ class CourseDetailViewController: UIViewController, UICollectionViewDelegate, UI
   
   
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      if let vm = viewModel{
-        let course  = vm.course
-        courseName.text = course.name
-        addressOne.text = course.street
-        addressTwo.text = course.city + ", " + course.state + " " + course.zip_code
-        numScorecards.text = String(course.numScorecards)
-        puttsPerHole.text =  String(format: "%.2f", Double(course.numPutts) / Double(course.numHolesPlayed))
-        pars.text = String(course.nineHolePar) + "/" + String(course.eighteenHolePar)
-        
-      }
+  override func viewDidLoad() {
+      super.viewDidLoad()
+    if let vm = viewModel{
+      let course  = vm.course
+      courseName.text = course.name
+      addressOne.text = course.street
+      addressTwo.text = course.city + ", " + course.state + " " + course.zip_code
+      numScorecards.text = String(course.numScorecards)
+      puttsPerHole.text =  String(format: "%.2f", Double(course.numPutts) / Double(course.numHolesPlayed))
+      pars.text = String(course.nineHolePar) + "/" + String(course.eighteenHolePar)
       
-
     }
+    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  }
+
+  override func didReceiveMemoryWarning() {
+      super.didReceiveMemoryWarning()
+  }
+  
   override func viewWillAppear(_ animated: Bool){
     if let vm = viewModel{
       vm.refresh(completion: { [unowned self] in
@@ -50,25 +50,13 @@ class CourseDetailViewController: UIViewController, UICollectionViewDelegate, UI
         }
       })
     }
-    
-    // Do any additional setup after loading the view.
   }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
   
   // MARK: - Collection View
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
-    return viewModel!.clubStats.count
+    return viewModel!.numClubStats
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

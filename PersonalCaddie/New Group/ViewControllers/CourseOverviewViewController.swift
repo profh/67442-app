@@ -14,8 +14,6 @@ class CourseOverviewViewController: UICollectionViewController, UICollectionView
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -26,15 +24,11 @@ class CourseOverviewViewController: UICollectionViewController, UICollectionView
     }
   }
   
-  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
-  
   // MARK: - CollectionView
-  
   
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return viewModel.numberOfCourseOverviews
@@ -65,37 +59,17 @@ class CourseOverviewViewController: UICollectionViewController, UICollectionView
     return CGSize(width: self.view.frame.width - 10, height: 110)
   }
   
+  // MARK: - Navigation
 
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showCourseDetail" {
       if let indexPath = self.collectionView?.indexPathsForSelectedItems{
         (segue.destination as! CourseDetailViewController).viewModel = CourseDetailViewModel(viewModel.courseOverviews[indexPath[0].row])
-        
-        
-        
+
       }
-      
-      
-      
+
     }
   }
-  
-  
-  
-  
-
-  
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

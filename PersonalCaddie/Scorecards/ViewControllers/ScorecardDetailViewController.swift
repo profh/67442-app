@@ -21,34 +21,17 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
 
   var viewModel: ScorecardDetailViewModel?
 
-    override func viewDidLoad() {
-      super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-      
-//        self.viewModel!.refreshScorecard { [unowned self] in
-//          DispatchQueue.main.async {
-//            self.collectionView.reloadData()
-//
-//          }
-//        }
-//
-//        self.viewModel!.refreshStats(completion: { [unowned self] in
-//          DispatchQueue.main.async {
-//          }
-//        })
-      
-      collectionView.layer.borderWidth = 2
-      collectionView.layer.borderColor = UIColor.black.cgColor
+    collectionView.layer.borderWidth = 2
+    collectionView.layer.borderColor = UIColor.black.cgColor
 
-      
-    }
-  
-  
+  }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  override func didReceiveMemoryWarning() {
+      super.didReceiveMemoryWarning()
+  }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -87,7 +70,7 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
       return 1
     }
     else {
-      return viewModel!.clubStats.count
+      return viewModel!.numberOfClubStats
     }
   }
   
@@ -96,7 +79,7 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
       return viewModel!.numberOfHolesPlayed
     }
     else {
-      if viewModel!.clubStats.count > 0 && viewModel!.clubStats[section].expanded {
+      if viewModel!.numberOfClubStats > 0 && viewModel!.clubStats[section].expanded {
         return 1
       }
       else {
@@ -104,8 +87,6 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
       }
     }
   }
-  
-  
   
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -190,7 +171,6 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
     
     if collectionView == self.clubStatsCollectionView {
       if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeader", for: indexPath) as? SectionHeader{
-        
         return sectionHeader
       }
     }
@@ -207,9 +187,7 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
       return CGSize(width: 35.0, height: 160.0)
     }
   }
-  
-  
-  
+
   
   func tappedOnHeader(_ indexPath: IndexPath) {
     
@@ -222,17 +200,6 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
     }
   }
   
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 

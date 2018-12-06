@@ -67,10 +67,6 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
     let holeNum = viewModel!.numberOfHolesPlayed + 1
     let title = "Start Hole #\(holeNum)"
     holeButton.setTitle(title, for: .normal)
-    
-    
-
-    
 
     collectionView.layer.borderWidth = 2
     collectionView.layer.borderColor = UIColor.black.cgColor
@@ -85,26 +81,10 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
     
   }
 
-  override func viewWillDisappear(_ animated: Bool) {
-    self.navigationController?.tabBarController?.tabBar.items?[1].isEnabled = true
-    self.navigationController?.tabBarController?.tabBar.items?[1].badgeColor = .black
-
-  }
   override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
   }
 
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      // Get the new view controller using segue.destinationViewController.
-      // Pass the selected object to the new view controller.
-  }
-  */
-  
   
   // MARK: - Collection View
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -241,13 +221,12 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
     self.navigationController?.tabBarController?.tabBar.items?[1].isEnabled = true
     self.navigationController?.tabBarController?.tabBar.items?[1].badgeColor = .black
 
-
     viewModel!.reset()
 
   }
   
   
-
+  // MARK: - Navigation
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 

@@ -19,24 +19,20 @@ class ContactTypeViewController: UIViewController, UICollectionViewDelegate, UIC
     let nibCell = UINib(nibName: "ScorecardInputCollectionViewCell", bundle: nil)
     
     collectionView!.register(nibCell, forCellWithReuseIdentifier: "scorecardInputCell")
-      // Do any additional setup after loading the view.
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
   }
   
+  // MARK: - Collection View
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    // #warning Incomplete implementation, return the number of items
     return contactTypes.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "scorecardInputCell", for: indexPath) as! ScorecardInputCollectionViewCell
-    
     cell.value.text = contactTypes[indexPath.row] as! String
-    
     
     if selectedCellIndex != indexPath.row{
       cell.backgroundColor = UIColor.white
@@ -50,21 +46,14 @@ class ContactTypeViewController: UIViewController, UICollectionViewDelegate, UIC
     cell.layer.cornerRadius = 10
     
     return cell
-    
-    
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    //    (self.navigationController as! StrokeInputNavigationViewController).scorecardHole =  clubs[indexPath.item]["id"] as! Int
-    
-    
     let cell = collectionView.cellForItem(at: indexPath) as! ScorecardInputCollectionViewCell
     selectedCellIndex = indexPath.item
     collectionView.reloadData()
-    
     (self.navigationController as! StrokeInputNavigationViewController).contactType = contactTypes[indexPath.item]
     self.performSegue(withIdentifier: "showFlightType", sender: collectionView)
-    
   }
   
   

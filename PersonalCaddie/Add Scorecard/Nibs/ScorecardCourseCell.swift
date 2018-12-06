@@ -15,5 +15,4 @@ class ScorecardCourseCell: UITableViewCell {
 
   var course: Course?
   
-
 }

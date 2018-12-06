@@ -11,9 +11,7 @@ import Foundation
 
 class CourseOverviewViewModel {
 
-  
-  //var scorecards: [ScorecardOverview]
-  var parser: CourseParser
+   var parser: CourseParser
   var networkClient: NetworkClient
   var courseOverviews: [CourseOverview]
   init(){

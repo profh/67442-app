@@ -9,7 +9,6 @@
 import UIKit
 
 
-let flightTypes = ["Draw", "Fade", "Push", "Pull", "Slice", "Hook", "Straight"]
 
 class FlightTypeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -30,18 +29,14 @@ class FlightTypeViewController: UIViewController, UICollectionViewDelegate, UICo
     submitButton.layer.cornerRadius = 10
     submitButton.setTitleColor(UIColor.black, for: .normal)
     submitButton.setTitleColor(UIColor.gray, for: .disabled)
-
-      // Do any additional setup after loading the view.
   }
 
   override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
   }
   
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    // #warning Incomplete implementation, return the number of items
     return flightTypes.count
   }
   
@@ -49,8 +44,7 @@ class FlightTypeViewController: UIViewController, UICollectionViewDelegate, UICo
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "scorecardInputCell", for: indexPath) as! ScorecardInputCollectionViewCell
     
     cell.value.text = flightTypes[indexPath.row] as! String
-    
-    
+  
     if selectedCellIndex != indexPath.row{
       cell.backgroundColor = UIColor.white
     }
@@ -91,16 +85,6 @@ class FlightTypeViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     return CGSize(width: width , height: height)
   }
-
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      // Get the new view controller using segue.destinationViewController.
-      // Pass the selected object to the new view controller.
-  }
-  */
 
   // MARK: - IBActions
   

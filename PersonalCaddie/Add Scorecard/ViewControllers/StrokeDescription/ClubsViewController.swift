@@ -8,57 +8,7 @@
 
 import UIKit
 
-let clubs =
-  [[
-    "id": 1,
-    "name": "Driver"
-    ],
-   [
-    "id": 3,
-    "name": "3 Wood"
-    ],
-   [
-    "id": 4,
-    "name": "4 Iron"
-    ],
-   [
-    "id": 5,
-    "name": "5 Iron"
-    ],
-   [
-    "id": 6,
-    "name": "6 Iron"
-    ],
-   [
-    "id": 7,
-    "name": "7 Iron"
-    ],
-   [
-    "id": 8,
-    "name": "8 Iron"
-    ],
-   [
-    "id": 9,
-    "name": "9 Iron"
-    ],
-   [
-    "id": 10,
-    "name": "PW"
-    ],
-   [
-    "id": 11,
-    "name": "AW"
-    ],
-   
-   [
-    "id": 12,
-    "name": "60"
-    ],
-   [
-    "id": 2,
-    "name": "Putter"
-    ]
-]
+
 
 class ClubsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 
@@ -75,36 +25,24 @@ class ClubsViewController: UIViewController, UICollectionViewDelegate, UICollect
   var selectedCellIndex: Int?
   
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-      let nibCell = UINib(nibName: "ScorecardInputCollectionViewCell", bundle: nil)
+  override func viewDidLoad() {
+      super.viewDidLoad()
+    
+    let nibCell = UINib(nibName: "ScorecardInputCollectionViewCell", bundle: nil)
 
-      collectionView!.register(nibCell, forCellWithReuseIdentifier: "scorecardInputCell")
-
-      collectionView.allowsMultipleSelection = false
-      
-
+    collectionView!.register(nibCell, forCellWithReuseIdentifier: "scorecardInputCell")
+    collectionView.allowsMultipleSelection = false
   }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  override func didReceiveMemoryWarning() {
+      super.didReceiveMemoryWarning()
+  }
   
+
+  
+  // MARK: - CollectionView
+
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    // #warning Incomplete implementation, return the number of items
     return clubs.count
   }
   
@@ -131,12 +69,10 @@ class ClubsViewController: UIViewController, UICollectionViewDelegate, UICollect
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    // (self.navigationController as! StrokeInputNavigationViewController).scorecardHole =  clubs[indexPath.item]["id"] as! Int
     
     let cell = collectionView.cellForItem(at: indexPath) as! ScorecardInputCollectionViewCell
     selectedCellIndex = indexPath.item
 
-    
     collectionView.reloadData()
     (self.navigationController as! StrokeInputNavigationViewController).club = clubs[selectedCellIndex!]["id"] as! Int
     

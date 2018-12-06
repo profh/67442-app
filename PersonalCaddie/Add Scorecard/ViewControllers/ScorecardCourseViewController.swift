@@ -14,6 +14,7 @@ class ScorecardCourseViewController: UIViewController, UITableViewDataSource, UI
   @IBOutlet var tableView: UITableView!
   @IBOutlet var startRoundButton: UIButton!
   var viewModel: NewScorecardViewModel?
+  
   override func viewDidLoad() {
       super.viewDidLoad()
 
@@ -31,15 +32,10 @@ class ScorecardCourseViewController: UIViewController, UITableViewDataSource, UI
     startRoundButton.setTitle("Start Round", for: .normal)
     startRoundButton.setTitle("Select Course", for: .disabled)
 
-    
-
-    
-      // Do any additional setup after loading the view.
   }
 
   override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -55,17 +51,11 @@ class ScorecardCourseViewController: UIViewController, UITableViewDataSource, UI
   }
 
   
-    // MARK: - Navigation
+  // MARK: - Navigation
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    (segue.destination as! NewScorecardViewController).viewModel = viewModel
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      (segue.destination as! NewScorecardViewController).viewModel = viewModel
-      
-//      (segue.destination as! NewScorecardViewController).viewModel = NewScorecardViewModel()
-//      (segue.destination as! NewScorecardViewController).viewModel!.course = viewModel.course!
-    }
-  
-
+  }
   
   // MARK: - Table View
  

@@ -11,18 +11,18 @@ import CoreLocation
 
 class ScorecardDetailViewModel: ProcessStrokes{
   
-  var scorecardOverview: ScorecardOverview?
+  var scorecardOverview: ScorecardOverview
   var scorecard: ScorecardDetail?
-  var networkClient: NetworkClient
-  var parser: ScorecardParser
+  var networkClient: NetworkClient = NetworkClient()
+  var parser: ScorecardParser = ScorecardParser()
   
   var clubStats: [ClubStats] = []
   var strokes: [ReadStroke] = []
 
   
-  init() {
-    networkClient = NetworkClient()
-    parser = ScorecardParser()
+  init(_ scorecardOverview: ScorecardOverview) {
+
+    self.scorecardOverview = scorecardOverview
   }
   
   var numberOfHolesPlayed: Int{
@@ -40,7 +40,7 @@ class ScorecardDetailViewModel: ProcessStrokes{
       
       completion()
       
-    }, scorecardId: self.scorecardOverview!.scorecardId)
+    }, scorecardId: self.scorecardOverview.scorecardId)
   }
   
   func refreshStats(completion: @escaping () -> Void ){
@@ -52,9 +52,13 @@ class ScorecardDetailViewModel: ProcessStrokes{
         completion()
       }
       
-    }, scorecardId: scorecardOverview!.scorecardId)
+    }, scorecardId: scorecardOverview.scorecardId)
   }
   
+  
+  var numberOfClubStats: Int {
+    return clubStats.count
+  }
   
  
 

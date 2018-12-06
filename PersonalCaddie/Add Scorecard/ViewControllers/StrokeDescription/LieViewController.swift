@@ -8,17 +8,7 @@
 
 import UIKit
 
-let lies = [
-  "Tee Box",
-   "Fairway",
-   "1st  Cut Rough",
-   "Low Rough",
-   "High rough",
-   "Green",
-   "Fringe",
-   "Sand",
-   "Dirt",
-   "Gravel"]
+
 
 class LieViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
@@ -31,16 +21,14 @@ class LieViewController: UIViewController, UICollectionViewDelegate, UICollectio
     let nibCell = UINib(nibName: "ScorecardInputCollectionViewCell", bundle: nil)
     
     collectionView!.register(nibCell, forCellWithReuseIdentifier: "scorecardInputCell")
-      // Do any additional setup after loading the view.
   }
 
   override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
   }
   
+  // MARK: - Collection View
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    // #warning Incomplete implementation, return the number of items
     return lies.count
   }
   
@@ -63,12 +51,9 @@ class LieViewController: UIViewController, UICollectionViewDelegate, UICollectio
     
     return cell
     
-    
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    //    (self.navigationController as! StrokeInputNavigationViewController).scorecardHole =  clubs[indexPath.item]["id"] as! Int
-    
     
     let cell = collectionView.cellForItem(at: indexPath) as! ScorecardInputCollectionViewCell
     selectedCellIndex = indexPath.item

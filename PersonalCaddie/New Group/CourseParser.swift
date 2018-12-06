@@ -34,8 +34,6 @@ class CourseParser {
           courseOverviews.append(CourseOverview(courseId: courseId!, name: name!, street: street!, city: city!, state: state!, zip_code: zip_code!, nineHolePar: nineHolePar!, eighteenHolePar: eighteenHolePar!, numScorecards: numScorecards!, numHolesPlayed: numHolesPlayed!, numPutts: numPutts!))
         }
 
-        
-        
         return courseOverviews
       }
     }

@@ -9,7 +9,6 @@
 import Foundation
 
 class ScorecardOverviewViewModel {
-  //var scorecards: [ScorecardOverview]
   var parser: ScorecardParser
   var networkClient: NetworkClient
   var scorecards: [ScorecardOverview]

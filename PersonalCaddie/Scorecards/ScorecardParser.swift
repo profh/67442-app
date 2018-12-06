@@ -18,8 +18,7 @@ class ScorecardParser {
     f.dateFormat = "yyyy-MM-dd"
     do {
       if let swiftyjson = try? JSON(data: data! ){
-        
-        
+
         for (_, scorecardOverview):(String, JSON) in swiftyjson {
           let scorecardId = scorecardOverview["id"].int
           let date = f.date(from: scorecardOverview["date"].string!)
@@ -34,8 +33,7 @@ class ScorecardParser {
           
           scorecards.append(ScorecardOverview(scorecardId: scorecardId!, date: date!, userId: userId!, courseId: courseId!, numHolesPlayed: numHolesPlayed!, numStrokes: numStrokes!, numPutts: numPutts!, courseName: courseName!, nineHolePar: nineHolePar!, eighteenHolePar: eighteenHolePar!))
         }
-        
-        
+
         return scorecards
       }
     }
@@ -43,35 +41,25 @@ class ScorecardParser {
       print("error serializing json: \(error)")
       
     }
-    
     return nil
-    
   }
-  
-  
-  
+
   func parseScorecardDetailResponse(_ data: Data) -> ScorecardDetail?{
     
     var scorecard: ScorecardDetail
     let f = DateFormatter()
     f.dateFormat = "yyyy-MM-dd"
-    
-    
     if let swiftyjson = try? JSON(data: data ){
       var scorecardHoles: [ScorecardHoleDetail] = []
-      
       let scorecardId = swiftyjson["id"].int
       let date = f.date(from: swiftyjson["date"].string!)
-      
       let courseId = swiftyjson["course"]["id"].int
       let courseName = swiftyjson["course"]["name"].string
       let nineHolePar = swiftyjson["course"]["nineHolePar"].int
       let eighteenHolePar = swiftyjson["course"]["eighteenHolePar"].int
-      
-      
       let numPutts = swiftyjson["numPutts"].int
-      
       var totalStrokes = 0
+      
       for (_, scHole):(String, JSON) in swiftyjson["scorecardHoles"]{
         let schId = scHole["id"].int
         let holeId = scHole["hole"]["id"].int
@@ -81,25 +69,19 @@ class ScorecardParser {
         let numStrokes = scHole["numStrokes"].int
         
         totalStrokes += numStrokes!
-        
         scorecardHoles.append(ScorecardHoleDetail(id: schId!, holeId: holeId!, number: number!, par: par!, distance: distance!, numStrokes: numStrokes!))
       }
-      
-      
       scorecard = ScorecardDetail(scorecardId: scorecardId!, date: date!, courseId: courseId!, courseName: courseName!, nineHolePar: nineHolePar!, eighteenHolePar: eighteenHolePar!, numPutts: numPutts!, numStrokes: totalStrokes, numHolesPlayed: scorecardHoles.count, scorecardHoles: scorecardHoles)
       return scorecard
     }
-    
     return nil
   }
-  
   
   func parseStrokesResponse(_ data: Data? ) -> [ReadStroke]?{
     var strokes: [ReadStroke] = []
     
     do {
       if let swiftyjson = try? JSON(data: data! ){
-        
         for (_, stroke):(String, JSON) in swiftyjson {
           let id = stroke["id"].int
           let scorecardHole = stroke["scorecardHole"].int
@@ -120,10 +102,7 @@ class ScorecardParser {
       print("error serializing json: \(error)")
       
     }
-    
     return nil
-    
   }
-  
-  
+
 }
