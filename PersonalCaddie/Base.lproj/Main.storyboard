@@ -1636,7 +1636,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nXv-Od-p1F">
-                                <rect key="frame" x="16" y="80" width="343" height="538"/>
+                                <rect key="frame" x="16" y="150" width="343" height="468"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p4r-s4-uL3">
                                     <size key="itemSize" width="343" height="80"/>
@@ -1755,12 +1755,22 @@
                                     <outlet property="delegate" destination="5jL-Az-DnC" id="L3o-Kc-0Ey"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knX-xv-JTS">
+                                <rect key="frame" x="0.0" y="97" width="375" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="knX-xv-JTS" firstAttribute="top" secondItem="Ymy-NQ-0D7" secondAttribute="top" constant="33" id="68l-9t-g1M"/>
                             <constraint firstItem="nXv-Od-p1F" firstAttribute="leading" secondItem="Ymy-NQ-0D7" secondAttribute="leading" constant="16" id="Bj9-VF-aW2"/>
+                            <constraint firstItem="knX-xv-JTS" firstAttribute="centerX" secondItem="Ymy-NQ-0D7" secondAttribute="centerX" id="ISk-ED-dhx"/>
+                            <constraint firstItem="nXv-Od-p1F" firstAttribute="top" secondItem="knX-xv-JTS" secondAttribute="bottom" constant="23" id="ZHX-mU-05J"/>
+                            <constraint firstItem="knX-xv-JTS" firstAttribute="width" secondItem="Lny-Su-ES5" secondAttribute="width" id="iiW-Vg-FDG"/>
                             <constraint firstItem="Ymy-NQ-0D7" firstAttribute="bottom" secondItem="nXv-Od-p1F" secondAttribute="bottom" id="nFv-UL-Oy9"/>
-                            <constraint firstItem="nXv-Od-p1F" firstAttribute="top" secondItem="Ymy-NQ-0D7" secondAttribute="top" constant="16" id="qfM-G5-Sa0"/>
+                            <constraint firstItem="nXv-Od-p1F" firstAttribute="top" secondItem="Ymy-NQ-0D7" secondAttribute="top" constant="86" id="qfM-G5-Sa0"/>
                             <constraint firstItem="Ymy-NQ-0D7" firstAttribute="trailing" secondItem="nXv-Od-p1F" secondAttribute="trailing" constant="16" id="u73-nR-iZ8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ymy-NQ-0D7"/>
@@ -1775,6 +1785,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="nXv-Od-p1F" id="Xwo-WV-y1f"/>
+                        <outlet property="name" destination="knX-xv-JTS" id="CNf-Df-eoM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZMT-r4-qWE" userLabel="First Responder" sceneMemberID="firstResponder"/>

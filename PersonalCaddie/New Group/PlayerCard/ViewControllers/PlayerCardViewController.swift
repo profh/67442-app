@@ -11,11 +11,34 @@ import UIKit
 class PlayerCardViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
   
   @IBOutlet var collectionView: UICollectionView!
-  var viewModel = PlayerCardViewModel()
+  @IBOutlet var name: UILabel!
+
   
+  var viewModel = PlayerCardViewModel()
+  var firstName: String?
+  var lastName: String?
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    let path = self.dataFilePath()
+    if FileManager.default.fileExists(atPath: path) {
+      if let data = NSData(contentsOfFile: path) {
+        let unarchiver = NSKeyedUnarchiver(forReadingWith: data as Data)
+        
+        firstName = unarchiver.decodeObject(forKey: "firstName") as! String
+        lastName = unarchiver.decodeObject(forKey: "lastName") as! String
+  
+        unarchiver.finishDecoding()
+        name.text = firstName! + " " + lastName!
+        
+        
+      } else {
+        print("\nFILE NOT FOUND AT: \(path)")
+      }
+      
+      
+    }
+
   }
 
   override func didReceiveMemoryWarning() {
@@ -109,15 +132,20 @@ class PlayerCardViewController: UIViewController, UICollectionViewDataSource, UI
     }
   }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    // MARK: - Plist
+
+
+  
+  func documentsDirectory() -> String {
+    let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+    return paths[0]
+  }
+  
+  func dataFilePath() -> String {
+    return documentsDirectory().stringByAppendingPathComponent(aPath: "UserInfo.plist")
+  }
+
 
 }
 
@@ -135,3 +163,5 @@ class SectionHeader: UICollectionReusableView {
     
   }
 }
+
+
