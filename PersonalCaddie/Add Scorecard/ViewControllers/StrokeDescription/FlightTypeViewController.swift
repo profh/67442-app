@@ -14,7 +14,6 @@ class FlightTypeViewController: UIViewController, UICollectionViewDelegate, UICo
 
   
   @IBOutlet var collectionView: UICollectionView!
-  @IBOutlet var submitButton: UIButton!
   var selectedCellIndex: Int?
 
   override func viewDidLoad() {
@@ -23,12 +22,11 @@ class FlightTypeViewController: UIViewController, UICollectionViewDelegate, UICo
     
     collectionView!.register(nibCell, forCellWithReuseIdentifier: "scorecardInputCell")
     
-    submitButton.isEnabled = false
-    submitButton.layer.borderColor = UIColor.gray.cgColor
-    submitButton.layer.borderWidth = 1
-    submitButton.layer.cornerRadius = 10
-    submitButton.setTitleColor(UIColor.black, for: .normal)
-    submitButton.setTitleColor(UIColor.gray, for: .disabled)
+
+    let cancel = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelStroke))
+    cancel.tintColor = UIColor.red
+    self.navigationItem.rightBarButtonItems = [cancel]
+    self.navigationItem.title = "Flight"
   }
 
   override func didReceiveMemoryWarning() {
@@ -63,14 +61,20 @@ class FlightTypeViewController: UIViewController, UICollectionViewDelegate, UICo
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
-    submitButton.isEnabled = true
-    submitButton.layer.borderColor = UIColor.black.cgColor
+
 
     let cell = collectionView.cellForItem(at: indexPath) as! ScorecardInputCollectionViewCell
     selectedCellIndex = indexPath.item
     collectionView.reloadData()
     
-    (self.navigationController as! StrokeInputNavigationViewController).flightType = flightTypes[indexPath.item]
+    let navVC = (self.navigationController as! StrokeInputNavigationViewController)
+    navVC.flightType = flightTypes[indexPath.item]
+    
+    var vc: UIViewController
+  
+    vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SubmitStrokeVC") as! SubmitStrokeViewController
+    navVC.pushViewController(vc, animated: true)
+    
 
   }
   
@@ -92,18 +96,7 @@ class FlightTypeViewController: UIViewController, UICollectionViewDelegate, UICo
     self.navigationController!.dismiss(animated: true)
   }
   
-  @IBAction func submit(_ sender: UIButton) {
-    if let clubId = (self.navigationController as! StrokeInputNavigationViewController).club,
-      let lon = (self.navigationController as! StrokeInputNavigationViewController).longitude,
-      let lat = (self.navigationController as! StrokeInputNavigationViewController).latitude,
-      let ct = (self.navigationController as! StrokeInputNavigationViewController).contactType,
-      let ft = (self.navigationController as! StrokeInputNavigationViewController).flightType,
-      let lie = (self.navigationController as! StrokeInputNavigationViewController).lie
-    {
-      (self.navigationController! as! StrokeInputNavigationViewController).viewModel!.strokes.append(Stroke(club: clubId, lat: lat, lon: lon, contactType: ct, flightType: ft, finalLocation: lie))
-      self.navigationController!.dismiss(animated: true)
-    }
-  }
+  
   
   
 

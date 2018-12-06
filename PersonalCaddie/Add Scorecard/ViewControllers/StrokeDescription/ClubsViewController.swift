@@ -32,6 +32,11 @@ class ClubsViewController: UIViewController, UICollectionViewDelegate, UICollect
 
     collectionView!.register(nibCell, forCellWithReuseIdentifier: "scorecardInputCell")
     collectionView.allowsMultipleSelection = false
+    
+    let cancel = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelStroke))
+    cancel.tintColor = UIColor.red
+    self.navigationItem.rightBarButtonItems = [cancel]
+    self.navigationItem.title = "Club"
   }
 
   override func didReceiveMemoryWarning() {
@@ -74,9 +79,23 @@ class ClubsViewController: UIViewController, UICollectionViewDelegate, UICollect
     selectedCellIndex = indexPath.item
 
     collectionView.reloadData()
-    (self.navigationController as! StrokeInputNavigationViewController).club = clubs[selectedCellIndex!]["id"] as! Int
+    let navVC = (self.navigationController as! StrokeInputNavigationViewController)
+    navVC.club = clubs[selectedCellIndex!]["id"] as! Int
     
-    self.performSegue(withIdentifier: "showLies", sender: collectionView)    
+    var vc: UIViewController
+     if navVC.lieTracking {
+      vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "lieVC") as! LieViewController
+    }
+    else if navVC.contactTracking {
+      vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "contactVC") as! ContactTypeViewController
+    }
+    else if navVC.flightTracking {
+      vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "flightVC") as! FlightTypeViewController
+    }
+    else {
+      vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SubmitStrokeVC") as! SubmitStrokeViewController
+    }
+    navVC.pushViewController(vc, animated: true)
     
   }
   

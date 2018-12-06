@@ -17,6 +17,7 @@
 		9703FDB021B1A8DC0052CF02 /* CourseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703FDAF21B1A8DC0052CF02 /* CourseDetailViewModel.swift */; };
 		9703FDB221B1A9C10052CF02 /* ReadStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703FDB121B1A9C10052CF02 /* ReadStroke.swift */; };
 		9703FDB421B1AE680052CF02 /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703FDB321B1AE680052CF02 /* CourseDetailViewController.swift */; };
+		971EF21621B9461B008538FB /* SubmitStrokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971EF21521B9461B008538FB /* SubmitStrokeViewController.swift */; };
 		973FBCEB21B8FC41004A4829 /* UserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 973FBCEA21B8FC41004A4829 /* UserInfo.plist */; };
 		973FBCED21B8FE8E004A4829 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FBCEC21B8FE8E004A4829 /* LoginViewController.swift */; };
 		973FBCEE21B8FE8E004A4829 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FBCEC21B8FE8E004A4829 /* LoginViewController.swift */; };
@@ -106,6 +107,7 @@
 		9703FDAF21B1A8DC0052CF02 /* CourseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewModel.swift; sourceTree = "<group>"; };
 		9703FDB121B1A9C10052CF02 /* ReadStroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadStroke.swift; sourceTree = "<group>"; };
 		9703FDB321B1AE680052CF02 /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
+		971EF21521B9461B008538FB /* SubmitStrokeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitStrokeViewController.swift; sourceTree = "<group>"; };
 		973FBCEA21B8FC41004A4829 /* UserInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserInfo.plist; sourceTree = "<group>"; };
 		973FBCEC21B8FE8E004A4829 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		973FBCF021B8FEFA004A4829 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				97CACBA821A5B7C100D29F01 /* FlightTypeViewController.swift */,
 				97CACBAD21A63DA200D29F01 /* LieViewController.swift */,
 				97CACBAF21A7097300D29F01 /* ContactTypeViewController.swift */,
+				971EF21521B9461B008538FB /* SubmitStrokeViewController.swift */,
 			);
 			path = StrokeDescription;
 			sourceTree = "<group>";
@@ -752,6 +755,7 @@
 				97CACB94219D030A00D29F01 /* ScorecardCourseCell.swift in Sources */,
 				97CACB54219A728200D29F01 /* NetworkClient.swift in Sources */,
 				976B2C2321B5B918000116E5 /* PlayerCardParser.swift in Sources */,
+				971EF21621B9461B008538FB /* SubmitStrokeViewController.swift in Sources */,
 				9703FDB421B1AE680052CF02 /* CourseDetailViewController.swift in Sources */,
 				976B2C2F21B8A695000116E5 /* Constants.swift in Sources */,
 				97CACB8B219CF5CF00D29F01 /* NewScorecardViewController.swift in Sources */,

@@ -107,7 +107,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
             archiver.encode(firstName, forKey: "firstName")
             archiver.encode(lastName, forKey: "lastName")
             archiver.encode(email, forKey: "email")
-            archiver.encode(true, forKey: "clubTracking")
             archiver.encode(true, forKey: "lieTracking")
             archiver.encode(true, forKey: "contactTracking")
             archiver.encode(true, forKey: "flightTracking")

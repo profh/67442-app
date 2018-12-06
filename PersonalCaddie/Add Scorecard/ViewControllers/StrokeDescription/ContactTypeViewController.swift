@@ -19,6 +19,11 @@ class ContactTypeViewController: UIViewController, UICollectionViewDelegate, UIC
     let nibCell = UINib(nibName: "ScorecardInputCollectionViewCell", bundle: nil)
     
     collectionView!.register(nibCell, forCellWithReuseIdentifier: "scorecardInputCell")
+    
+    let cancel = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelStroke))
+    cancel.tintColor = UIColor.red
+    self.navigationItem.rightBarButtonItems = [cancel]
+    self.navigationItem.title = "Contact"
   }
 
   override func didReceiveMemoryWarning() {
@@ -52,8 +57,17 @@ class ContactTypeViewController: UIViewController, UICollectionViewDelegate, UIC
     let cell = collectionView.cellForItem(at: indexPath) as! ScorecardInputCollectionViewCell
     selectedCellIndex = indexPath.item
     collectionView.reloadData()
-    (self.navigationController as! StrokeInputNavigationViewController).contactType = contactTypes[indexPath.item]
-    self.performSegue(withIdentifier: "showFlightType", sender: collectionView)
+    let navVC = (self.navigationController as! StrokeInputNavigationViewController)
+    navVC.contactType = contactTypes[indexPath.item]
+    
+    var vc: UIViewController
+    if navVC.flightTracking {
+      vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "flightVC") as! FlightTypeViewController
+    }
+    else {
+      vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SubmitStrokeVC") as! SubmitStrokeViewController
+    }
+    navVC.pushViewController(vc, animated: true)
   }
   
   

@@ -26,6 +26,7 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
 
   var inHole = false
 
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -237,8 +238,6 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
     vc.viewModel = viewModel
     
   }
-  
-  
   
   
 }

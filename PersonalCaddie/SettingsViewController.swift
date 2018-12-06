@@ -13,7 +13,6 @@ class SettingsViewController: UIViewController, GIDSignInUIDelegate {
   @IBOutlet var logoutButton: UIButton!
   @IBOutlet var trackingSaveButton: UIButton!
 
-  @IBOutlet var clubTrackingSwitch: UISwitch!
   @IBOutlet var lieTrackingSwitch: UISwitch!
   @IBOutlet var contactTrackingSwitch: UISwitch!
   @IBOutlet var flightTrackingSwitch: UISwitch!
@@ -30,9 +29,7 @@ class SettingsViewController: UIViewController, GIDSignInUIDelegate {
     logoutButton.layer.cornerRadius = 10
     trackingSaveButton.layer.borderWidth = 1
     trackingSaveButton.layer.cornerRadius = 10
-    
-    var clubTracking: Bool
-    
+        
     
     let path = self.dataFilePath()
     if FileManager.default.fileExists(atPath: path) {
@@ -43,14 +40,12 @@ class SettingsViewController: UIViewController, GIDSignInUIDelegate {
         lastName = unarchiver.decodeObject(forKey: "lastName") as! String
         email = unarchiver.decodeObject(forKey: "email") as! String
         token = unarchiver.decodeObject(forKey: "token") as! String
-        tracking["clubTracking"] = unarchiver.decodeBool(forKey: "clubTracking")
         tracking["lieTracking"] = unarchiver.decodeBool(forKey: "lieTracking")
         tracking["contactTracking"] = unarchiver.decodeBool(forKey: "contactTracking")
         tracking["flightTracking"] = unarchiver.decodeBool(forKey: "flightTracking")
         
         unarchiver.finishDecoding()
         
-        clubTrackingSwitch.isOn = tracking["clubTracking"]!
         lieTrackingSwitch.isOn = tracking["lieTracking"]!
         contactTrackingSwitch.isOn = tracking["contactTracking"]!
         flightTrackingSwitch.isOn = tracking["flightTracking"]!
@@ -100,7 +95,6 @@ class SettingsViewController: UIViewController, GIDSignInUIDelegate {
 
   
   @IBAction func switched(_ sender: UISwitch){
-    tracking["clubTracking"] = clubTrackingSwitch.isOn
     tracking["lieTracking"] = lieTrackingSwitch.isOn
     tracking["contactTracking"] = contactTrackingSwitch.isOn
     tracking["flightTracking"] = flightTrackingSwitch.isOn
@@ -113,7 +107,6 @@ class SettingsViewController: UIViewController, GIDSignInUIDelegate {
     archiver.encode(firstName, forKey: "firstName")
     archiver.encode(lastName, forKey: "lastName")
     archiver.encode(email, forKey: "email")
-    archiver.encode(tracking["clubTracking"]!, forKey: "clubTracking")
     archiver.encode(tracking["lieTracking"]!, forKey: "lieTracking")
     archiver.encode(tracking["contactTracking"]!, forKey: "contactTracking")
     archiver.encode(tracking["flightTracking"]!, forKey: "flightTracking")
