@@ -35,7 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
         print("\nFILE NOT FOUND AT: \(path)")
       }
     }
-    print("Token as app loads:", token)
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     self.window = UIWindow(frame: UIScreen.main.bounds)
     var vc: UIViewController

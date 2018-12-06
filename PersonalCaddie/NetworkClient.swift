@@ -12,12 +12,34 @@ import Alamofire
 
 let MY_API_KEY = "8469e22bcd93b82c15a94c463cb3f00f5913fcb2"
 
-let headers: HTTPHeaders = [
-  "Authorization": "Token " + MY_API_KEY
-]
 
 
-class NetworkClient {
+class NetworkClient{
+  
+  var headers: HTTPHeaders
+  let path: String
+  var token: String
+  
+  init(){
+    token = ""
+    
+    let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+    path = paths[0].stringByAppendingPathComponent(aPath: "UserInfo.plist")
+    
+    if FileManager.default.fileExists(atPath: path) {
+      if let data = NSData(contentsOfFile: path) {
+        let unarchiver = NSKeyedUnarchiver(forReadingWith: data as Data)
+        token = unarchiver.decodeObject(forKey: "token") as! String
+        unarchiver.finishDecoding()
+      } else {
+        print("\nFILE NOT FOUND AT: \(path)")
+      }
+    }
+    headers = [
+      "Authorization": "Token " + token
+    ]
+
+  }
   
   func fetchScorecardOverviews(_ completion: @escaping (Data?) -> Void) {
     
@@ -192,6 +214,16 @@ class NetworkClient {
     }
     
   }
+  
+  func documentsDirectory() -> String {
+    let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+    return paths[0]
+  }
+  
+  func dataFilePath() -> String {
+    return documentsDirectory().stringByAppendingPathComponent(aPath: "UserInfo.plist")
+  }
+
   
   
 }
