@@ -17,6 +17,12 @@
 		9703FDB021B1A8DC0052CF02 /* CourseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703FDAF21B1A8DC0052CF02 /* CourseDetailViewModel.swift */; };
 		9703FDB221B1A9C10052CF02 /* ReadStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703FDB121B1A9C10052CF02 /* ReadStroke.swift */; };
 		9703FDB421B1AE680052CF02 /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9703FDB321B1AE680052CF02 /* CourseDetailViewController.swift */; };
+		973FBCEB21B8FC41004A4829 /* UserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 973FBCEA21B8FC41004A4829 /* UserInfo.plist */; };
+		973FBCED21B8FE8E004A4829 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FBCEC21B8FE8E004A4829 /* LoginViewController.swift */; };
+		973FBCEE21B8FE8E004A4829 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FBCEC21B8FE8E004A4829 /* LoginViewController.swift */; };
+		973FBCEF21B8FE94004A4829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB28219A6A3500D29F01 /* AppDelegate.swift */; };
+		973FBCF121B8FEFA004A4829 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FBCF021B8FEFA004A4829 /* StringExtension.swift */; };
+		973FBCF221B8FEFA004A4829 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FBCF021B8FEFA004A4829 /* StringExtension.swift */; };
 		976B2C0921B5946B000116E5 /* smallBall.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C0821B5946A000116E5 /* smallBall.png */; };
 		976B2C0A21B5946B000116E5 /* smallBall.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C0821B5946A000116E5 /* smallBall.png */; };
 		976B2C0C21B595A5000116E5 /* smallHole.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C0B21B595A5000116E5 /* smallHole.png */; };
@@ -98,6 +104,9 @@
 		9703FDAF21B1A8DC0052CF02 /* CourseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewModel.swift; sourceTree = "<group>"; };
 		9703FDB121B1A9C10052CF02 /* ReadStroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadStroke.swift; sourceTree = "<group>"; };
 		9703FDB321B1AE680052CF02 /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
+		973FBCEA21B8FC41004A4829 /* UserInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserInfo.plist; sourceTree = "<group>"; };
+		973FBCEC21B8FE8E004A4829 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		973FBCF021B8FEFA004A4829 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		976B2C0821B5946A000116E5 /* smallBall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallBall.png; sourceTree = "<group>"; };
 		976B2C0B21B595A5000116E5 /* smallHole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallHole.png; sourceTree = "<group>"; };
 		976B2C0E21B59620000116E5 /* smallSc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallSc.png; sourceTree = "<group>"; };
@@ -316,7 +325,10 @@
 				97CACB4B219A6D4300D29F01 /* Scorecards */,
 				9703714821AF8A0600EB95FD /* Courses */,
 				976B2C1821B5B124000116E5 /* PlayerCard */,
+				973FBCEA21B8FC41004A4829 /* UserInfo.plist */,
 				97CACB28219A6A3500D29F01 /* AppDelegate.swift */,
+				973FBCF021B8FEFA004A4829 /* StringExtension.swift */,
+				973FBCEC21B8FE8E004A4829 /* LoginViewController.swift */,
 				97CACB2C219A6A3500D29F01 /* Main.storyboard */,
 				976B2C1421B5A6B2000116E5 /* imgs */,
 				97CACB32219A6A3800D29F01 /* Assets.xcassets */,
@@ -557,6 +569,7 @@
 				97CACB5A219A7EC300D29F01 /* ScorecardOverviewCollectionViewCell.xib in Resources */,
 				97CACB36219A6A3800D29F01 /* LaunchScreen.storyboard in Resources */,
 				976B2C1621B5A81B000116E5 /* smallPerson.png in Resources */,
+				973FBCEB21B8FC41004A4829 /* UserInfo.plist in Resources */,
 				976B2C0C21B595A5000116E5 /* smallHole.png in Resources */,
 				97CACB33219A6A3800D29F01 /* Assets.xcassets in Resources */,
 				97CACB2E219A6A3500D29F01 /* Main.storyboard in Resources */,
@@ -731,6 +744,7 @@
 				97CACBB021A7097300D29F01 /* ContactTypeViewController.swift in Sources */,
 				97CACB31219A6A3500D29F01 /* PersonalCaddie.xcdatamodeld in Sources */,
 				97CACBA921A5B7C100D29F01 /* FlightTypeViewController.swift in Sources */,
+				973FBCF121B8FEFA004A4829 /* StringExtension.swift in Sources */,
 				97CACB94219D030A00D29F01 /* ScorecardCourseCell.swift in Sources */,
 				97CACB54219A728200D29F01 /* NetworkClient.swift in Sources */,
 				976B2C2321B5B918000116E5 /* PlayerCardParser.swift in Sources */,
@@ -751,6 +765,7 @@
 				97CACBA1219D319B00D29F01 /* NewScorecardViewModel.swift in Sources */,
 				97CACB50219A6E3500D29F01 /* ScorecardDetail.swift in Sources */,
 				97CACB65219A91F700D29F01 /* ScorecardDetailViewModel.swift in Sources */,
+				973FBCED21B8FE8E004A4829 /* LoginViewController.swift in Sources */,
 				9703715121B05A0C00EB95FD /* CourseParser.swift in Sources */,
 				976B2C2021B5B87B000116E5 /* PlayerCardViewModel.swift in Sources */,
 				97CACB9F219D30E000D29F01 /* Hole.swift in Sources */,
@@ -766,8 +781,11 @@
 			files = (
 				976B2C2721B5B9AB000116E5 /* ClubStats.swift in Sources */,
 				976B2C1E21B5B19D000116E5 /* ClubStatsCollectionViewCell.swift in Sources */,
+				973FBCF221B8FEFA004A4829 /* StringExtension.swift in Sources */,
 				976B2C1321B5976D000116E5 /* TabBarViewController.swift in Sources */,
+				973FBCEF21B8FE94004A4829 /* AppDelegate.swift in Sources */,
 				97CACB41219A6A3900D29F01 /* PersonalCaddieTests.swift in Sources */,
+				973FBCEE21B8FE8E004A4829 /* LoginViewController.swift in Sources */,
 				976B2C2121B5B87B000116E5 /* PlayerCardViewModel.swift in Sources */,
 				976B2C1B21B5B15B000116E5 /* PlayerCardViewController.swift in Sources */,
 				976B2C2421B5B918000116E5 /* PlayerCardParser.swift in Sources */,
@@ -930,7 +948,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.67442.PersonalCaddie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.67442.VirtualCaddie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -949,7 +967,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.67442.PersonalCaddie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.67442.VirtualCaddie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
