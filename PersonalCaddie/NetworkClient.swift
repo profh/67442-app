@@ -74,8 +74,9 @@ class NetworkClient{
   func fetchCourses(_ completion: @escaping (Data?) -> Void) {
     
     let urlString = "https://personalcaddieapi.herokuapp.com/courses/"
-    
-    Alamofire.request(urlString, headers: headers).response { response in
+    var params: [String: Any]  = ["complete": "True"]
+
+    Alamofire.request(urlString, parameters: params, headers: headers).response { response in
       if let error = response.error {
         print("Error fetching courses: \(error)")
         completion(response.data)

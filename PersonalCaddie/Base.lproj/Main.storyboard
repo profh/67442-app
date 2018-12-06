@@ -1464,7 +1464,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.062745098040000002" green="0.58477743310277774" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.062745098039215685" green="0.58431372549019611" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="dlN-lI-KJr" firstAttribute="centerY" secondItem="b1b-pE-qKb" secondAttribute="centerY" multiplier="2:5" id="6kZ-Cq-jjc"/>
                             <constraint firstItem="iLW-e0-Ema" firstAttribute="centerY" secondItem="b1b-pE-qKb" secondAttribute="centerY" multiplier="5:3" id="DHa-5V-SoG"/>

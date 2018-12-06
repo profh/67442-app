@@ -23,7 +23,24 @@ class ScorecardOverviewCollectionViewController: UICollectionViewController, UIC
   override func viewWillAppear(_ animated: Bool) {
     viewModel.refresh { [unowned self] in
       DispatchQueue.main.async {
-        self.collectionView?.reloadData()
+        if self.viewModel.numberOfScorecards != 0 {
+          self.collectionView?.reloadData()
+        }
+        else{
+          let frame = CGRect(x: self.view.bounds.size.width/10 * 2, y: self.view.bounds.size.height/4, width: self.view.bounds.size.width/10 * 6, height: self.view.bounds.size.height/2) // x , y, width , height
+
+          let lbl = UILabel(frame: frame)
+          
+          lbl.textAlignment = .center //For center alignment
+          lbl.text = "No scorecards yet!\n\n Check back after you've played a round"
+          lbl.textColor = .black
+          lbl.font = UIFont.systemFont(ofSize: 25)
+          lbl.numberOfLines = 0
+          lbl.lineBreakMode = .byWordWrapping
+          
+          lbl.sizeToFit()//If required
+          self.view.addSubview(lbl)
+        }
       }
     }
   }
