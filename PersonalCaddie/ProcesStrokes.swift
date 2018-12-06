@@ -111,15 +111,12 @@ extension ProcessStrokes{
         if perfContact.count > 0 {
           pc = Double(perfContact.count)
         }
-        
-        var sf = 0.0
+        var sf: Double = 0.0
         if straightFlight.count > 0{
-          let sf = Double(straightFlight.count)
+          sf = Double(straightFlight.count)
         }
-        
+
         clubStats.append(ClubStats(clubId: clubs[i]["id"] as! Int, clubName: clubs[i]["name"] as! String, avgDist: avgDistances[i], perfContactPercentage: pc / numStrokes * 100, straightFlightPercentage: sf / numStrokes * 100))
-        
-        
       }
       
     }

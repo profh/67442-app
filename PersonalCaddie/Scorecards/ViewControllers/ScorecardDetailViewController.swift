@@ -131,6 +131,7 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
       }
       
       if let straightFlightPercentage = viewModel!.clubStats[indexPath.section].straightFlightPercentage{
+        print(straightFlightPercentage, "            !!!!!!!!!!!!!!!!!!!!!!")
         cell.straightFlightPercentage.text = String(format: "%.2f", straightFlightPercentage)
       }
       else{
