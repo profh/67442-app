@@ -1645,7 +1645,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ymy-NQ-0D7"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Player Card" id="9po-YS-chY"/>
+                    <navigationItem key="navigationItem" title="Player Card" id="9po-YS-chY">
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="JjP-iN-nXb">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="4OS-cP-P52" kind="show" id="yO7-1Y-vG5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="nXv-Od-p1F" id="Xwo-WV-y1f"/>
                     </connections>
@@ -1654,8 +1661,37 @@
             </objects>
             <point key="canvasLocation" x="-999.20000000000005" y="1995.6521739130437"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="DyX-it-kFq">
+            <objects>
+                <viewController id="4OS-cP-P52" customClass="SettingsViewController" customModule="PersonalCaddie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q9I-Jl-fCO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NU7-bL-Cd8">
+                                <rect key="frame" x="77" y="467" width="221" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOut:" destination="4OS-cP-P52" eventType="touchUpInside" id="YwZ-hj-A5M"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="lp0-MN-Uc9"/>
+                    </view>
+                    <connections>
+                        <outlet property="logoutButton" destination="NU7-bL-Cd8" id="3VZ-19-TSa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LrM-FO-O4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="1995.6521739130437"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="settings" width="24" height="24"/>
         <image name="smallBall.png" width="25" height="25"/>
         <image name="smallHole.png" width="25" height="25"/>
         <image name="smallPerson.png" width="25" height="25"/>

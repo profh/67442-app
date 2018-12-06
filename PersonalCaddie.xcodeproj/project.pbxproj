@@ -23,6 +23,8 @@
 		973FBCEF21B8FE94004A4829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB28219A6A3500D29F01 /* AppDelegate.swift */; };
 		973FBCF121B8FEFA004A4829 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FBCF021B8FEFA004A4829 /* StringExtension.swift */; };
 		973FBCF221B8FEFA004A4829 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FBCF021B8FEFA004A4829 /* StringExtension.swift */; };
+		973FBCF421B90338004A4829 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FBCF321B90338004A4829 /* SettingsViewController.swift */; };
+		973FBCF521B90338004A4829 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FBCF321B90338004A4829 /* SettingsViewController.swift */; };
 		976B2C0921B5946B000116E5 /* smallBall.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C0821B5946A000116E5 /* smallBall.png */; };
 		976B2C0A21B5946B000116E5 /* smallBall.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C0821B5946A000116E5 /* smallBall.png */; };
 		976B2C0C21B595A5000116E5 /* smallHole.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C0B21B595A5000116E5 /* smallHole.png */; };
@@ -107,6 +109,7 @@
 		973FBCEA21B8FC41004A4829 /* UserInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserInfo.plist; sourceTree = "<group>"; };
 		973FBCEC21B8FE8E004A4829 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		973FBCF021B8FEFA004A4829 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		973FBCF321B90338004A4829 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		976B2C0821B5946A000116E5 /* smallBall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallBall.png; sourceTree = "<group>"; };
 		976B2C0B21B595A5000116E5 /* smallHole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallHole.png; sourceTree = "<group>"; };
 		976B2C0E21B59620000116E5 /* smallSc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallSc.png; sourceTree = "<group>"; };
@@ -330,6 +333,7 @@
 				973FBCF021B8FEFA004A4829 /* StringExtension.swift */,
 				973FBCEC21B8FE8E004A4829 /* LoginViewController.swift */,
 				97CACB2C219A6A3500D29F01 /* Main.storyboard */,
+				973FBCF321B90338004A4829 /* SettingsViewController.swift */,
 				976B2C1421B5A6B2000116E5 /* imgs */,
 				97CACB32219A6A3800D29F01 /* Assets.xcassets */,
 				97CACB34219A6A3800D29F01 /* LaunchScreen.storyboard */,
@@ -754,6 +758,7 @@
 				9703FDB021B1A8DC0052CF02 /* CourseDetailViewModel.swift in Sources */,
 				9703715321B073BA00EB95FD /* CourseOverviewCollectionViewCell.swift in Sources */,
 				9703714721AF7D2C00EB95FD /* CourseOverviewViewController.swift in Sources */,
+				973FBCF421B90338004A4829 /* SettingsViewController.swift in Sources */,
 				9703714C21AF8A3700EB95FD /* CourseOverviewViewModel.swift in Sources */,
 				9703714F21AF8A7800EB95FD /* CourseOverview.swift in Sources */,
 				97CACB87219BDC9100D29F01 /* StrokeInputNavigationViewController.swift in Sources */,
@@ -781,6 +786,7 @@
 			files = (
 				976B2C2721B5B9AB000116E5 /* ClubStats.swift in Sources */,
 				976B2C1E21B5B19D000116E5 /* ClubStatsCollectionViewCell.swift in Sources */,
+				973FBCF521B90338004A4829 /* SettingsViewController.swift in Sources */,
 				973FBCF221B8FEFA004A4829 /* StringExtension.swift in Sources */,
 				976B2C1321B5976D000116E5 /* TabBarViewController.swift in Sources */,
 				973FBCEF21B8FE94004A4829 /* AppDelegate.swift in Sources */,
