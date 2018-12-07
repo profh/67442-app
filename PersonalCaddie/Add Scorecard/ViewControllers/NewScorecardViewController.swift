@@ -114,6 +114,8 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
     }
     else{
       cell.score.text = "-"
+      cell.score.layer.backgroundColor = UIColor.white.cgColor
+
     }
     
     cell.par.text = String(par)
