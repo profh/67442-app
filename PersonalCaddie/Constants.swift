@@ -47,7 +47,7 @@ let clubs =
     ],
    [
     "id": 11,
-    "name": "AW"
+    "name": "SW"
     ],
    
    [

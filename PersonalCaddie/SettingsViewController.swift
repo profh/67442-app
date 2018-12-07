@@ -23,13 +23,27 @@ class SettingsViewController: UIViewController, GIDSignInUIDelegate {
   var email: String = ""
   var token: String = ""
   
+  var savedTracking: [String: Bool] = [:]
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     logoutButton.layer.borderWidth = 1
     logoutButton.layer.cornerRadius = 10
+    
+  }
+
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    trackingSaveButton.layer.borderColor = UIColor.gray.cgColor
     trackingSaveButton.layer.borderWidth = 1
     trackingSaveButton.layer.cornerRadius = 10
-        
+    trackingSaveButton.isEnabled = false
+    trackingSaveButton.setTitleColor(UIColor.black, for: .normal)
+    trackingSaveButton.setTitleColor(UIColor.gray, for: .disabled)
+    
     
     let path = self.dataFilePath()
     if FileManager.default.fileExists(atPath: path) {
@@ -43,7 +57,7 @@ class SettingsViewController: UIViewController, GIDSignInUIDelegate {
         tracking["lieTracking"] = unarchiver.decodeBool(forKey: "lieTracking")
         tracking["contactTracking"] = unarchiver.decodeBool(forKey: "contactTracking")
         tracking["flightTracking"] = unarchiver.decodeBool(forKey: "flightTracking")
-        
+        savedTracking = tracking
         unarchiver.finishDecoding()
         
         lieTrackingSwitch.isOn = tracking["lieTracking"]!
@@ -56,13 +70,6 @@ class SettingsViewController: UIViewController, GIDSignInUIDelegate {
       
       
     }
-
-    
-    
-  }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
   }
   
   
@@ -98,6 +105,15 @@ class SettingsViewController: UIViewController, GIDSignInUIDelegate {
     tracking["lieTracking"] = lieTrackingSwitch.isOn
     tracking["contactTracking"] = contactTrackingSwitch.isOn
     tracking["flightTracking"] = flightTrackingSwitch.isOn
+    
+    if tracking != savedTracking {
+      trackingSaveButton.isEnabled = true
+      trackingSaveButton.layer.borderColor = UIColor.black.cgColor
+    }
+    else {
+      trackingSaveButton.isEnabled = false
+      trackingSaveButton.layer.borderColor = UIColor.gray.cgColor
+    }
   }
   
   @IBAction func saveChanges(_ sender: UIButton){
@@ -112,6 +128,10 @@ class SettingsViewController: UIViewController, GIDSignInUIDelegate {
     archiver.encode(tracking["flightTracking"]!, forKey: "flightTracking")
     archiver.finishEncoding()
     data.write(toFile: self.dataFilePath(), atomically: true)
+    savedTracking = tracking
+    trackingSaveButton.isEnabled = false
+    trackingSaveButton.layer.borderColor = UIColor.gray.cgColor
+
   }
 
 }
