@@ -93,13 +93,22 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
     if collectionView == self.collectionView {
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "scorecardHoleCell", for: indexPath) as! ScorecardHoleCell
       cell.num.text = String(viewModel!.scorecard!.scorecardHoles[indexPath.item].number)
+      
+      let score = viewModel!.scorecard!.scorecardHoles[indexPath.item].numStrokes
+      let par = viewModel!.scorecard!.scorecardHoles[indexPath.item].par
       if (viewModel!.scorecard!.scorecardHoles[indexPath.item].numStrokes == 0){
         cell.score.text = "-"
       }
       else {
-        cell.score.text = String(viewModel!.scorecard!.scorecardHoles[indexPath.item].numStrokes)
+        cell.score.text = String(score)
+        if score < par {
+          cell.score.layer.backgroundColor = UIColor.green.cgColor
+        }
+        else if score > par {
+          cell.score.layer.backgroundColor = UIColor.red.cgColor
+        }
       }
-      cell.par.text = String(viewModel!.scorecard!.scorecardHoles[indexPath.item].par)
+      cell.par.text = String(par)
       cell.dist.text = String(viewModel!.scorecard!.scorecardHoles[indexPath.item].distance )
       
       cell.layer.borderWidth = 1

@@ -97,15 +97,23 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "scorecardHoleCell", for: indexPath) as! ScorecardHoleCell
     cell.num.text = String(viewModel!.holes[indexPath.item].number)
+    
+    let par = viewModel!.holes[indexPath.item].par
     if indexPath.item < viewModel!.holesPlayed.count{
       let score = viewModel!.holesPlayed[indexPath.item].count
       cell.score.text = String(score)
+      if score < par {
+        cell.score.layer.backgroundColor = UIColor.green.cgColor
+      }
+      else if score > par {
+        cell.score.layer.backgroundColor = UIColor.red.cgColor
+      }
     }
     else{
       cell.score.text = "-"
     }
     
-    cell.par.text = String(viewModel!.holes[indexPath.item].par)
+    cell.par.text = String(par)
     cell.dist.text = String(viewModel!.holes[indexPath.item].distance )
     
     
