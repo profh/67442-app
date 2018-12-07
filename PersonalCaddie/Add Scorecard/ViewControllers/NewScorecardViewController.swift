@@ -108,6 +108,9 @@ class NewScorecardViewController: UIViewController, UICollectionViewDelegate, UI
       else if score > par {
         cell.score.layer.backgroundColor = UIColor.red.cgColor
       }
+      else {
+        cell.score.layer.backgroundColor = UIColor.white.cgColor
+      }
     }
     else{
       cell.score.text = "-"

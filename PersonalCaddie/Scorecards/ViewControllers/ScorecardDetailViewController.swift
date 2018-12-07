@@ -107,6 +107,9 @@ class ScorecardDetailViewController: UIViewController, UICollectionViewDelegate,
         else if score > par {
           cell.score.layer.backgroundColor = UIColor.red.cgColor
         }
+        else {
+          cell.score.layer.backgroundColor = UIColor.white.cgColor
+        }
       }
       cell.par.text = String(par)
       cell.dist.text = String(viewModel!.scorecard!.scorecardHoles[indexPath.item].distance )
