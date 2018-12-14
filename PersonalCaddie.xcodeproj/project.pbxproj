@@ -23,7 +23,6 @@
 		973FBCEE21B8FE8E004A4829 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FBCEC21B8FE8E004A4829 /* LoginViewController.swift */; };
 		973FBCEF21B8FE94004A4829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB28219A6A3500D29F01 /* AppDelegate.swift */; };
 		973FBCF121B8FEFA004A4829 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FBCF021B8FEFA004A4829 /* StringExtension.swift */; };
-		973FBCF221B8FEFA004A4829 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FBCF021B8FEFA004A4829 /* StringExtension.swift */; };
 		973FBCF421B90338004A4829 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FBCF321B90338004A4829 /* SettingsViewController.swift */; };
 		973FBCF521B90338004A4829 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973FBCF321B90338004A4829 /* SettingsViewController.swift */; };
 		976B2C0921B5946B000116E5 /* smallBall.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C0821B5946A000116E5 /* smallBall.png */; };
@@ -33,7 +32,6 @@
 		976B2C0F21B59621000116E5 /* smallSc.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C0E21B59620000116E5 /* smallSc.png */; };
 		976B2C1021B59621000116E5 /* smallSc.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C0E21B59620000116E5 /* smallSc.png */; };
 		976B2C1221B5976D000116E5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C1121B5976D000116E5 /* TabBarViewController.swift */; };
-		976B2C1321B5976D000116E5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C1121B5976D000116E5 /* TabBarViewController.swift */; };
 		976B2C1621B5A81B000116E5 /* smallPerson.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C1521B5A81B000116E5 /* smallPerson.png */; };
 		976B2C1721B5A81B000116E5 /* smallPerson.png in Resources */ = {isa = PBXBuildFile; fileRef = 976B2C1521B5A81B000116E5 /* smallPerson.png */; };
 		976B2C1A21B5B15B000116E5 /* PlayerCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C1921B5B15B000116E5 /* PlayerCardViewController.swift */; };
@@ -45,7 +43,6 @@
 		976B2C2321B5B918000116E5 /* PlayerCardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C2221B5B918000116E5 /* PlayerCardParser.swift */; };
 		976B2C2421B5B918000116E5 /* PlayerCardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C2221B5B918000116E5 /* PlayerCardParser.swift */; };
 		976B2C2621B5B9AB000116E5 /* ClubStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C2521B5B9AB000116E5 /* ClubStats.swift */; };
-		976B2C2721B5B9AB000116E5 /* ClubStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C2521B5B9AB000116E5 /* ClubStats.swift */; };
 		976B2C2C21B89F11000116E5 /* ProcesStrokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C2B21B89F11000116E5 /* ProcesStrokes.swift */; };
 		976B2C2F21B8A695000116E5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2C2E21B8A695000116E5 /* Constants.swift */; };
 		97CACB29219A6A3500D29F01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACB28219A6A3500D29F01 /* AppDelegate.swift */; };
@@ -241,6 +238,20 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		973B8FE721C46F2200DFE78D /* General */ = {
+			isa = PBXGroup;
+			children = (
+				976B2C2B21B89F11000116E5 /* ProcesStrokes.swift */,
+				976B2C1121B5976D000116E5 /* TabBarViewController.swift */,
+				97CACB53219A728200D29F01 /* NetworkClient.swift */,
+				97CACB88219CD15E00D29F01 /* LocationManager.swift */,
+				976B2C2E21B8A695000116E5 /* Constants.swift */,
+				976B2C2521B5B9AB000116E5 /* ClubStats.swift */,
+				973FBCF021B8FEFA004A4829 /* StringExtension.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		973FBCE021B8B695004A4829 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +299,7 @@
 		976B2C1821B5B124000116E5 /* PlayerCard */ = {
 			isa = PBXGroup;
 			children = (
+				973FBCF321B90338004A4829 /* SettingsViewController.swift */,
 				976B2C2221B5B918000116E5 /* PlayerCardParser.swift */,
 				973FBCE121B8B69E004A4829 /* ViewControllers */,
 				973FBCE221B8B6AC004A4829 /* ViewModels */,
@@ -320,22 +332,15 @@
 		97CACB27219A6A3500D29F01 /* PersonalCaddie */ = {
 			isa = PBXGroup;
 			children = (
-				976B2C2B21B89F11000116E5 /* ProcesStrokes.swift */,
-				976B2C1121B5976D000116E5 /* TabBarViewController.swift */,
-				97CACB53219A728200D29F01 /* NetworkClient.swift */,
-				97CACB88219CD15E00D29F01 /* LocationManager.swift */,
-				976B2C2E21B8A695000116E5 /* Constants.swift */,
-				976B2C2521B5B9AB000116E5 /* ClubStats.swift */,
+				973B8FE721C46F2200DFE78D /* General */,
 				97CACB7F219BD85900D29F01 /* Add Scorecard */,
 				97CACB4B219A6D4300D29F01 /* Scorecards */,
 				9703714821AF8A0600EB95FD /* Courses */,
 				976B2C1821B5B124000116E5 /* PlayerCard */,
 				973FBCEA21B8FC41004A4829 /* UserInfo.plist */,
 				97CACB28219A6A3500D29F01 /* AppDelegate.swift */,
-				973FBCF021B8FEFA004A4829 /* StringExtension.swift */,
 				973FBCEC21B8FE8E004A4829 /* LoginViewController.swift */,
 				97CACB2C219A6A3500D29F01 /* Main.storyboard */,
-				973FBCF321B90338004A4829 /* SettingsViewController.swift */,
 				976B2C1421B5A6B2000116E5 /* imgs */,
 				97CACB32219A6A3800D29F01 /* Assets.xcassets */,
 				97CACB34219A6A3800D29F01 /* LaunchScreen.storyboard */,
@@ -788,11 +793,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				976B2C2721B5B9AB000116E5 /* ClubStats.swift in Sources */,
 				976B2C1E21B5B19D000116E5 /* ClubStatsCollectionViewCell.swift in Sources */,
 				973FBCF521B90338004A4829 /* SettingsViewController.swift in Sources */,
-				973FBCF221B8FEFA004A4829 /* StringExtension.swift in Sources */,
-				976B2C1321B5976D000116E5 /* TabBarViewController.swift in Sources */,
 				973FBCEF21B8FE94004A4829 /* AppDelegate.swift in Sources */,
 				97CACB41219A6A3900D29F01 /* PersonalCaddieTests.swift in Sources */,
 				973FBCEE21B8FE8E004A4829 /* LoginViewController.swift in Sources */,
